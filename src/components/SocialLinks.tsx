@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Icon, IconType } from './Icons'
+import { ViewCounter } from './ViewCount'
 
 interface Props {
   type: IconType
@@ -30,6 +31,7 @@ export const SociaLinks = () => (
       title="Huvik Instagram"
       link="https://www.instagram.com/huv1k/"
     />
+    <ViewCounter />
   </Menu>
 )
 
@@ -45,10 +47,10 @@ const Link = styled.a`
   width: 2.4rem;
   height: 2.4rem;
   margin-bottom: 1rem;
-  color: ${p => p.theme.colors.text};
+  color: ${(p) => p.theme.colors.text};
   transition: color 125ms ease-in;
 
   &:hover {
-    color: ${p => p.theme.colors.detail};
+    color: ${(p) => p.theme.colors.detail};
   }
 `
