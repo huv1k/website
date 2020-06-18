@@ -10,7 +10,6 @@ import fetch from 'unfetch'
 class Blog extends App {
   render() {
     const { Component, pageProps } = this.props
-    console.log(process.env)
 
     return (
       <ThemeProvider theme={theme}>
