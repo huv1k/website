@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
-import fetch from 'unfetch'
 
 export const ViewCounter = () => {
   const { pathname } = useRouter()

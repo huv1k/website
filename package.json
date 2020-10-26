@@ -11,22 +11,34 @@
     "up": "dotenv -- prisma migrate up --experimental"
   },
   "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
   "dependencies": {
-    "@prisma/client": "^2.0.0-beta.3",
-    "next": "9.3.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "styled-components": "5.1.0",
-    "swr": "^0.2.0",
-    "unfetch": "^4.1.0"
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@prisma/client": "^2.0.1",
+    "gray-matter": "^4.0.2",
+    "mdx-prism": "^0.3.1",
+    "next": "^9.5.3",
+    "next-mdx-enhanced": "^4.0.0",
+    "next-mdx-remote": "^1.0.0",
+    "next-seo": "^4.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "reading-time": "^1.2.0",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-code-titles": "^0.1.1",
+    "remark-slug": "^6.0.0",
+    "swr": "^0.2.0"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.0.0-beta.3",
+    "@prisma/cli": "^2.0.1",
     "@types/node": "13.7.0",
     "@types/react": "16.9.19",
-    "@types/styled-components": "4.4.2",
-    "babel-plugin-styled-components": "1.10.7",
     "dotenv-cli": "^3.1.0",
-    "typescript": "3.8.3"
+    "rehype": "^11.0.0",
+    "typescript": "^3.9.7"
   }
 }

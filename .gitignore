@@ -1,6 +1,6 @@
 .DS_Store
 .next
 node_modules
-.env
-
-.now
+.env*
+.mdx-data
+*.log
