@@ -1,4 +1,4 @@
-import { Heading, VStack, Text, HStack } from '@chakra-ui/core'
+import { Heading, VStack, Text, HStack } from '@chakra-ui/react'
 import { InferGetStaticPropsType } from 'next'
 import { Layout } from '../components/layout'
 import fs from 'fs'
@@ -19,19 +19,26 @@ export default function IndexPage({
       </Heading>
       <Text>My two cents about different topics going trought my mind</Text>
       <VStack alignItems="flex-start" marginTop={10} spacing={6}>
-        {posts.map((post) => (
-          <VStack alignItems="flex-start" key={post.slug} width="100%">
-            <HStack justifyContent="space-between" width="100%">
-              <Link href={`/blog/${post.slug}`} passHref>
-                <Heading size="lg" as="a">
-                  {post.frontMatter.title}
-                </Heading>
-              </Link>
-              <Text fontSize="sm">{post.readingTime.text}</Text>
-            </HStack>
-            <Text>{post.frontMatter.description}</Text>
-          </VStack>
-        ))}
+        {posts
+          .sort((a, b) => {
+            return (
+              new Date(b.frontMatter.date).getTime() -
+              new Date(a.frontMatter.date).getTime()
+            )
+          })
+          .map((post) => (
+            <VStack alignItems="flex-start" key={post.slug} width="100%">
+              <HStack justifyContent="space-between" width="100%">
+                <Link href={`/blog/${post.slug}`} passHref>
+                  <Heading size="lg" as="a">
+                    {post.frontMatter.title}
+                  </Heading>
+                </Link>
+                <Text fontSize="sm">{post.readingTime.text}</Text>
+              </HStack>
+              <Text>{post.frontMatter.description}</Text>
+            </VStack>
+          ))}
       </VStack>
     </Layout>
   )

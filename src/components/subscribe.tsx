@@ -5,9 +5,13 @@ import {
   Button,
   Input,
   useToast,
-} from '@chakra-ui/core'
+  Box,
+  Heading,
+  Text,
+} from '@chakra-ui/react'
 import { useCallback, useState } from 'react'
 import { Mail } from 'react-feather'
+import { EMAIL_REGEX } from '../lib/utils'
 
 export const Subscribe = () => {
   const [loading, setLoading] = useState(false)
@@ -16,51 +20,78 @@ export const Subscribe = () => {
 
   const subscribe = useCallback(async () => {
     setLoading(true)
-    const req = await fetch('/api/subscribe', {
-      method: 'POST',
-      body: JSON.stringify({ email }),
-      headers: {
-        'Content-type': 'application/json',
-      },
-    })
 
-    const res = await req.json()
-    const sucess = req.status === 201
+    if (EMAIL_REGEX.exec(email)) {
+      const req = await fetch('/api/subscribe', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        headers: {
+          'Content-type': 'application/json',
+        },
+      })
 
-    toast({
-      description: res.message,
-      status: sucess ? 'success' : 'error',
-    })
+      const res = await req.json()
+      const sucess = req.status === 201
 
-    if (sucess) {
-      setEmail('')
+      toast({
+        description: res.message,
+        status: sucess ? 'success' : 'error',
+      })
+
+      if (sucess) {
+        ;(window as any).splitbee.track('Signup for newsletter')
+        setEmail('')
+      }
+      setLoading(false)
+    } else {
+      toast({
+        description: `Email: ${email} is not valid email format.`,
+        status: 'error',
+      })
     }
     setLoading(false)
   }, [email])
 
   return (
-    <InputGroup>
-      <InputLeftElement
-        width="1.5ren"
-        children={<Mail size={16} />}
-        color="gray.500"
-      />
-      <Input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <InputRightElement width="6.75rem">
-        <Button
-          isLoading={loading}
-          fontWeight="bold"
-          h="1.75rem"
-          size="xs"
-          onClick={subscribe}
-        >
-          Subscribe
-        </Button>
-      </InputRightElement>
-    </InputGroup>
+    <Box
+      padding={6}
+      border="1px solid"
+      background="cyan.50"
+      borderColor="cyan.300"
+      borderRadius="base"
+    >
+      <Heading as="h4" size="lg" mb={2}>
+        Don’t miss the next post!
+      </Heading>
+      <Text mb={4}>
+        Sign up for the newsletter from me, about different topics going trough
+        my mind.
+      </Text>
+      <InputGroup>
+        <InputLeftElement
+          width="1.5ren"
+          children={<Mail size={16} />}
+          color="gray.500"
+        />
+        <Input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          background="white"
+          placeholder="your@email.com"
+        />
+        <InputRightElement width="4.75rem">
+          <Button
+            isLoading={loading}
+            fontWeight="bold"
+            h="1.75rem"
+            size="xs"
+            onClick={subscribe}
+          >
+            Join
+          </Button>
+        </InputRightElement>
+      </InputGroup>
+    </Box>
   )
 }

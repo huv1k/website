@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import { config } from '../lib/seo'
 
