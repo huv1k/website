@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { Flex, Heading, Text } from '@chakra-ui/core'
+import { Flex, Heading, Text } from '@chakra-ui/react'
 import { Layout } from '../components/layout'
+import { Speaking } from '../components/speaking'
 
 const Index = () => {
   return (
     <Layout>
-      <Flex flexDirection="column">
+      <Flex flexDirection="column" mb={20}>
         <Text>Lukáš Huvar</Text>
         <Heading as="h1" size="2xl">
           Huvik
@@ -15,6 +16,7 @@ const Index = () => {
           <b>Typescript</b>
         </Text>
       </Flex>
+      <Speaking />
     </Layout>
   )
 }

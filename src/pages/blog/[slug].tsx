@@ -5,9 +5,11 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import { Layout } from '../../components/layout'
-import { Heading } from '@chakra-ui/core'
+import { Heading } from '@chakra-ui/react'
 import mdxPrism from 'mdx-prism'
 import { components } from '../../components/mdx-components'
+import { Content } from '../../components/content'
+import { Subscribe } from '../../components/subscribe'
 
 const root = process.cwd()
 
@@ -23,7 +25,8 @@ export default function BlogPost({
       <Heading as="h1" size="xl">
         {frontMatter.title}
       </Heading>
-      {content}
+      <Content content={content} />
+      <Subscribe />
     </Layout>
   )
 }

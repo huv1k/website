@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Navigation } from './navigation'
-import { Container } from '@chakra-ui/core'
+import { Container } from '@chakra-ui/react'
 import { Footer } from './footer'
 
 type Props = {

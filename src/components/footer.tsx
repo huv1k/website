@@ -1,4 +1,4 @@
-import { HStack, Link, VStack, ListItem, Container } from '@chakra-ui/core'
+import { HStack, Link, VStack, ListItem, Container } from '@chakra-ui/react'
 
 type Link = {
   href: string

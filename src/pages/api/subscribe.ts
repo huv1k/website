@@ -18,6 +18,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .json({ message: `Email ${email} is in invalid format` })
   }
 
+  if (email === 'your@email.com') {
+    return res
+      .status(400)
+      .json({ message: `Well you tried, we got you tested` })
+  }
+
   try {
     const response = await fetch(
       `https://api.mailerlite.com/api/v2/groups/${process.env.MAILERLITE_GROUP_ID}/subscribers`,
@@ -27,7 +33,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           'Content-Type': 'application/json',
           'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY,
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: email.trim() }),
       }
     )
 
