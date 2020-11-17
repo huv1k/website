@@ -22,9 +22,11 @@ export const Subscribe = () => {
     setLoading(true)
 
     if (EMAIL_REGEX.exec(email)) {
+      const formatedEmail = email.trim()
+
       const req = await fetch('/api/subscribe', {
         method: 'POST',
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: formatedEmail }),
         headers: {
           'Content-type': 'application/json',
         },
@@ -40,6 +42,7 @@ export const Subscribe = () => {
 
       if (sucess) {
         ;(window as any).splitbee.track('Signup for newsletter')
+        ;(window as any).splitbee.user.set({ email: formatedEmail })
         setEmail('')
       }
       setLoading(false)
