@@ -1,0 +1,53 @@
+---
+title: 'Improve prototyping speed of Prisma'
+description: 'Automate your database updates with one command.'
+date: '2020-11-22T18:00:00Z'
+image: 'improve-prototyping-speed-of-prisma/og-image.png'
+---
+
+[Prisma](https://www.prisma.io/) is really great "next-generation" ORM. It enables developers to work with databases effortlessly. It had one downside and that was prototyping because the developer experience wasn't great.
+
+## Single command for schema changes
+
+From [2.10.0 release](https://github.com/prisma/prisma/releases/tag/2.10.0) release everything improved to run just one single command! Prisma introduced a new `prisma db` namespace for commands that operate directly against the database.
+
+```bash
+prisma db push --preview-feature
+```
+
+This greatly improves prototyping speed, because the developer is no longer required to write migrations. This command is suited for prototyping and local environments. For production environments, you should use `prisma migrate` commands to run propper database migrations.
+
+## Save and run
+
+If you are using [VSCode](https://code.visualstudio.com/) we can improve prototyping even more. There is [Save and Run](https://marketplace.visualstudio.com/items?itemName=wk-j.save-and-run) extension, which enables to run a command on save. You can install this extension trough `Extensions` in VScode or run this command:
+
+```bash
+code --install-extension wk-j.save-and-run
+```
+
+Next, you need to add to your `Prisma` project settings file to enable `Save and Run` to work on `schema.prisma` file.
+
+```json:.vscode/settings.json
+{
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": "schema.prisma",
+        "cmd": "yarn prisma db push --preview-feature",
+        "silent": false
+      }
+    ]
+  }
+}
+```
+
+Here you can see whole flow in action, deploying a new schema to database and generating types for `PrismaClient`.
+
+![Run Prisma db push command on save](/improve-prototyping-speed-of-prisma/run-on-save-prisma.gif)
+
+You can use `Save and run` with oter tools for example:
+
+- [GraphQL code generator](https://graphql-code-generator.com/) - generating code from your `GraphQL` schema
+- [Nexus.js](https://nexusjs.org/) - generating code-first `GraphQL` schema
+
+If you are not using `VSCode` you can use [Watchman](https://facebook.github.io/watchman/), [entr](https://github.com/eradman/entr) or any other tools for watching file change.

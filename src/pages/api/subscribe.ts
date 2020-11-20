@@ -38,9 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     )
 
     if (response.status === 200) {
-      return res
-        .status(201)
-        .json({ message: 'You sucessfully subscribed to the newsletter' })
+      return res.status(201).json({ message: 'Subscribed to newsletter' })
     }
 
     const { error } = await response.json()
