@@ -63,7 +63,7 @@ export const Subscribe = () => {
       borderColor="cyan.300"
       borderRadius="base"
     >
-      <Heading as="h4" size="lg" mb={2}>
+      <Heading as="p" size="lg" mb={2}>
         Don’t miss the next post!
       </Heading>
       <Text mb={4}>
@@ -78,6 +78,7 @@ export const Subscribe = () => {
         />
         <Input
           type="email"
+          aria-label="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           background="white"
