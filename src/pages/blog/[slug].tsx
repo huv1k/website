@@ -11,6 +11,7 @@ import mdxPrism from 'mdx-prism'
 import { components } from '../../components/mdx-components'
 import { Content } from '../../components/content'
 import { Subscribe } from '../../components/subscribe'
+import { getBlogSlugs } from '../../lib/data'
 
 const root = process.cwd()
 
@@ -64,9 +65,9 @@ export default function BlogPost({
 export async function getStaticPaths() {
   return {
     fallback: false,
-    paths: fs
-      .readdirSync(path.join(root, 'content'))
-      .map((p) => ({ params: { slug: p.replace(/\.mdx/, '') } })),
+    paths: getBlogSlugs().map((slug) => ({
+      params: { slug },
+    })),
   }
 }
 
