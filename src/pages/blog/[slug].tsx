@@ -4,6 +4,7 @@ import hydrate from 'next-mdx-remote/hydrate'
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
+import { NextSeo } from 'next-seo'
 import { Layout } from '../../components/layout'
 import { Heading } from '@chakra-ui/react'
 import mdxPrism from 'mdx-prism'
@@ -16,14 +17,35 @@ const root = process.cwd()
 export default function BlogPost({
   mdxSource,
   frontMatter,
+  slug,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const content = hydrate(mdxSource, {
     components,
   })
+
+  const title = frontMatter.title
+  const description = frontMatter.description
+  const date = new Date(frontMatter.date).toISOString()
+  const url = `https://huvik.dev/blog/${slug}`
+
   return (
     <Layout>
+      <NextSeo
+        title={`${title} - Huvik`}
+        description={description}
+        canonical={url}
+        openGraph={{
+          type: 'Article',
+          article: {
+            publishedTime: date,
+          },
+          url,
+          title,
+          description,
+        }}
+      />
       <Heading as="h1" size="xl">
-        {frontMatter.title}
+        {title}
       </Heading>
       <Content content={content} />
       <Subscribe />
@@ -40,8 +62,10 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params?.slug
+
   const source = fs.readFileSync(
-    path.join(root, 'content', `${params?.slug}.mdx`),
+    path.join(root, 'content', `${slug}.mdx`),
     'utf8'
   )
   const { data, content } = matter(source)
@@ -56,5 +80,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       rehypePlugins: [mdxPrism],
     },
   })
-  return { props: { mdxSource, frontMatter: data } }
+  return { props: { mdxSource, frontMatter: data, slug } }
 }
