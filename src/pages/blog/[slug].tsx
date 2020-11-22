@@ -27,6 +27,14 @@ export default function BlogPost({
   const description = frontMatter.description
   const date = new Date(frontMatter.date).toISOString()
   const url = `https://huvik.dev/blog/${slug}`
+  const images = frontMatter.image
+    ? [
+        {
+          url: `https://huvik.dev/${frontMatter.image}`,
+          alt: title,
+        },
+      ]
+    : []
 
   return (
     <Layout>
@@ -42,6 +50,7 @@ export default function BlogPost({
           url,
           title,
           description,
+          images,
         }}
       />
       <Heading as="h1" size="xl">
