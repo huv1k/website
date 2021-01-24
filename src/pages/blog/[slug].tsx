@@ -9,7 +9,6 @@ import { Layout } from '../../components/layout'
 import { Heading } from '@chakra-ui/react'
 import mdxPrism from 'mdx-prism'
 import { components } from '../../components/mdx-components'
-import { Content } from '../../components/content'
 import { Subscribe } from '../../components/subscribe'
 import { getBlogSlugs } from '../../lib/data'
 
@@ -57,7 +56,7 @@ export default function BlogPost({
       <Heading as="h1" size="xl">
         {title}
       </Heading>
-      <Content content={content} />
+      {content}
       <Subscribe />
     </Layout>
   )

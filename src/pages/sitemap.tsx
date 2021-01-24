@@ -3,7 +3,12 @@ import { getBlogSlugs } from '../lib/data'
 
 const hostname = 'https://huvik.dev'
 
-const getSitemapEntry = ({ pathname, priority = 0.5 }) => {
+type EntryConfig = {
+  pathname: string
+  priority?: number
+}
+
+const getSitemapEntry = ({ pathname, priority = 0.5 }: EntryConfig) => {
   return `
       <url>
           <loc>${hostname}${pathname}</loc>

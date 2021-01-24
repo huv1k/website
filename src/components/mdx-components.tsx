@@ -7,14 +7,21 @@ import {
   UnorderedList,
   ListItem,
 } from '@chakra-ui/react'
+import { MdxRemote } from 'next-mdx-remote/types'
 
-export const components = {
+interface Props {
+  children: React.ReactNode
+}
+
+export const components: MdxRemote.Components = {
   // Hotfix for missing providers in mdx-remote
-  wrapper: (props) => <ChakraProvider resetCSS {...props} />,
-  h2: (props) => <Heading as="h2" size="md" {...props} />,
-  a: (props) => <Link fontWeight="bold" {...props} />,
-  p: (props) => <Text as="p" mt={4} mb={8} lineHeight="tall" {...props} />,
-  ul: (props) => <UnorderedList {...props} />,
-  li: (props) => <ListItem {...props} />,
-  inlineCode: (props) => <Code {...props} />,
+  wrapper: (props: Props) => <ChakraProvider resetCSS {...props} />,
+  h2: (props: Props) => <Heading as="h2" size="md" {...props} />,
+  a: (props: Props) => <Link fontWeight="bold" {...props} />,
+  p: (props: Props) => (
+    <Text as="p" mt={4} mb={8} lineHeight="tall" {...props} />
+  ),
+  ul: (props: Props) => <UnorderedList {...props} />,
+  li: (props: Props) => <ListItem {...props} />,
+  inlineCode: (props: Props) => <Code {...props} />,
 }

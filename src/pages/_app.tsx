@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import { config } from '../lib/seo'
 import splitbee from '@splitbee/web'
+import '../styles.css'
 
 splitbee.init()
 
