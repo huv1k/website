@@ -1,4 +1,11 @@
-import { HStack, Link, VStack, ListItem, Container } from '@chakra-ui/react'
+import {
+  HStack,
+  Link,
+  VStack,
+  ListItem,
+  Container,
+  UnorderedList,
+} from '@chakra-ui/react'
 
 type Link = {
   href: string
@@ -13,7 +20,7 @@ const links: Array<Link> = [
 export const Footer = () => (
   <Container maxWidth="700px">
     <VStack as="footer" alignItems="flex-start" paddingY={10}>
-      <HStack as="ul" listStyleType="none">
+      <HStack as={UnorderedList} listStyleType="none" margin="0">
         {links.map((link) => (
           <ListItem key={link.title}>
             <Link href={link.href} target="_blank" rel="noopener noreferrer">

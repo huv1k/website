@@ -3,12 +3,14 @@ import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import { config } from '../lib/seo'
+import splitbee from '@splitbee/web'
+
+splitbee.init()
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS>
       <Head>
-        <script async src="https://cdn.splitbee.io/sb.js" />
         <link
           rel="icon"
           type="image/png"

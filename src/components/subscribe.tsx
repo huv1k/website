@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { useCallback, useState } from 'react'
 import { Mail } from 'react-feather'
+import splitbee from '@splitbee/web'
 import { EMAIL_REGEX } from '../lib/utils'
 
 export const Subscribe = () => {
@@ -41,8 +42,8 @@ export const Subscribe = () => {
       })
 
       if (sucess) {
-        ;(window as any).splitbee.track('Signup for newsletter')
-        ;(window as any).splitbee.user.set({ email: formatedEmail })
+        await splitbee.track('Signup for newsletter')
+        await splitbee.user.set({ email: formatedEmail })
         setEmail('')
       }
       setLoading(false)
@@ -71,11 +72,7 @@ export const Subscribe = () => {
         my mind.
       </Text>
       <InputGroup>
-        <InputLeftElement
-          width="1.5ren"
-          children={<Mail size={16} />}
-          color="gray.500"
-        />
+        <InputLeftElement children={<Mail size={16} />} color="gray.500" />
         <Input
           type="email"
           aria-label="Email"

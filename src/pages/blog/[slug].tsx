@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     'utf8'
   )
   const { data, content } = matter(source)
-  const mdxSource: string = await renderToString(content, {
+  const mdxSource = await renderToString(content, {
     components,
     mdxOptions: {
       remarkPlugins: [
