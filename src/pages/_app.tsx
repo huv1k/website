@@ -6,7 +6,10 @@ import { config } from '../lib/seo'
 import splitbee from '@splitbee/web'
 import '../styles.css'
 
-splitbee.init()
+splitbee.init({
+  scriptUrl: '/bee.js',
+  apiUrl: '/_hive',
+})
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
