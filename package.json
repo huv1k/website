@@ -40,7 +40,7 @@
     "swr": "^0.5.5"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.15.0",
+    "@prisma/cli": "^2.20.0",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.3",
     "dotenv-cli": "^4.0.0",
