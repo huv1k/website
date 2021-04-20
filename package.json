@@ -16,7 +16,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.4.1",
+    "@chakra-ui/react": "^1.5.2",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "@prisma/client": "^2.20.1",
