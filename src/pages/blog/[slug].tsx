@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import renderToString from 'next-mdx-remote/render-to-string'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
@@ -15,14 +15,10 @@ import { getBlogSlugs } from '../../lib/data'
 const root = process.cwd()
 
 export default function BlogPost({
-  mdxSource,
+  source,
   frontMatter,
   slug,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const content = hydrate(mdxSource, {
-    components,
-  })
-
   const title = frontMatter.title
   const description = frontMatter.description
   const date = new Date(frontMatter.date).toISOString()
@@ -56,7 +52,7 @@ export default function BlogPost({
       <Heading as="h1" size="xl">
         {title}
       </Heading>
-      {content}
+      <MDXRemote {...source} components={components} />
       <Subscribe />
     </Layout>
   )
@@ -78,8 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     'utf8'
   )
   const { data, content } = matter(source)
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         require('remark-autolink-headings'),
@@ -89,5 +84,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       rehypePlugins: [mdxPrism],
     },
   })
-  return { props: { mdxSource, frontMatter: data, slug } }
+  return { props: { source: mdxSource, frontMatter: data, slug } }
 }
