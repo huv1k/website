@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
-    "@types/react": "^17.0.3",
+    "@types/react": "^17.0.9",
     "dotenv-cli": "^4.0.0",
     "prisma": "^2.20.1",
     "rehype": "^11.0.0",
