@@ -4,7 +4,7 @@ import {
   renderGraphiQL,
   shouldRenderGraphiQL,
 } from 'graphql-helix'
-import { NextApiHandler } from 'next/types'
+import type { NextApiHandler } from 'next'
 import { schema } from '../../lib/schema'
 
 export default (async (req, res) => {

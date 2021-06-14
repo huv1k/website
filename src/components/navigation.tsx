@@ -1,5 +1,5 @@
+import { Link as A, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
-import { Flex, Link as A } from '@chakra-ui/react'
 
 type Props = {
   href: string

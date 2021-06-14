@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const prisma = new PrismaClient()
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const PageVIews = async (req: NextApiRequest, res: NextApiResponse) => {
   const { slug = '/' } = req.query
 
   const count = await prisma.view.count({
@@ -14,3 +14,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.json({ count })
 }
+
+export default PageVIews

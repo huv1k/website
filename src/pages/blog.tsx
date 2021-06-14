@@ -1,11 +1,11 @@
-import { Heading, VStack, Text, HStack } from '@chakra-ui/react'
-import { InferGetStaticPropsType } from 'next'
-import { Layout } from '../components/layout'
 import fs from 'fs'
-import Link from 'next/link'
-import matter from 'gray-matter'
 import path from 'path'
+import { HStack, Heading, Text, VStack } from '@chakra-ui/react'
+import matter from 'gray-matter'
+import { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 import readingTime from 'reading-time'
+import { Layout } from '../components/layout'
 
 const root = process.cwd()
 

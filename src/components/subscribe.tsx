@@ -1,17 +1,17 @@
 import {
+  Box,
+  Button,
+  Heading,
+  Input,
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Button,
-  Input,
-  useToast,
-  Box,
-  Heading,
   Text,
+  useToast,
 } from '@chakra-ui/react'
+import splitbee from '@splitbee/web'
 import { useCallback, useState } from 'react'
 import { Mail } from 'react-feather'
-import splitbee from '@splitbee/web'
 import { EMAIL_REGEX } from '../lib/utils'
 
 export const Subscribe = () => {
@@ -54,7 +54,7 @@ export const Subscribe = () => {
       })
     }
     setLoading(false)
-  }, [email])
+  }, [email, toast])
 
   return (
     <Box
@@ -72,7 +72,9 @@ export const Subscribe = () => {
         my mind.
       </Text>
       <InputGroup>
-        <InputLeftElement children={<Mail size={16} />} color="gray.500" />
+        <InputLeftElement color="gray.500">
+          <Mail size={16} />
+        </InputLeftElement>
         <Input
           type="email"
           aria-label="Email"

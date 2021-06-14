@@ -1,4 +1,4 @@
-import { makeSchema, queryType, objectType } from 'nexus'
+import { makeSchema, objectType, queryType } from 'nexus'
 
 const huvik = objectType({
   name: 'Huvik',

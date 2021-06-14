@@ -1,10 +1,10 @@
 import {
+  Container,
   HStack,
   Link,
-  VStack,
   ListItem,
-  Container,
   UnorderedList,
+  VStack,
 } from '@chakra-ui/react'
 
 type Link = {

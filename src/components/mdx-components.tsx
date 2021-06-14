@@ -1,27 +1,34 @@
 import {
+  ChakraProvider,
   Code,
   Heading,
   Link,
-  Text,
-  ChakraProvider,
-  UnorderedList,
   ListItem,
+  Text,
+  UnorderedList,
 } from '@chakra-ui/react'
-import { MdxRemote } from 'next-mdx-remote/types'
 
 interface Props {
   children: React.ReactNode
 }
 
-export const components: MdxRemote.Components = {
+const Wrapper = (props: Props) => <ChakraProvider resetCSS {...props} />
+const H2 = (props: Props) => <Heading as="h2" size="md" {...props} />
+const A = (props: Props) => <Link fontWeight="bold" {...props} />
+const P = (props: Props) => (
+  <Text as="p" mt={4} mb={8} lineHeight="tall" {...props} />
+)
+const UL = (props: Props) => <UnorderedList {...props} />
+const LI = (props: Props) => <ListItem {...props} />
+const InlineCode = (props: Props) => <Code {...props} />
+
+export const components = {
   // Hotfix for missing providers in mdx-remote
-  wrapper: (props: Props) => <ChakraProvider resetCSS {...props} />,
-  h2: (props: Props) => <Heading as="h2" size="md" {...props} />,
-  a: (props: Props) => <Link fontWeight="bold" {...props} />,
-  p: (props: Props) => (
-    <Text as="p" mt={4} mb={8} lineHeight="tall" {...props} />
-  ),
-  ul: (props: Props) => <UnorderedList {...props} />,
-  li: (props: Props) => <ListItem {...props} />,
-  inlineCode: (props: Props) => <Code {...props} />,
+  wrapper: Wrapper,
+  h2: H2,
+  a: A,
+  p: P,
+  ul: UL,
+  li: LI,
+  inlineCode: InlineCode,
 }

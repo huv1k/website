@@ -5,7 +5,7 @@ type Data = {
   email?: string
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body as Data
 
   if (!email) {
@@ -50,3 +50,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(500).json({ message: 'Internal server error!' })
   }
 }
+
+export default Subscribe

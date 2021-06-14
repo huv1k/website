@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Navigation } from './navigation'
 import { Container } from '@chakra-ui/react'
+import * as React from 'react'
 import { Footer } from './footer'
+import { Navigation } from './navigation'
 
 type Props = {
   children: React.ReactNode
