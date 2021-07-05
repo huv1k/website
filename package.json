@@ -29,7 +29,7 @@
     "mdx-prism": "^0.3.3",
     "next": "^10.2.4-canary.15",
     "next-mdx-remote": "^3.0.2",
-    "next-seo": "^4.23.0",
+    "next-seo": "^4.26.0",
     "nexus": "^1.0.0",
     "perfect-freehand": "^0.4.9",
     "react": "^17.0.2",
