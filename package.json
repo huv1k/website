@@ -42,7 +42,7 @@
     "swr": "^0.5.5"
   },
   "devDependencies": {
-    "@types/node": "^15.14.0",
+    "@types/node": "^16.7.1",
     "@types/react": "^17.0.3",
     "dotenv-cli": "^4.0.0",
     "eslint": "^7.30.0",
