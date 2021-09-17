@@ -1,11 +1,12 @@
 import fs from 'fs'
 import path from 'path'
-import { HStack, Heading, Text, VStack } from '@chakra-ui/react'
+import { Flex, HStack, Heading, Text, VStack } from '@chakra-ui/react'
 import matter from 'gray-matter'
 import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import readingTime from 'reading-time'
 import { Layout } from '../components/layout'
+import { ViewCounter } from '../components/view-counter'
 
 const root = process.cwd()
 
@@ -34,9 +35,18 @@ export default function IndexPage({
                     {post.frontMatter.title}
                   </Heading>
                 </Link>
-                <Text fontSize="sm">{post.readingTime.text}</Text>
+                <Text fontSize="sm" color="gray.500">
+                  {post.readingTime.text}
+                </Text>
               </HStack>
-              <Text>{post.frontMatter.description}</Text>
+              <Flex
+                width="100%"
+                alignItems="center"
+                justifyContent="space-between"
+              >
+                <Text>{post.frontMatter.description}</Text>
+                <ViewCounter slug={post.slug} track={false} />
+              </Flex>
             </VStack>
           ))}
       </VStack>
