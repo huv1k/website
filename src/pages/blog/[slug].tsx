@@ -1,15 +1,17 @@
 import fs from 'fs'
 import path from 'path'
-import { Heading } from '@chakra-ui/react'
+import { Heading, Flex, Text, HStack } from '@chakra-ui/react'
 import matter from 'gray-matter'
 import mdxPrism from 'mdx-prism'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { NextSeo } from 'next-seo'
+import readingTime from 'reading-time'
 import { Layout } from '../../components/layout'
 import { components } from '../../components/mdx-components'
 import { Subscribe } from '../../components/subscribe'
+import { ViewCounter } from '../../components/view-counter'
 import { getBlogSlugs } from '../../lib/data'
 
 const root = process.cwd()
@@ -18,6 +20,7 @@ export default function BlogPost({
   source,
   frontMatter,
   slug,
+  readingTime,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = frontMatter.title
   const description = frontMatter.description
@@ -49,9 +52,18 @@ export default function BlogPost({
           images,
         }}
       />
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="xl" mb={2}>
         {title}
       </Heading>
+      <Flex width="100%" alignItems="center" justifyContent="space-between">
+        <Text fontWeight="bold">Lukáš Huvar</Text>
+        <HStack>
+          <Text fontSize="sm" color="gray.500">
+            {readingTime}
+          </Text>
+          <ViewCounter slug={slug} />
+        </HStack>
+      </Flex>
       <MDXRemote {...source} components={components} />
       <Subscribe />
     </Layout>
@@ -84,5 +96,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       rehypePlugins: [mdxPrism],
     },
   })
-  return { props: { source: mdxSource, frontMatter: data, slug } }
+  return {
+    props: {
+      source: mdxSource,
+      frontMatter: data,
+      slug,
+      readingTime: readingTime(content).text,
+    },
+  }
 }
