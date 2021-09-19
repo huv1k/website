@@ -1,5 +1,5 @@
 import { Box, Tooltip } from '@chakra-ui/react'
-import getStroke from 'perfect-freehand'
+import { getStroke } from 'perfect-freehand'
 import { PointerEvent, useState } from 'react'
 import { Edit2, MousePointer } from 'react-feather'
 import { getSvgPathFromStroke } from '../lib/stroke'
