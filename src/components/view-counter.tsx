@@ -12,11 +12,9 @@ export const ViewCounter = ({ track = true, slug }: Props) => {
   const { pathname } = useRouter()
   const slugPath = slug ?? pathname
 
-  const { data, error } = useSWR(
+  const { data } = useSWR(
     `/api/page-views?slug=${encodeURIComponent(slugPath)}`
   )
-
-  console.log(data, error)
 
   useEffect(() => {
     if (track) {

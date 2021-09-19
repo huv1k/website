@@ -1,4 +1,4 @@
-.remark-code-title {
+.rehype-code-title {
   width: 100%;
   background: #edf2f6;
   padding: 6px 8px;
@@ -11,13 +11,13 @@
   color: rgb(36, 41, 46);
   font-weight: 700;
 }
-.remark-code-title + pre {
+.rehype-code-title + pre {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
   margin-top: 0px !important;
 }
 
-pre[class*='language-'] {
+pre {
   box-sizing: border-box;
   padding: 14px;
   border: 1px solid;
@@ -27,7 +27,7 @@ pre[class*='language-'] {
   background: #f8fafc;
   margin-bottom: 2rem;
 }
-code[class*='language-'] {
+code {
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
     monospace;
 }

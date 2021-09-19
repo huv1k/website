@@ -2,12 +2,15 @@ import fs from 'fs'
 import path from 'path'
 import { Heading, Flex, Text, HStack } from '@chakra-ui/react'
 import matter from 'gray-matter'
-import mdxPrism from 'mdx-prism'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { NextSeo } from 'next-seo'
 import readingTime from 'reading-time'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrism from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
 import { Layout } from '../../components/layout'
 import { components } from '../../components/mdx-components'
 import { Subscribe } from '../../components/subscribe'
@@ -88,12 +91,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data, content } = matter(source)
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [
-        require('remark-autolink-headings'),
-        require('remark-slug'),
-        require('remark-code-titles'),
+      rehypePlugins: [
+        rehypeAutolinkHeadings,
+        rehypeCodeTitles,
+        rehypePrism,
+        rehypeSlug,
       ],
-      rehypePlugins: [mdxPrism],
     },
   })
   return {

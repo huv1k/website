@@ -6,15 +6,11 @@ const prisma = new PrismaClient()
 const PageVIews = async (req: NextApiRequest, res: NextApiResponse) => {
   const { slug = '/' } = req.query
 
-  console.log('Here')
-
   const count = await prisma.view.count({
     where: {
       slug: slug as string,
     },
   })
-
-  console.log(count)
 
   res.json({ count })
 }
