@@ -2651,10 +2651,10 @@ graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-graphql-helix@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.2.3.tgz#eaad4db338e2cdf6f5799478d1b05125ff19cd04"
-  integrity sha512-psBs23Md/Nt0qsNOv5K+MqqsJ09lTyYtoujGAlFuE1+twUBQiKyanOYk3cqs9BtnJ7JsS+JlsS2/0ceE+20RCA==
+graphql-helix@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.7.0.tgz#452b2792447dddd259cdf4d6731da2171c8a7e49"
+  integrity sha512-CUqBZL0e/ivPnqFguzWCmMzPTjYXvak2465SsIiAYt0C2yZa4kjzQjB/JIF7YKHCsP8VrJwA29HXmYOJzPAe3g==
 
 graphql@^15.5.3:
   version "15.5.3"
