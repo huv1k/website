@@ -4058,10 +4058,10 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-perfect-freehand@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/perfect-freehand/-/perfect-freehand-1.0.12.tgz#5f3614e099ad459ced4f50da9ce109fdf5b62b90"
-  integrity sha512-tY6ZVUbF672WJdHQMSz+YT45WgkeoLtbD5oe0TQNAZWCd4xD8B0Pcv+3URMEqhErR4JenRgSlV4kT7zHsbvzVg==
+perfect-freehand@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/perfect-freehand/-/perfect-freehand-1.0.14.tgz#76621baa268624b087097201fc64eef55fc6d907"
+  integrity sha512-WQ2NCO4gCH09Q++eRKNMzbz21Z4poLN4z9AKVY/SHBfkbPbtZYOHs8X63XWVAYsMSGKwaxGR22LUcBH3FizLeA==
 
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   version "2.3.0"
