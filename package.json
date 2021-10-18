@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@prisma/client": "^3.2.1",
     "@splitbee/web": "^0.3.0",
