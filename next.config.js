@@ -1,5 +1,6 @@
+/** @type{import('next').NextConfig */
 module.exports = {
-  webpack5: true,
+  swcMinify: true,
   async rewrites() {
     return [
       {
