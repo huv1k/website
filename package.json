@@ -22,7 +22,7 @@
     "@emotion/styled": "^11.3.0",
     "@prisma/client": "^3.4.2",
     "@splitbee/web": "^0.3.0",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^5.2.1",
     "graphql": "^15.7.2",
     "graphql-helix": "^1.9.1",
     "gray-matter": "^4.0.3",
