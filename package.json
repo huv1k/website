@@ -27,7 +27,7 @@
     "graphql-helix": "^1.9.1",
     "gray-matter": "^4.0.3",
     "next": "^12.0.2",
-    "next-mdx-remote": "^3.0.7",
+    "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
     "nexus": "^1.1.0",
     "perfect-freehand": "^1.0.16",
