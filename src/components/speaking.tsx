@@ -8,6 +8,11 @@ type Talk = {
 
 const talks: Array<Talk> = [
   {
+    name: 'Every millisecond matters',
+    location: 'Productboard frontend meetup #3 2021',
+    href: 'https://www.youtube.com/watch?v=IWR3xxEc3V0',
+  },
+  {
     name: 'Code-first GraphQL Server Development with Nexus & Prisma',
     location: 'PragueJS 2019 #4',
     href: 'https://www.youtube.com/watch?v=rTJYIfae7Rk',
