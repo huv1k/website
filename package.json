@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/node": "^16.11.13",
     "@types/react": "^17.0.39",
-    "dotenv-cli": "^4.1.1",
+    "dotenv-cli": "^5.0.0",
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.0.10",
     "eslint-plugin-import": "^2.25.4",
