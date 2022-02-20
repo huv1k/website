@@ -25,7 +25,6 @@ export const Navigation = () => {
     >
       {/* <NavLink href="/reading-list">Reading list</NavLink> */}
       <NavLink href="/">Home</NavLink>
-      <NavLink href="/drawing">Drawing</NavLink>
       <NavLink href="/blog">Blog</NavLink>
     </Flex>
   )
