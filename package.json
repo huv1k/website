@@ -9,6 +9,9 @@
     "start": "next start",
     "generate": "prisma generate"
   },
+  "engines": {
+    "node": "14.x.x"
+  },
   "license": "MIT",
   "prettier": {
     "semi": false,
