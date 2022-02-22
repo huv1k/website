@@ -21,7 +21,7 @@
     "@chakra-ui/react": "1.8.5",
     "@emotion/react": "11.8.1",
     "@emotion/styled": "11.8.1",
-    "@prisma/client": "3.9.2",
+    "@prisma/client": "3.10.0",
     "@splitbee/web": "0.3.0",
     "framer-motion": "6.2.7",
     "graphql": "15.8.0",
