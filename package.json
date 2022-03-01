@@ -49,6 +49,6 @@
     "eslint-plugin-import": "2.25.4",
     "prisma": "3.10.0",
     "rehype": "12.0.1",
-    "typescript": "4.5.5"
+    "typescript": "4.6.2"
   }
 }
