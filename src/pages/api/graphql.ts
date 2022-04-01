@@ -1,36 +1,22 @@
-import {
-  getGraphQLParameters,
-  processRequest,
-  renderGraphiQL,
-  shouldRenderGraphiQL,
-} from 'graphql-helix'
-import type { NextApiHandler } from 'next'
+import { createServer } from '@graphql-yoga/node'
+import { NextApiRequest, NextApiResponse } from 'next'
+
 import { schema } from '../../lib/schema'
 
-export default (async (req, res) => {
-  const request = {
-    body: req.body,
-    headers: req.headers,
-    method: String(req.method),
-    query: req.query,
-  }
+const server = createServer<{
+  req: NextApiRequest
+  res: NextApiResponse
+}>({
+  cors: false,
+  endpoint: '/api/graphql',
+  schema,
+})
 
-  if (shouldRenderGraphiQL(request)) {
-    res.send(renderGraphiQL({ endpoint: '/api/graphql' }))
-  } else {
-    const { operationName, query, variables } = getGraphQLParameters(request)
+export const config = {
+  api: {
+    bodyParser: false,
+    externalResolver: true,
+  },
+}
 
-    const result = await processRequest({
-      operationName,
-      query,
-      variables,
-      request,
-      schema,
-    })
-
-    if (result.type === 'RESPONSE') {
-      result.headers.forEach(({ name, value }) => res.setHeader(name, value))
-      res.status(result.status).json(result.payload)
-    }
-  }
-}) as NextApiHandler
+export default server

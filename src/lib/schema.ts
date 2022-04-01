@@ -1,24 +1,24 @@
-import { makeSchema, objectType, queryType } from 'nexus'
+import SchemaBuilder from '@pothos/core'
+import SimpleObjectsPlugin from '@pothos/plugin-simple-objects'
 
-const huvik = objectType({
-  name: 'Huvik',
-  definition: (t) => {
-    t.string('name')
-    t.string('website')
-  },
+const builder = new SchemaBuilder({
+  plugins: [SimpleObjectsPlugin],
 })
 
-const query = queryType({
-  definition: (t) => {
-    t.field('me', {
-      type: 'Huvik',
-      resolve: () => {
-        return { name: 'Huvik', website: 'https://huvik.dev/' }
-      },
-    })
-  },
+const huvik = builder.simpleObject('Huvik', {
+  fields: (t) => ({
+    name: t.string(),
+    website: t.string(),
+  }),
 })
 
-export const schema = makeSchema({
-  types: [huvik, query],
+builder.queryType({
+  fields: (t) => ({
+    me: t.field({
+      type: huvik,
+      resolve: () => ({ name: 'Huvik', website: 'https://huvik.dev/' }),
+    }),
+  }),
 })
+
+export const schema = builder.toSchema({})
