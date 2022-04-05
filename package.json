@@ -22,7 +22,7 @@
     "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
     "@graphql-yoga/node": "2.0.0",
-    "@pothos/core": "3.3.3",
+    "@pothos/core": "3.4.0",
     "@pothos/plugin-simple-objects": "3.0.3",
     "@prisma/client": "3.11.1",
     "@splitbee/web": "0.3.0",
