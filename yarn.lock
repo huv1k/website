@@ -809,10 +809,10 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.1.0.tgz#75f166fdca29c0b634584446ded43cb1a74b76ba"
-  integrity sha512-DC7pIT+CPhDjiwYxgFECIHVG/zUG42SzzwFSAalMSoE22YcutDxKIIOGIKQ3Szkh7XKR9u7YlgPCkqQqSavvdQ==
+"@graphql-yoga/common@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.2.1.tgz#0f319ebad608cdda0917be8726fedb93b9f636cd"
+  integrity sha512-zHrUmZRmSWDkQQgSWQxU8s30UMzpKIzVkBcfODR4OvWi8gtZsfgVmrn4YIQcg5JEbFTuNZeudtMRKEa5l2MtcA==
   dependencies:
     "@envelop/core" "^2.0.0"
     "@envelop/disable-introspection" "^3.0.0"
@@ -823,20 +823,20 @@
     "@graphql-typed-document-node/core" "^3.1.1"
     "@graphql-yoga/subscription" "2.0.0"
     chalk "4.1.2"
-    cross-undici-fetch "^0.1.25"
+    cross-undici-fetch "^0.2.5"
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.1.0.tgz#d29b80ba39febeec8a06057e7930af8cd2a04556"
-  integrity sha512-KDlWDT72iKmGDfc2I2VmzDvyLAhrSCeBiYbTu1TJBUgbeBo8XTXRmseWhO2p8LYYDygf8CW+gVVymg00Z1kROA==
+"@graphql-yoga/node@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.2.1.tgz#af8449da876d5d8ec9616961d1cdeaa4c645b79b"
+  integrity sha512-FlHuDAYAuKxJQat9Hl1m0i0O8MqU7JuxA9padA4WRnSWQzi5rRhkxoSOalzJCL4Kqt5ge0+Pa7KezL+afhpvvg==
   dependencies:
     "@envelop/core" "^2.0.0"
     "@graphql-tools/utils" "^8.6.0"
-    "@graphql-yoga/common" "2.1.0"
+    "@graphql-yoga/common" "2.2.1"
     "@graphql-yoga/subscription" "2.0.0"
-    cross-undici-fetch "^0.1.25"
+    cross-undici-fetch "^0.2.5"
     tslib "^2.3.1"
 
 "@graphql-yoga/subscription@2.0.0":
@@ -1543,10 +1543,10 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cross-undici-fetch@^0.1.25:
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.1.28.tgz#40b7071b9ab2d1d6aff889836205e1972092e8d1"
-  integrity sha512-/nLMyVE5IC9PQdBtmgjpGZfK0wo8UupomAPx+7HlbEgVDkZOa9xCiZP9goo5aLYofP0gHXgovjXdXrE2obANag==
+cross-undici-fetch@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.2.5.tgz#0dd5bb3809a2fc4524fc777f1e6eb052203a6b68"
+  integrity sha512-6IR+JN6o2UMNj2f3fu0ZVkZeP0h22DRKzq78SiMenkqyBYyGIT1AkZjHkItvh0A80LdsAlWENHUpvapapePucw==
   dependencies:
     abort-controller "^3.0.0"
     form-data-encoder "^1.7.1"
