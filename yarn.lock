@@ -990,10 +990,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.2.tgz#0798c03351f0dea1a5a4cabddf26a55a7cbee590"
   integrity sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ==
 
-"@pothos/core@3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.5.1.tgz#c574ddbe5118fac5e8e9b0a69911d1cd11cdba42"
-  integrity sha512-xop9VL3JmcF7/wUw79HpY3ulUfmbs57yFHEnxDy6pgZbLbnuaDBjgUrBRfSGSdHyu2jexd72USpgv4y/lD4xow==
+"@pothos/core@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.6.0.tgz#4540730eeccd8ae6da37367aa1a835b2a8974a1b"
+  integrity sha512-mdexn6dGNTw+AUO63Hg2ncLeiPYmXoehJKo5FW+ycTyWHIO+ic5YCNVgM9GrMZpum4husfh/5tg1sWdD7WGwXw==
 
 "@pothos/plugin-simple-objects@3.2.0":
   version "3.2.0"
@@ -2098,10 +2098,10 @@ formdata-node@^4.3.1:
     node-domexception "1.0.0"
     web-streams-polyfill "4.0.0-beta.1"
 
-framer-motion@6.2.10:
-  version "6.2.10"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.2.10.tgz#7fb300d4c559f0991be5499f99d055a04851fcb3"
-  integrity sha512-nfkpA5r3leVOYJH0YXV1cMOLNJuAoznR3Cswet5wCIDi7AZwS62N+u0EmGSNG1JHtglDo5erqyamc55M2XICvA==
+framer-motion@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.3.0.tgz#0e50ef04b4fa070fca7d04bc32fb1d64027b7ea7"
+  integrity sha512-Nm6l2cemuFeSC1fmq9R32sCQs1eplOuZ3r14/PxRDewpE3NUr+ul5ulGRRzk8K0Aa5p76Tedi3sfCUaTPa5fRg==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
