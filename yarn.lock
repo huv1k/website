@@ -989,10 +989,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.2.tgz#0798c03351f0dea1a5a4cabddf26a55a7cbee590"
   integrity sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ==
 
-"@pothos/core@3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.6.0.tgz#4540730eeccd8ae6da37367aa1a835b2a8974a1b"
-  integrity sha512-mdexn6dGNTw+AUO63Hg2ncLeiPYmXoehJKo5FW+ycTyWHIO+ic5YCNVgM9GrMZpum4husfh/5tg1sWdD7WGwXw==
+"@pothos/core@3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.7.0.tgz#0b097b500dcba39be8152233136f7cc4b4028ca2"
+  integrity sha512-vIph2m8jeUSSq59CxgiHcFVgV73bg6xyWVy7h232gb3XCS4y3b7Xkzw/aH8XnINWtwUX1JOpJTPgTWq/wxJZqg==
 
 "@pothos/plugin-simple-objects@3.2.0":
   version "3.2.0"
