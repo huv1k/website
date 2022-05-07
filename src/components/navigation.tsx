@@ -1,4 +1,4 @@
-import { Link as A, Flex } from '@chakra-ui/react'
+import { Link as A, Container } from '@chakra-ui/react'
 import Link from 'next/link'
 
 type Props = {
@@ -14,7 +14,8 @@ const NavLink = ({ href, children }: Props) => (
 
 export const Navigation = () => {
   return (
-    <Flex
+    <Container
+      display="flex"
       as="nav"
       maxWidth="900px"
       width="100%"
@@ -26,6 +27,6 @@ export const Navigation = () => {
       {/* <NavLink href="/reading-list">Reading list</NavLink> */}
       <NavLink href="/">Home</NavLink>
       <NavLink href="/blog">Blog</NavLink>
-    </Flex>
+    </Container>
   )
 }

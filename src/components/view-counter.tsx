@@ -1,4 +1,5 @@
-import { Text } from '@chakra-ui/react'
+import { HStack, Icon, Text } from '@chakra-ui/react'
+import { EyeIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import useSWR from 'swr'
@@ -26,8 +27,11 @@ export const ViewCounter = ({ track = true, slug }: Props) => {
   }, [slugPath, track])
 
   return (
-    <Text fontSize="sm" color="gray.500">
-      {data ? data.count : '~'} views
-    </Text>
+    <HStack>
+      <Icon boxSize={4} as={EyeIcon} color="gray.500" />
+      <Text fontSize="sm" color="gray.500">
+        {data ? data.count : '~'} views
+      </Text>
+    </HStack>
   )
 }

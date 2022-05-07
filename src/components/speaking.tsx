@@ -25,7 +25,11 @@ export const Speaking = () => (
       Speaking
     </Heading>
     {talks.map((talk, i) => (
-      <Flex key={i} justifyContent="space-between">
+      <Flex
+        key={i}
+        justifyContent="space-between"
+        flexFlow={['column', 'column', 'row']}
+      >
         <Link
           href={talk.href}
           target="_blank"

@@ -11,8 +11,10 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
+import { Avatar } from '../../components/avatar'
 import { Layout } from '../../components/layout'
 import { components } from '../../components/mdx-components'
+import { ReadingTime } from '../../components/reading-time'
 import { Subscribe } from '../../components/subscribe'
 import { ViewCounter } from '../../components/view-counter'
 import { getBlogSlugs } from '../../lib/data'
@@ -59,11 +61,12 @@ export default function BlogPost({
         {title}
       </Heading>
       <Flex width="100%" alignItems="center" justifyContent="space-between">
-        <Text fontWeight="bold">Lukáš Huvar</Text>
         <HStack>
-          <Text fontSize="sm" color="gray.500">
-            {readingTime}
-          </Text>
+          <Avatar src="/lukas-huvar.jpg" width={24} height={24} />
+          <Text fontWeight="bold">Lukáš Huvar</Text>
+        </HStack>
+        <HStack>
+          <ReadingTime time={readingTime} />
           <ViewCounter slug={slug} />
         </HStack>
       </Flex>
