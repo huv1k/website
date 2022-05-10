@@ -22,7 +22,7 @@
     "@heroicons/react": "1.0.6",
     "@pothos/core": "3.10.1",
     "@pothos/plugin-simple-objects": "3.2.0",
-    "@prisma/client": "3.13.0",
+    "@prisma/client": "3.14.0",
     "@splitbee/web": "0.3.0",
     "framer-motion": "6.3.3",
     "graphql": "16.4.0",
