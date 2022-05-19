@@ -740,11 +740,6 @@
   dependencies:
     "@envelop/types" "2.1.0"
 
-"@envelop/disable-introspection@^3.0.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@envelop/disable-introspection/-/disable-introspection-3.2.0.tgz#d5971e5c88d9f0721857c8bf56221c55a0225282"
-  integrity sha512-QIDZRhi5b7i7wtWniVOevSsRok/40LmB6qzKbE0ddwqypGa6s5MniWDEYAMchpjPGDDqLyhCG51kQNamerWmvw==
-
 "@envelop/parser-cache@^4.0.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@envelop/parser-cache/-/parser-cache-4.2.0.tgz#4131d810b70fba0eb7416959b99f7e5bf8e6efc0"
@@ -809,13 +804,12 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.5.0.tgz#036e28a30d6395678907f80a1e358ecf19494c7e"
-  integrity sha512-fSaTt5JhUvyPcYISEPqRdxb7g7PshN+1reKH5yighRNcX6ouMhNAXWb2MG4kG2pVAg4YCbUAjy1k2TMmN9AYjw==
+"@graphql-yoga/common@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.6.0.tgz#ce38f6317642d633ec96a9f2b63fa9fd0eb602b2"
+  integrity sha512-iG33wMQlBujB1+Q2D/CLEVDW3xTeBVhHKsbaUmVSHV4zpmGRRQMg/YROJ2mU1lONOyZDPIC+9j3AR7+x0dSzoA==
   dependencies:
     "@envelop/core" "^2.0.0"
-    "@envelop/disable-introspection" "^3.0.0"
     "@envelop/parser-cache" "^4.0.0"
     "@envelop/validation-cache" "^4.0.0"
     "@graphql-tools/schema" "^8.3.1"
@@ -826,14 +820,14 @@
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.5.0.tgz#29726338738ff113da8f5f307f74249a3ce17002"
-  integrity sha512-mhKAGe5rUc4NcMPNcSepQUiVw37w036C4wteLlySntsrQKu3sTkz2+6/KgtR64B/yV3XYoSzQto8OQySkqiDsw==
+"@graphql-yoga/node@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.6.0.tgz#37ce10a6549fcdbc4e0ec7e971969d53550cb842"
+  integrity sha512-VkHaiIwDYx+WJI/NnT2x+mGknk1YoNTP/auweDvKzPXdsWR5Za8rEYUloKZX4TxHTpyqbBLMtCt+4TDITriVbA==
   dependencies:
     "@envelop/core" "^2.0.0"
     "@graphql-tools/utils" "^8.6.0"
-    "@graphql-yoga/common" "2.5.0"
+    "@graphql-yoga/common" "2.6.0"
     "@graphql-yoga/subscription" "2.0.0"
     cross-undici-fetch "^0.4.2"
     tslib "^2.3.1"
