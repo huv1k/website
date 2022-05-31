@@ -20,7 +20,6 @@ const P = (props: Props) => (
 )
 const UL = (props: Props) => <UnorderedList {...props} />
 const LI = (props: Props) => <ListItem {...props} />
-const InlineCode = (props: Props) => <Code {...props} />
 
 export const components = {
   // Hotfix for missing providers in mdx-remote
@@ -30,5 +29,5 @@ export const components = {
   p: P,
   ul: UL,
   li: LI,
-  inlineCode: InlineCode,
+  code: Code,
 }

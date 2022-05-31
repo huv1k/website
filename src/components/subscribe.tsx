@@ -9,6 +9,7 @@ import {
   InputRightElement,
   Text,
   useToast,
+  useColorMode,
 } from '@chakra-ui/react'
 import { MailIcon } from '@heroicons/react/outline'
 import splitbee from '@splitbee/web'
@@ -19,6 +20,7 @@ export const Subscribe = () => {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
   const toast = useToast()
+  const { colorMode } = useColorMode()
 
   const subscribe = useCallback(async () => {
     setLoading(true)
@@ -61,8 +63,8 @@ export const Subscribe = () => {
     <Box
       padding={6}
       border="1px solid"
-      background="cyan.50"
-      borderColor="cyan.300"
+      background={colorMode === 'light' ? 'blue.50' : 'blue.800'}
+      borderColor={colorMode === 'light' ? 'blue.300' : 'blue.500'}
       borderRadius="base"
     >
       <Heading as="p" size="lg" mb={2}>
@@ -81,7 +83,7 @@ export const Subscribe = () => {
           aria-label="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          background="white"
+          background={colorMode === 'light' ? 'gray.50' : 'gray.800'}
           placeholder="your@email.com"
         />
         <InputRightElement width="4.75rem">
