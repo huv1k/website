@@ -5,7 +5,7 @@ import { Speaking } from '../components/speaking'
 const Index = () => {
   return (
     <Layout>
-      <Flex flexDirection="column" mb={20}>
+      <Flex flexDirection="column" mb={12}>
         <Text>Lukáš Huvar</Text>
         <Heading as="h1" size="2xl">
           Huvik

@@ -8,6 +8,7 @@ import readingTime from 'reading-time'
 import { Layout } from '../components/layout'
 import { ReadingTime } from '../components/reading-time'
 import { ViewCounter } from '../components/view-counter'
+import { formatDate } from '../utils'
 
 export default function IndexPage({
   posts,
@@ -35,9 +36,7 @@ export default function IndexPage({
               </Link>
               <HStack spacing={8}>
                 <Text fontSize="sm" color="gray.500">
-                  {new Intl.DateTimeFormat('en-US', {
-                    dateStyle: 'medium',
-                  }).format(new Date(post.frontMatter.date))}
+                  {formatDate(new Date(post.frontMatter.date))}
                 </Text>
                 <ReadingTime time={post.readingTime.text} />
                 <ViewCounter slug={post.slug} track={false} />

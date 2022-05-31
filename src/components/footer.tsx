@@ -6,6 +6,7 @@ import {
   UnorderedList,
   VStack,
 } from '@chakra-ui/react'
+import {} from '@heroicons/react/outline'
 
 type Link = {
   href: string
