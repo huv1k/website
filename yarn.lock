@@ -822,10 +822,10 @@
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.11.1":
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.11.1.tgz#82ad7b4ff17b4beb06ad9423cf6b7c6d9a6c8031"
-  integrity sha512-GLA+wuM4YK4pGKhvbA/VhCEy1aCsKf6TBqs6EdDlhuKOY3Pdcw2D5lyanU/k9PuUQVH1x5t2uHf186Ok4kivWw==
+"@graphql-yoga/node@2.11.2":
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.11.2.tgz#87ee50ba650e6527180054303144e73cebd9edbf"
+  integrity sha512-/mS9G1bpM6aRKIQVyKkfaPJeLYWlwPftlB1MMKjfoiukVUCtVM9sAUaHHL4q/z+jgL3AaYHu4oYKMJvH1Hd2kA==
   dependencies:
     "@envelop/core" "^2.4.0"
     "@graphql-tools/utils" "^8.8.0"
