@@ -18,7 +18,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@chakra-ui/react": "2.2.1",
+    "@chakra-ui/react": "2.2.3",
     "@emotion/react": "11.9.3",
     "@emotion/styled": "11.9.3",
     "@graphql-yoga/node": "2.12.0",
@@ -30,7 +30,7 @@
     "framer-motion": "6.4.3",
     "graphql": "16.5.0",
     "gray-matter": "4.0.3",
-    "next": "12.2.1",
+    "next": "12.2.2",
     "next-mdx-remote": "4.0.3",
     "next-seo": "5.4.0",
     "nexus": "1.3.0",
