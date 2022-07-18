@@ -49,7 +49,7 @@
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "eslint-plugin-import": "2.26.0",
-    "prisma": "3.15.2",
+    "prisma": "4.0.0",
     "rehype": "12.0.1",
     "typescript": "4.7.4"
   }
