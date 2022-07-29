@@ -21,7 +21,7 @@
     "@chakra-ui/react": "2.2.4",
     "@emotion/react": "11.9.3",
     "@emotion/styled": "11.9.3",
-    "@graphql-yoga/node": "2.13.4",
+    "@graphql-yoga/node": "2.13.5",
     "@heroicons/react": "1.0.6",
     "@pothos/core": "3.13.0",
     "@pothos/plugin-simple-objects": "3.4.0",
