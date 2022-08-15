@@ -27,7 +27,7 @@
     "@pothos/plugin-simple-objects": "3.4.0",
     "@prisma/client": "4.2.1",
     "@splitbee/web": "0.3.0",
-    "framer-motion": "7.1.0",
+    "framer-motion": "7.1.1",
     "graphql": "16.5.0",
     "gray-matter": "4.0.3",
     "next": "12.2.5",
