@@ -28,7 +28,7 @@
     "@prisma/client": "4.2.1",
     "@splitbee/web": "0.3.0",
     "framer-motion": "7.2.0",
-    "graphql": "16.5.0",
+    "graphql": "16.6.0",
     "gray-matter": "4.0.3",
     "next": "12.2.5",
     "next-mdx-remote": "4.1.0",
