@@ -1022,10 +1022,10 @@
     "@repeaterjs/repeater" "^3.0.4"
     tslib "^2.3.1"
 
-"@heroicons/react@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.6.tgz#35dd26987228b39ef2316db3b1245c42eb19e324"
-  integrity sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==
+"@heroicons/react@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.2.tgz#814985c245ce52ce4980eb559fa3deaea8ab8d16"
+  integrity sha512-QhjjFcgq4Xsa1X+k/OBl/Mt6ean5XlDA/Lg5hS852+Cc8rOyBsSoTZt+BXhM7kKUpL90S3Jm9lzRfeG1WxQACw==
 
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
