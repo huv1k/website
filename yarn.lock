@@ -977,10 +977,10 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@^2.12.9":
-  version "2.12.9"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.12.9.tgz#5088edd81058dc3f49195be63237c49466cbe5ad"
-  integrity sha512-oP3SAzceQ2IadM682o9ZJKhGnyDO0f7e0ReJLQWLlM7QTo1+R4TFTE1urtPLYQt0Xqm8zko5k6D6ZymONQi31w==
+"@graphql-yoga/common@^2.12.10":
+  version "2.12.10"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.12.10.tgz#22908e41285b6c21c6b921c9028524eddd874f4d"
+  integrity sha512-nd+Ed5f4DLmopsip342Ocryk5cPHQKCbyroOpGtnCQ7n+is8033j+BrEvFMz8Qy4UlQXBsErfsbbfwSkOaYCTQ==
   dependencies:
     "@envelop/core" "^2.5.0"
     "@envelop/parser-cache" "^4.6.0"
@@ -993,14 +993,14 @@
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.13.10":
-  version "2.13.10"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.10.tgz#f6dada54eb776c73103bb5c833dc0a78b3550ab3"
-  integrity sha512-X5A+dV7LtLrrc+AbwPSvU3Gc1cTtThVV+KQ7/jOKKuALK86oFl2QNWjQdOwucmFw+1JO31fAMMY4Q2/du/OxMw==
+"@graphql-yoga/node@2.13.11":
+  version "2.13.11"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.11.tgz#ae86a26650b814118fc55077dbbeb88822963a54"
+  integrity sha512-Y8EVDdP+rpaN6HssAayRf97bTV2RLwvj+uIMU3WNlcxplpZcLlJsNem2QmAEbKc0WaCR0J7KU8pziI5HygtTRg==
   dependencies:
     "@envelop/core" "^2.5.0"
     "@graphql-tools/utils" "^8.8.0"
-    "@graphql-yoga/common" "^2.12.9"
+    "@graphql-yoga/common" "^2.12.10"
     "@graphql-yoga/subscription" "^2.2.3"
     "@whatwg-node/fetch" "^0.3.0"
     tslib "^2.3.1"
