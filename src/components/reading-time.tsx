@@ -1,5 +1,5 @@
 import { HStack, Icon, Text } from '@chakra-ui/react'
-import { BookOpenIcon } from '@heroicons/react/outline'
+import { BookOpenIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   time: string

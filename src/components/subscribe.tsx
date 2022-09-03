@@ -11,7 +11,7 @@ import {
   useToast,
   useColorMode,
 } from '@chakra-ui/react'
-import { MailIcon } from '@heroicons/react/outline'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import splitbee from '@splitbee/web'
 import { useCallback, useState } from 'react'
 import { EMAIL_REGEX } from '../lib/utils'
@@ -76,7 +76,7 @@ export const Subscribe = () => {
       </Text>
       <InputGroup>
         <InputLeftElement>
-          <Icon as={MailIcon} boxSize={4} color="gray.500" />
+          <Icon as={EnvelopeIcon} boxSize={4} color="gray.500" />
         </InputLeftElement>
         <Input
           type="email"

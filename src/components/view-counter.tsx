@@ -1,5 +1,5 @@
 import { HStack, Icon, Text } from '@chakra-ui/react'
-import { EyeIcon } from '@heroicons/react/outline'
+import { EyeIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import useSWR from 'swr'
