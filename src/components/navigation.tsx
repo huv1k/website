@@ -19,16 +19,15 @@ const NavLink = ({ href, children }: Props) => {
   const { asPath: pathname } = useRouter()
 
   return (
-    <Link href={href} passHref>
-      <Button
-        size="sm"
-        as="a"
-        variant="ghost"
-        fontWeight={href === pathname ? 'bold' : 'normal'}
-      >
-        {children}
-      </Button>
-    </Link>
+    <Button
+      size="sm"
+      as={Link}
+      variant="ghost"
+      href={href}
+      fontWeight={href === pathname ? 'bold' : 'normal'}
+    >
+      {children}
+    </Button>
   )
 }
 

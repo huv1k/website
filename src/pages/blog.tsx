@@ -29,11 +29,9 @@ export default function IndexPage({
           })
           .map((post) => (
             <VStack alignItems="flex-start" key={post.slug} width="100%">
-              <Link href={`/blog/${post.slug}`} passHref>
-                <Heading size="lg" as="a">
-                  {post.frontMatter.title}
-                </Heading>
-              </Link>
+              <Heading size="lg" as={Link} href={`/blog/${post.slug}`}>
+                {post.frontMatter.title}
+              </Heading>
               <HStack spacing={8}>
                 <Text fontSize="sm" color="gray.500">
                   {formatDate(new Date(post.frontMatter.date))}
