@@ -988,7 +988,7 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@^2.12.11":
+"@graphql-yoga/common@^2.12.12":
   version "2.12.12"
   resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.12.12.tgz#8e90d94e1a3206f91363bd78278e5b0288d032b6"
   integrity sha512-La2ygIw2qlIJZrRGT4nW70Nam7gQ2xZkOn0FDCnKWSJhQ4nHw4aFAkeHIJdZGK0u2TqtXRrNSAj5cb/TZoqUiQ==
@@ -1004,14 +1004,14 @@
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.13.12":
-  version "2.13.12"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.12.tgz#d2bdcf6e7eda6ea97cca639b63d498b61201d4de"
-  integrity sha512-QVlMTSLyOWw1uCsS8Lm4lufGMcQs9R4PIo/LkFU9w9e+NHfFdrU+VaHODU2+3CY5KksIHnX9OmWX9N+3d9rBfA==
+"@graphql-yoga/node@2.13.13":
+  version "2.13.13"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.13.tgz#8f42cab6be3d4d396483c33b490171772569e73b"
+  integrity sha512-3NmdEq3BkuVLRbo5yUi401sBiwowSKgY8O1DN1RwYdHRr0nu2dXzlYEETf4XLymyP6mKsVfQgsy7HQjwsc1oNw==
   dependencies:
     "@envelop/core" "^2.5.0"
     "@graphql-tools/utils" "^8.8.0"
-    "@graphql-yoga/common" "^2.12.11"
+    "@graphql-yoga/common" "^2.12.12"
     "@graphql-yoga/subscription" "^2.2.3"
     "@whatwg-node/fetch" "^0.3.0"
     tslib "^2.3.1"
@@ -1276,10 +1276,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
-"@pothos/core@3.19.1":
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.19.1.tgz#9b8e93863d0accd4926fbea80637d11660b76956"
-  integrity sha512-+D6Jm4qzXENLkPsyHqsqgrYrQktg8Rce1x+uwU+348ztr8eQKxmb1VIJ8Hk//k/S/8yMHbNbuKv4qPwXb7J9mQ==
+"@pothos/core@3.20.0":
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.20.0.tgz#a73df94e23e778a8b66f71bb17c6212dbb29d60e"
+  integrity sha512-BfWnHJvOMtESg8syGJWvon26xnF8xVEjzUICnByae9ZHNNCPkRJ3kYSrmCGD46d7QSeaT/DQc/moHa01mnyqww==
 
 "@pothos/plugin-simple-objects@3.4.0":
   version "3.4.0"
