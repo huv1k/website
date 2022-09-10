@@ -24,7 +24,7 @@
     "@graphql-yoga/node": "2.13.13",
     "@heroicons/react": "2.0.10",
     "@pothos/core": "3.21.0",
-    "@pothos/plugin-simple-objects": "3.4.0",
+    "@pothos/plugin-simple-objects": "3.5.0",
     "@prisma/client": "4.3.1",
     "@splitbee/web": "0.3.0",
     "framer-motion": "7.3.2",

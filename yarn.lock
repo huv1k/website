@@ -1281,10 +1281,10 @@
   resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.21.0.tgz#dee7a516f256f7e2e131d769d15d63754f0f7102"
   integrity sha512-ZyXtLAzYnMplmeGiUYvHV991fCKof9zVtWdXUS6k6eQEjeBkeW/oCYhKZGBYKZhMExn/TRj48tR54bT1DpPMzA==
 
-"@pothos/plugin-simple-objects@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-simple-objects/-/plugin-simple-objects-3.4.0.tgz#0cb689dae06f106b383a35c43ae8f6c0bd3aa9ce"
-  integrity sha512-FMzGqhSnekyDLIMhGYYgcMLNiTTiq33zluKTgpd3dJVgEPv562H4jxyKVYU7LN1DWWOqKCoOkt25sQy8Y0ua+Q==
+"@pothos/plugin-simple-objects@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-simple-objects/-/plugin-simple-objects-3.5.0.tgz#89fdaac0d8d1a1d9eaec07751bc991e097738658"
+  integrity sha512-nlkdGttPEAvk91HPdtG/YMiCsba+o8+0H/ajdePS1ZLsAS2MZvQXjzv8PMsWHLbuVPFTmEafsb7Qao+IFqygoA==
 
 "@prisma/client@4.3.1":
   version "4.3.1"
