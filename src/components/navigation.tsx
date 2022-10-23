@@ -1,12 +1,13 @@
 import {
   Container,
-  useColorMode,
   IconButton,
   Icon,
   HStack,
   Button,
+  useColorMode,
 } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -32,7 +33,8 @@ const NavLink = ({ href, children }: Props) => {
 }
 
 export const Navigation = () => {
-  const { toggleColorMode, colorMode } = useColorMode()
+  const { resolvedTheme, setTheme } = useTheme()
+  const { setColorMode } = useColorMode()
 
   return (
     <Container
@@ -54,13 +56,16 @@ export const Navigation = () => {
           icon={
             <Icon
               boxSize="20px"
-              as={colorMode === 'light' ? MoonIcon : SunIcon}
+              as={resolvedTheme === 'light' ? MoonIcon : SunIcon}
             />
           }
           aria-label={`Switch to ${
-            colorMode === 'light' ? 'dark' : 'light'
+            resolvedTheme === 'light' ? 'dark' : 'light'
           } theme`}
-          onClick={toggleColorMode}
+          onClick={() => {
+            setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
+            setColorMode(resolvedTheme === 'light' ? 'dark' : 'light')
+          }}
         />
       </HStack>
     </Container>

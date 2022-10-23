@@ -1,5 +1,6 @@
 .DS_Store
 .next
+.contentlayer
 node_modules
 .env*
 .mdx-data

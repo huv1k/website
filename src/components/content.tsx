@@ -1,18 +1,11 @@
-import {
-  ChakraProvider,
-  Code,
-  Heading,
-  Link,
-  ListItem,
-  Text,
-  UnorderedList,
-} from '@chakra-ui/react'
+import { Heading, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+// eslint-disable-next-line import/no-unresolved
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 interface Props {
   children: React.ReactNode
 }
 
-const Wrapper = (props: Props) => <ChakraProvider resetCSS {...props} />
 const H2 = (props: Props) => <Heading as="h2" size="md" {...props} />
 const A = (props: Props) => <Link fontWeight="bold" {...props} />
 const P = (props: Props) => (
@@ -22,12 +15,15 @@ const UL = (props: Props) => <UnorderedList {...props} />
 const LI = (props: Props) => <ListItem {...props} />
 
 export const components = {
-  // Hotfix for missing providers in mdx-remote
-  wrapper: Wrapper,
   h2: H2,
   a: A,
   p: P,
   ul: UL,
   li: LI,
-  code: Code,
+}
+
+export const Content = ({ source }: { source: string }) => {
+  const MDXContent = useMDXComponent(source)
+
+  return <MDXContent components={components} />
 }

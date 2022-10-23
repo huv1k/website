@@ -7,9 +7,7 @@ type Props = {
 
 export const ReadingTime = ({ time }: Props) => (
   <HStack>
-    <Icon boxSize={4} as={BookOpenIcon} color="gray.500" />
-    <Text fontSize="sm" color="gray.500">
-      {time}
-    </Text>
+    <Icon boxSize={4} as={BookOpenIcon} />
+    <Text fontSize="sm">{time}</Text>
   </HStack>
 )

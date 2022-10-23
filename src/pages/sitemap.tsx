@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next'
-import { getBlogSlugs } from '../lib/data'
+import { allPosts } from 'contentlayer/generated'
 
 const hostname = 'https://huvik.dev'
 
@@ -18,11 +18,9 @@ const getSitemapEntry = ({ pathname, priority = 0.5 }: EntryConfig) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const slugs = getBlogSlugs()
-
-  const entries = slugs.map((slug) =>
+  const entries = allPosts.map(({ url }) =>
     getSitemapEntry({
-      pathname: `/blog/${slug}`,
+      pathname: url,
       priority: 0.8,
     })
   )

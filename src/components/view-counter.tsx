@@ -28,10 +28,8 @@ export const ViewCounter = ({ track = true, slug }: Props) => {
 
   return (
     <HStack>
-      <Icon boxSize={4} as={EyeIcon} color="gray.500" />
-      <Text fontSize="sm" color="gray.500">
-        {data ? data.count : '~'} views
-      </Text>
+      <Icon boxSize={4} as={EyeIcon} />
+      <Text fontSize="sm">{data ? data.count : '~'} views</Text>
     </HStack>
   )
 }
