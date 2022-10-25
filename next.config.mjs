@@ -5,9 +5,7 @@ const config = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    newNextLinkBehavior: true,
     legacyBrowsers: false,
-    browsersListForSwc: true,
   },
   async headers() {
     return [

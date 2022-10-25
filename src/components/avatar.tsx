@@ -1,5 +1,5 @@
 import { chakra } from '@chakra-ui/react'
-import Image from 'next/future/image'
+import Image from 'next/image'
 
 export const Avatar = chakra(Image, {
   baseStyle: { maxH: 6, maxW: 6, borderRadius: '100%' },
