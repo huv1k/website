@@ -39,7 +39,8 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline';
   child-src 'self';
   style-src 'self' 'unsafe-inline';
-  font-src 'self';  
+  font-src 'self';
+  connect-src *;
 `
 
 const securityHeaders = [
