@@ -1,5 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import splitbee from '@splitbee/web'
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from '@vercel/analytics/react'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -42,6 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         </Head>
         <DefaultSeo {...config} />
         <Component {...pageProps} />
+        <Analytics />
       </SWRConfig>
     </ChakraProvider>
   )
