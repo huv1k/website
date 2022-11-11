@@ -29,7 +29,7 @@
     "@splitbee/web": "0.3.0",
     "@vercel/analytics": "0.1.4",
     "contentlayer": "0.2.8",
-    "framer-motion": "7.6.5",
+    "framer-motion": "7.6.6",
     "graphql": "16.6.0",
     "gray-matter": "4.0.3",
     "next": "13.0.2",
