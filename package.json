@@ -18,7 +18,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@chakra-ui/react": "2.3.7",
+    "@chakra-ui/react": "2.4.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@graphql-yoga/node": "2.13.13",
