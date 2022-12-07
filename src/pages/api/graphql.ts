@@ -1,14 +1,14 @@
-import { createServer } from '@graphql-yoga/node'
+import { createYoga } from 'graphql-yoga'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { schema } from '../../lib/schema'
 
-const server = createServer<{
+const server = createYoga<{
   req: NextApiRequest
   res: NextApiResponse
 }>({
   cors: false,
-  endpoint: '/api/graphql',
+  graphqlEndpoint: '/api/graphql',
   schema,
 })
 

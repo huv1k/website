@@ -36,11 +36,12 @@ const config = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src https://unpkg.com/@graphql-yoga/ 'self' 'unsafe-eval' 'unsafe-inline';
   child-src 'self';
-  style-src 'self' 'unsafe-inline';
-  font-src 'self';
+  style-src https://unpkg.com/@graphql-yoga/ 'self' 'unsafe-inline';
+  font-src 'self' data:;
   connect-src *;
+  img-src https://raw.githubusercontent.com/dotansimha/graphql-yoga/ 'self' data:;
 `
 
 const securityHeaders = [
