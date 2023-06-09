@@ -1,18 +1,19 @@
-import { Heading, Text, VStack, HStack } from '@chakra-ui/react'
+import { HStack, Heading, Text, VStack } from '@chakra-ui/react'
+import { allPosts } from 'contentlayer/generated'
 import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
-import { allPosts } from 'contentlayer/generated'
+
 import { Layout } from '../../components/layout'
 import { ReadingTime } from '../../components/reading-time'
 import { ViewCounter } from '../../components/view-counter'
-import { formatDate } from '../../utils'
+import { formatDate, sortByDate } from '../../utils'
 
 export default function IndexPage({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <Heading as="h1" size="2xl">
+      <Heading as="h1" size="2xl" mb={2}>
         Blog
       </Heading>
       <Text>My two cents about different topics going trought my mind</Text>
@@ -23,9 +24,7 @@ export default function IndexPage({
               {post.title}
             </Heading>
             <HStack spacing={8}>
-              <Text fontSize="sm">
-                {formatDate(new Date(post.date))}
-              </Text>
+              <Text fontSize="sm">{formatDate(post.date)}</Text>
               <ReadingTime time={post.readingTime} />
               <ViewCounter slug={post.slug} track={false} />
             </HStack>
@@ -37,8 +36,6 @@ export default function IndexPage({
   )
 }
 export async function getStaticProps() {
-  const posts = allPosts.sort((a, d) => {
-    return new Date(d.date).getTime() - new Date(a.date).getTime()
-  })
+  const posts = allPosts.sort(sortByDate)
   return { props: { posts } }
 }

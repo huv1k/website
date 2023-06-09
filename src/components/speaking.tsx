@@ -30,12 +30,7 @@ export const Speaking = () => (
         justifyContent="space-between"
         flexFlow={['column', 'column', 'row']}
       >
-        <Link
-          href={talk.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-splitbee-event={`Click talk - ${talk.name}`}
-        >
+        <Link href={talk.href} target="_blank" rel="noopener noreferrer">
           <Heading as="h3" size="xs">
             {talk.name}
           </Heading>

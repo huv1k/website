@@ -4,9 +4,6 @@ import { withContentlayer } from 'next-contentlayer'
 const config = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    legacyBrowsers: false,
-  },
   async headers() {
     return [
       {
