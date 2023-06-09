@@ -1,5 +1,5 @@
+import { allPosts, allTodayILearneds } from 'contentlayer/generated'
 import { GetServerSideProps } from 'next'
-import { allPosts } from 'contentlayer/generated'
 
 const hostname = 'https://huvik.dev'
 
@@ -24,6 +24,12 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       priority: 0.8,
     })
   )
+  entries.push(
+    ...allTodayILearneds.map(({ url }) =>
+      getSitemapEntry({ pathname: url, priority: 0.7 })
+    )
+  )
+  entries.push(getSitemapEntry({ pathname: '/til' }))
   entries.push(
     getSitemapEntry({
       pathname: '/blog',

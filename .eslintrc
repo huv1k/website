@@ -1,24 +1,4 @@
 {
-  "extends": ["plugin:import/recommended", "plugin:import/typescript", "next"],
-  "plugins": ["import"],
-  "rules": {
-    "import/first": "warn",
-    "import/newline-after-import": "warn",
-    "import/no-duplicates": "warn",
-    "import/order": [
-      "warn",
-      {
-        "alphabetize": { "order": "asc", "caseInsensitive": true },
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "pathGroupsExcludedImportTypes": ["builtin", "external"]
-      }
-    ]
-  }
+  "extends": ["next"],
+  "rules": {}
 }

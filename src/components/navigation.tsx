@@ -1,12 +1,12 @@
 import {
-  Container,
-  IconButton,
-  Icon,
-  HStack,
   Button,
+  Container,
+  HStack,
+  Icon,
+  IconButton,
   useColorMode,
 } from '@chakra-ui/react'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -24,7 +24,8 @@ const NavLink = ({ href, children }: Props) => {
       as={Link}
       variant="ghost"
       href={href}
-      fontWeight={href === pathname ? 'bold' : 'normal'}
+      fontWeight="500"
+      isActive={pathname === href}
     >
       {children}
     </Button>
@@ -48,6 +49,7 @@ export const Navigation = () => {
     >
       <HStack spacing={4}>
         <NavLink href="/">Home</NavLink>
+        <NavLink href="/til">Today I Learned</NavLink>
         <NavLink href="/blog">Blog</NavLink>
 
         <IconButton

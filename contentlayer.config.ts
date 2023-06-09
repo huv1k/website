@@ -4,6 +4,7 @@ import readingTime from 'reading-time'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode, { Options } from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
 const options: Partial<Options> = {
   theme: {
@@ -57,10 +58,37 @@ export const Post = defineDocumentType(() => ({
   },
 }))
 
+export const TodayILearned = defineDocumentType(() => ({
+  name: 'TodayILearned',
+  filePathPattern: `til/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (post) => `/${post._raw.flattenedPath}`,
+    },
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ''),
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Post],
+  documentTypes: [Post, TodayILearned],
   mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [rehypeSlug],
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],

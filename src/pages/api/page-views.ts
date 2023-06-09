@@ -12,7 +12,7 @@ const PageVIews = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   })
 
-  res.json({ count })
+  res.json({ count: count > 0 ? count : 1 })
 }
 
 export default PageVIews

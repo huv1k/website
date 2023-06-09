@@ -109,9 +109,10 @@ html[data-theme='light']
 
 /* Inline code blocks */
 :not(pre) > code {
-  padding: 0.3em 0.5em;
-  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 html[data-theme='dark'] :not(pre) > code {
@@ -122,4 +123,31 @@ html[data-theme='dark'] :not(pre) > code {
 html[data-theme='light'] :not(pre) > code {
   background-color: var(--chakra-colors-gray-100);
   color: var(--chakra-colors-gray-800);
+}
+
+kbd {
+  border-radius: 4px;
+  display: inline-block;
+  font-family: var(--font-ia-writer) !important;
+  font-size: 16px !important;
+  line-height: 16px;
+  min-width: 24px;
+  padding: 3px;
+  text-align: center;
+  text-transform: capitalize;
+  vertical-align: baseline;
+}
+
+html[data-theme='dark'] kbd {
+  background-color: var(--chakra-colors-gray-700);
+  color: var(--chakra-colors-blue-50);
+}
+
+html[data-theme='light'] kbd {
+  background-color: var(--chakra-colors-gray-100);
+  color: var(--chakra-colors-gray-800);
+}
+
+code[data-language='terminal'] .line ::before {
+  content: '$ ';
 }

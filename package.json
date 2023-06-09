@@ -3,19 +3,25 @@
   "version": "0.0.1",
   "author": "Lukáš Huvar <lukas@huvar.cz>",
   "scripts": {
-    "build": "next build",
-    "dev": "next",
+    "build": "contentlayer build && next build",
+    "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "prepare": "husky install"
   },
   "engines": {
-    "node": "16.x.x"
+    "node": "18.x.x"
   },
   "license": "MIT",
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "importOrder": [
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
   },
   "dependencies": {
     "@chakra-ui/react": "2.4.2",
@@ -25,16 +31,16 @@
     "@pothos/core": "3.23.1",
     "@pothos/plugin-simple-objects": "3.6.7",
     "@prisma/client": "4.7.0",
-    "@splitbee/web": "0.3.0",
     "@vercel/analytics": "0.1.5",
-    "contentlayer": "0.2.9",
+    "@vercel/og": "0.0.20",
+    "contentlayer": "0.3.3",
+    "date-fns": "2.30.0",
     "framer-motion": "7.6.19",
     "graphql": "16.6.0",
     "graphql-yoga": "3.1.1",
     "gray-matter": "4.0.3",
-    "next": "13.0.6",
-    "next-contentlayer": "0.2.9",
-    "next-mdx-remote": "4.2.0",
+    "next": "13.2.4",
+    "next-contentlayer": "0.3.3",
     "next-seo": "5.15.0",
     "nexus": "1.3.0",
     "react": "18.2.0",
@@ -43,17 +49,20 @@
     "rehype-autolink-headings": "6.1.1",
     "rehype-pretty-code": "0.5.1",
     "rehype-slug": "5.1.0",
+    "remark-gfm": "3.0.1",
     "shiki": "0.11.1",
     "swr": "1.3.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
     "@types/node": "18.11.11",
     "@types/react": "18.0.25",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
-    "eslint-plugin-import": "2.26.0",
+    "husky": "^8.0.0",
+    "prettier": "2.8.8",
+    "pretty-quick": "3.1.3",
     "prisma": "4.7.1",
-    "rehype": "12.0.1",
     "typescript": "4.9.3"
   }
 }

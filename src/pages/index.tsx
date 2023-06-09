@@ -1,4 +1,5 @@
 import { Flex, Heading, Text } from '@chakra-ui/react'
+
 import { Layout } from '../components/layout'
 import { Speaking } from '../components/speaking'
 
@@ -10,7 +11,7 @@ const Index = () => {
         <Heading as="h1" size="2xl">
           Huvik
         </Heading>
-        <Text>
+        <Text fontSize="lg">
           Software developer passionate about <b>React</b>, <b>GraphQL</b>,
           <b>Typescript</b>
         </Text>
