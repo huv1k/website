@@ -24,7 +24,7 @@
     "importOrderSortSpecifiers": true
   },
   "dependencies": {
-    "@chakra-ui/react": "2.4.2",
+    "@chakra-ui/react": "2.7.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@heroicons/react": "2.0.13",
