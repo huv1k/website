@@ -35,7 +35,7 @@
     "@vercel/og": "0.0.20",
     "contentlayer": "0.3.3",
     "date-fns": "2.30.0",
-    "framer-motion": "7.6.19",
+    "framer-motion": "10.12.16",
     "graphql": "16.6.0",
     "graphql-yoga": "4.0.0",
     "gray-matter": "4.0.3",
