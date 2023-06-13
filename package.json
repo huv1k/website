@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Lukáš Huvar <lukas@huvar.cz>",
   "scripts": {
-    "build": "contentlayer build && next build",
+    "build": "prisma generate && contentlayer build && next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
