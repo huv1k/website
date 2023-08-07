@@ -32,7 +32,7 @@
     "@pothos/plugin-simple-objects": "3.7.0",
     "@prisma/client": "4.16.2",
     "@vercel/analytics": "1.0.1",
-    "@vercel/og": "0.5.8",
+    "@vercel/og": "0.5.10",
     "contentlayer": "0.3.3",
     "date-fns": "2.30.0",
     "framer-motion": "10.12.18",
