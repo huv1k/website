@@ -8,6 +8,11 @@ type Talk = {
 
 const talks: Array<Talk> = [
   {
+    name: 'Loading 40 MB of JSON on initial load',
+    location: 'Productboard frontend meetup #4 2022',
+    href: 'https://www.youtube.com/watch?v=43OCcnLYYn8',
+  },
+  {
     name: 'Every millisecond matters',
     location: 'Productboard frontend meetup #3 2021',
     href: 'https://www.youtube.com/watch?v=IWR3xxEc3V0',
