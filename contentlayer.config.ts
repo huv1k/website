@@ -12,7 +12,7 @@ const options: Partial<Options> = {
     light: 'github-light',
   },
   onVisitHighlightedLine(node) {
-    node.properties.className.push('line--highlighted')
+    node.properties.className?.push('line--highlighted')
   },
 }
 
