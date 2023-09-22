@@ -18,11 +18,11 @@ dependencies:
     specifier: 2.0.18
     version: 2.0.18(react@18.2.0)
   '@pothos/core':
-    specifier: 3.36.0
-    version: 3.36.0(graphql@16.8.1)
+    specifier: 3.37.0
+    version: 3.37.0(graphql@16.8.1)
   '@pothos/plugin-simple-objects':
     specifier: 3.7.0
-    version: 3.7.0(@pothos/core@3.36.0)(graphql@16.8.1)
+    version: 3.7.0(@pothos/core@3.37.0)(graphql@16.8.1)
   '@prisma/client':
     specifier: 5.3.1
     version: 5.3.1(prisma@5.3.1)
@@ -2414,21 +2414,21 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@pothos/core@3.36.0(graphql@16.8.1):
-    resolution: {integrity: sha512-c3NEo9onuf1nmElY96z6pYgiVrdoc8l27VtaWMAhJTUUlSS45vgDNcelmU8v9ujaYgKTq54eqXDeP7sQ2LfoBQ==}
+  /@pothos/core@3.37.0(graphql@16.8.1):
+    resolution: {integrity: sha512-J9RHhjqmD0xdCkbuit5xIy1eQBwujkdxgn9ZtDjDQ3huuEIpp1oTIpKQqwwMMOVtyQK/dzQkQhYHU6FKNkgk8w==}
     peerDependencies:
       graphql: '>=15.1.0'
     dependencies:
       graphql: 16.8.1
     dev: false
 
-  /@pothos/plugin-simple-objects@3.7.0(@pothos/core@3.36.0)(graphql@16.8.1):
+  /@pothos/plugin-simple-objects@3.7.0(@pothos/core@3.37.0)(graphql@16.8.1):
     resolution: {integrity: sha512-CgZJLaHLt1Q30j+XCiWV6qVJcae1ksiUFdi8kz4sEsOhCNfdVwz64s8rx7SSqsdmPbjb68dJIDKpq2Qg9VZb8g==}
     peerDependencies:
       '@pothos/core': '*'
       graphql: '>=15.1.0'
     dependencies:
-      '@pothos/core': 3.36.0(graphql@16.8.1)
+      '@pothos/core': 3.37.0(graphql@16.8.1)
       graphql: 16.8.1
     dev: false
 
