@@ -31,7 +31,7 @@
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "@heroicons/react": "2.0.18",
-    "@pothos/core": "3.37.0",
+    "@pothos/core": "3.41.0",
     "@pothos/plugin-simple-objects": "3.7.0",
     "@prisma/client": "5.3.1",
     "@vercel/analytics": "1.0.2",
