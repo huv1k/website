@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "2.8.2",
-    "@emotion/react": "11.11.1",
+    "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "@heroicons/react": "2.0.18",
     "@pothos/core": "3.37.0",
