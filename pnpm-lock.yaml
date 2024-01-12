@@ -15,8 +15,8 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.47)(react@18.2.0)
   '@heroicons/react':
-    specifier: 2.0.18
-    version: 2.0.18(react@18.2.0)
+    specifier: 2.1.1
+    version: 2.1.1(react@18.2.0)
   '@pothos/core':
     specifier: 3.41.0
     version: 3.41.0(graphql@16.8.1)
@@ -2037,8 +2037,8 @@ packages:
       yargs: 17.7.2
     dev: false
 
-  /@heroicons/react@2.0.18(react@18.2.0):
-    resolution: {integrity: sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==}
+  /@heroicons/react@2.1.1(react@18.2.0):
+    resolution: {integrity: sha512-JyyN9Lo66kirbCMuMMRPtJxtKJoIsXKS569ebHGGRKbl8s4CtUfLnyKJxteA+vIKySocO4s1SkTkGS4xtG/yEA==}
     peerDependencies:
       react: '>= 16'
     dependencies:
