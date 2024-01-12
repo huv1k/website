@@ -45,8 +45,8 @@ dependencies:
     specifier: 16.8.1
     version: 16.8.1
   graphql-yoga:
-    specifier: 4.0.4
-    version: 4.0.4(graphql@16.8.1)
+    specifier: 4.0.5
+    version: 4.0.5(graphql@16.8.1)
   gray-matter:
     specifier: 4.0.3
     version: 4.0.3
@@ -4228,8 +4228,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-yoga@4.0.4(graphql@16.8.1):
-    resolution: {integrity: sha512-MvCLhFecYNIKuxAZisPjpIL9lxRYbpgPSNKENDO/8CV3oiFlsLJHZb5dp2sVAeLafXHeZ9TgkijLthUBc1+Jag==}
+  /graphql-yoga@4.0.5(graphql@16.8.1):
+    resolution: {integrity: sha512-vIbJU9QX5RP4PoxbMCHcfOlt/3EsC/0uLdAOlKaiUvlwJDTFCaIHo2X10vL4i/27Gw8g90ECIwm2YbmeLDwcqg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
