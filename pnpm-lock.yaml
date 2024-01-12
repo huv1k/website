@@ -93,7 +93,7 @@ dependencies:
 devDependencies:
   '@trivago/prettier-plugin-sort-imports':
     specifier: 4.2.0
-    version: 4.2.0(prettier@3.0.3)
+    version: 4.2.0(prettier@3.1.1)
   '@types/node':
     specifier: 18.16.17
     version: 18.16.17
@@ -113,8 +113,8 @@ devDependencies:
     specifier: 15.2.0
     version: 15.2.0
   prettier:
-    specifier: 3.0.3
-    version: 3.0.3
+    specifier: 3.1.1
+    version: 3.1.1
   prisma:
     specifier: 5.3.1
     version: 5.3.1
@@ -2544,7 +2544,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@trivago/prettier-plugin-sort-imports@4.2.0(prettier@3.0.3):
+  /@trivago/prettier-plugin-sort-imports@4.2.0(prettier@3.1.1):
     resolution: {integrity: sha512-YBepjbt+ZNBVmN3ev1amQH3lWCmHyt5qTbLCp/syXJRu/Kw2koXh44qayB1gMRxcL/gV8egmjN5xWSrYyfUtyw==}
     peerDependencies:
       '@vue/compiler-sfc': 3.x
@@ -2559,7 +2559,7 @@ packages:
       '@babel/types': 7.17.0
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 3.0.3
+      prettier: 3.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5985,8 +5985,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.1.1:
+    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
