@@ -59,7 +59,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@types/node": "20.12.7",
-    "@types/react": "18.2.75",
+    "@types/react": "18.2.77",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "husky": "8.0.3",
