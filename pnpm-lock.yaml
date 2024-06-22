@@ -21,11 +21,11 @@ importers:
         specifier: 2.1.4
         version: 2.1.4(react@18.3.1)
       '@pothos/core':
-        specifier: 3.41.1
-        version: 3.41.1(graphql@16.9.0)
+        specifier: 3.41.2
+        version: 3.41.2(graphql@16.9.0)
       '@pothos/plugin-simple-objects':
         specifier: 3.7.0
-        version: 3.7.0(@pothos/core@3.41.1(graphql@16.9.0))(graphql@16.9.0)
+        version: 3.7.0(@pothos/core@3.41.2(graphql@16.9.0))(graphql@16.9.0)
       '@prisma/client':
         specifier: 5.15.1
         version: 5.15.1(prisma@5.15.1)
@@ -1277,8 +1277,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@pothos/core@3.41.1':
-    resolution: {integrity: sha512-K+TGTK2Q7rmLU9WaC1cSDiGZaU9M+gHNbCYBom2W1vHuEYDUAiihVHz9tXYsrYjFMJSK+wLJ7Xp2374bQa9x/w==}
+  '@pothos/core@3.41.2':
+    resolution: {integrity: sha512-iR1gqd93IyD/snTW47HwKSsRCrvnJaYwjVNcUG8BztZPqMxyJKPAnjPHAgu1XB82KEdysrNqIUnXqnzZIs08QA==}
     peerDependencies:
       graphql: '>=15.1.0'
 
@@ -5213,13 +5213,13 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@pothos/core@3.41.1(graphql@16.9.0)':
+  '@pothos/core@3.41.2(graphql@16.9.0)':
     dependencies:
       graphql: 16.9.0
 
-  '@pothos/plugin-simple-objects@3.7.0(@pothos/core@3.41.1(graphql@16.9.0))(graphql@16.9.0)':
+  '@pothos/plugin-simple-objects@3.7.0(@pothos/core@3.41.2(graphql@16.9.0))(graphql@16.9.0)':
     dependencies:
-      '@pothos/core': 3.41.1(graphql@16.9.0)
+      '@pothos/core': 3.41.2(graphql@16.9.0)
       graphql: 16.9.0
 
   '@prisma/client@5.15.1(prisma@5.15.1)':
