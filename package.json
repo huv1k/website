@@ -27,7 +27,7 @@
     "**/*.{js,jsx,ts,tsx,html,json,yml,css,less,scss,md,mdx,graphql}": "prettier --write"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.8.2",
+    "@chakra-ui/react": "2.9.1",
     "@emotion/react": "11.13.3",
     "@emotion/styled": "11.13.0",
     "@heroicons/react": "2.1.5",
