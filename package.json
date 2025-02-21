@@ -30,7 +30,7 @@
     "@chakra-ui/react": "2.10.6",
     "@emotion/react": "11.13.3",
     "@emotion/styled": "11.13.0",
-    "@heroicons/react": "2.1.5",
+    "@heroicons/react": "2.2.0",
     "@pothos/core": "4.3.0",
     "@pothos/plugin-simple-objects": "4.1.0",
     "@prisma/client": "5.21.1",
