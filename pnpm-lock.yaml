@@ -97,8 +97,8 @@ importers:
         specifier: 4.3.0
         version: 4.3.0(prettier@3.5.2)
       '@types/node':
-        specifier: 20.17.19
-        version: 20.17.19
+        specifier: 20.19.25
+        version: 20.19.25
       '@types/react':
         specifier: 18.3.27
         version: 18.3.27
@@ -964,8 +964,8 @@ packages:
   '@types/ms@0.7.31':
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  '@types/node@20.17.19':
-    resolution: {integrity: sha512-LEwC7o1ifqg/6r2gn9Dns0f1rhK+fPFDoMiceTJ6kWmVk6bgXBI/9IOWfVan4WiAavK9pIVWdX0/e3J+eEUh5A==}
+  '@types/node@20.19.25':
+    resolution: {integrity: sha512-ZsJzA5thDQMSQO788d7IocwwQbI8B5OPzmqNvpf3NY/+MHDAS759Wo0gd2WQeXYt5AAAQjzcrTVC6SKCuYgoCQ==}
 
   '@types/parse-json@4.0.0':
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -3233,8 +3233,8 @@ packages:
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
 
-  undici-types@6.19.6:
-    resolution: {integrity: sha512-e/vggGopEfTKSvj4ihnOLTsqhrKRN3LeO6qSN/GxohhuRv8qH9bNQ4B8W7e/vFL+0XTnmHPB4/kegunZGA4Org==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   unicode-trie@2.0.0:
     resolution: {integrity: sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==}
@@ -3949,7 +3949,7 @@ snapshots:
   '@grpc/grpc-js@1.9.3':
     dependencies:
       '@grpc/proto-loader': 0.7.10
-      '@types/node': 20.17.19
+      '@types/node': 20.19.25
 
   '@grpc/proto-loader@0.7.10':
     dependencies:
@@ -4330,9 +4330,9 @@ snapshots:
 
   '@types/ms@0.7.31': {}
 
-  '@types/node@20.17.19':
+  '@types/node@20.19.25':
     dependencies:
-      undici-types: 6.19.6
+      undici-types: 6.21.0
 
   '@types/parse-json@4.0.0': {}
 
@@ -6664,7 +6664,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.17.19
+      '@types/node': 20.19.25
       long: 5.2.3
 
   punycode@2.3.0: {}
@@ -7163,7 +7163,7 @@ snapshots:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
 
-  undici-types@6.19.6: {}
+  undici-types@6.21.0: {}
 
   unicode-trie@2.0.0:
     dependencies:
