@@ -1,0 +1,31 @@
+---
+const today = new Date();
+import { Copyright, Github, Twitter } from '@lucide/astro';
+---
+
+<footer
+  class="flex justify-between w-full max-w-2xl mx-auto text-stone-400 my-4"
+>
+  <div class="flex gap-2">
+    <a
+      href="https://github.com/huv1k"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Github"
+    >
+      <Github size={16} />
+    </a>
+    <a
+      href="https://x.com/huv1k"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+    >
+      <Twitter size={16} />
+    </a>
+  </div>
+  <div class="flex gap-2 uppercase items-center">
+    <Copyright size={16} />
+    {today.getFullYear()} Huvik
+  </div>
+</footer>

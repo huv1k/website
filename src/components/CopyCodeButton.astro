@@ -1,0 +1,63 @@
+---
+import { Copy, Check } from '@lucide/astro';
+---
+
+<button
+  class="copy-code-button absolute top-2 right-2 rounded p-1 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors w-6 h-6 flex items-center justify-center"
+  aria-label="Copy code to clipboard"
+  data-copied="false"
+>
+  <Copy class="copy-icon w-4 h-4 text-gray-500 dark:text-gray-400" />
+  <Check class="check-icon w-4 h-4 text-green-600 dark:text-green-400 hidden" />
+</button>
+
+<script>
+  function setupCopyButtons() {
+    const buttons = document.querySelectorAll('.copy-code-button');
+
+    buttons.forEach((button) => {
+      if (button.hasAttribute('data-listener-attached')) {
+        return;
+      }
+
+      button.setAttribute('data-listener-attached', 'true');
+
+      button.addEventListener('click', async () => {
+        const pre = button.closest('pre');
+        if (!pre) return;
+
+        const code = pre.querySelector('code');
+        if (!code) return;
+
+        const textContent = code.textContent || '';
+
+        try {
+          await navigator.clipboard.writeText(textContent);
+
+          const copyIcon = button.querySelector('.copy-icon');
+          const checkIcon = button.querySelector('.check-icon');
+
+          if (copyIcon && checkIcon) {
+            copyIcon.classList.add('hidden');
+            checkIcon.classList.remove('hidden');
+            button.setAttribute('data-copied', 'true');
+
+            setTimeout(() => {
+              copyIcon.classList.remove('hidden');
+              checkIcon.classList.add('hidden');
+              button.setAttribute('data-copied', 'false');
+            }, 2000);
+          }
+        } catch (err) {
+          console.error('Failed to copy code:', err);
+        }
+      });
+    });
+  }
+
+  setupCopyButtons();
+
+  document.addEventListener('astro:page-load', () => {
+    setupCopyButtons();
+  });
+</script>
