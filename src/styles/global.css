@@ -1,153 +1,64 @@
-html[data-theme='dark'] pre[data-theme='light'],
-html[data-theme='dark'] code[data-theme='light'],
-html[data-theme='dark'] div[data-theme='light'] {
-  display: none;
+@import '@fontsource/space-mono/400.css';
+@import '@fontsource/space-mono/400-italic.css';
+@import '@fontsource/space-mono/700.css';
+@import '@fontsource/space-mono/700-italic.css';
+@import 'tailwindcss';
+
+/* Fallback font with size-adjust to match Space Mono metrics */
+@font-face {
+  font-family: 'Space Mono Fallback';
+  src: local('Courier New');
+  size-adjust: 90%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
 }
 
-html[data-theme='light'] pre[data-theme='dark'],
-html[data-theme='light'] code[data-theme='dark'],
-html[data-theme='light'] div[data-theme='dark'] {
-  display: none;
+@theme {
+  --font-sans: 'Space Mono', 'Space Mono Fallback', 'Courier New', monospace;
+  --font-mono: 'Space Mono', 'Space Mono Fallback', 'Courier New', monospace;
 }
 
-div[data-rehype-pretty-code-fragment] {
-  overflow: hidden;
-
-  border: 1px solid;
-  border-radius: 0.5rem;
+@layer base {
+  body {
+    @apply text-[15px];
+    letter-spacing: -0.5px;
+  }
+  a {
+    &:hover {
+      @apply underline;
+    }
+  }
 }
 
-html[data-theme='dark'] div[data-rehype-pretty-code-fragment] {
-  border-color: var(--chakra-colors-gray-700);
-}
-html[data-theme='light'] div[data-rehype-pretty-code-fragment] {
-  border-color: var(--chakra-colors-gray-200);
-}
+@layer components {
+  .markdown {
+    & h1,
+    h2,
+    h3,
+    h4 {
+      @apply uppercase font-bold;
+    }
+    & p {
+      @apply my-2;
+    }
+    & a {
+      @apply font-bold;
+      & hover {
+        @apply underline;
+      }
+    }
 
-div[data-rehype-pretty-code-fragment] code {
-  display: grid;
-}
+    & pre {
+      @apply border-gray-200 border rounded-md overflow-x-auto;
+    }
 
-/* Code block */
-div[data-rehype-pretty-code-fragment] pre {
-  overflow-x: auto;
+    & pre code {
+      @apply block p-2 relative;
+    }
 
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
-html[data-theme='dark'] div[data-rehype-pretty-code-fragment] pre {
-  background-color: var(--chakra-colors-gray-900);
-}
-
-html[data-theme='light'] div[data-rehype-pretty-code-fragment] pre {
-  background-color: var(--chakra-colors-gray-50);
-}
-
-/* Title */
-div[data-rehype-pretty-code-title] {
-  /* stylistic preferences */
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  font-family: var(--chakra-fonts-mono);
-  font-size: 0.8rem;
-  line-height: 1rem;
-}
-
-html[data-theme='dark'] div[data-rehype-pretty-code-title] {
-  background-color: var(--chakra-colors-gray-700);
-  color: var(--chakra-colors-blue-50);
-}
-
-html[data-theme='light'] div[data-rehype-pretty-code-title] {
-  background-color: var(--chakra-colors-gray-100);
-  color: var(--chakra-colors-gray-800);
-}
-
-/* Line numbers */
-code[data-line-numbers] {
-  counter-reset: lineNumber;
-}
-
-code[data-line-numbers] .line::before {
-  counter-increment: lineNumber;
-  content: counter(lineNumber);
-  display: inline-block;
-  text-align: right;
-
-  margin-right: 0.75rem;
-  width: 1rem;
-  /* color: red; */
-}
-
-/* Highlighting lines */
-div[data-rehype-pretty-code-fragment] .line {
-  padding-left: 0.5rem;
-  padding-right: 0.75rem;
-
-  border-left-width: 4px;
-  border-left-color: transparent;
-}
-
-html[data-theme='dark']
-  div[data-rehype-pretty-code-fragment]
-  .line--highlighted {
-  border-left-color: var(--chakra-colors-purple-400);
-  background-color: #9f7aea12;
-}
-
-html[data-theme='light']
-  div[data-rehype-pretty-code-fragment]
-  .line--highlighted {
-  border-left-color: var(--chakra-colors-purple-400);
-  background-color: #e9d8fd59;
-}
-
-/* Inline code blocks */
-:not(pre) > code {
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-html[data-theme='dark'] :not(pre) > code {
-  background-color: var(--chakra-colors-gray-700);
-  color: var(--chakra-colors-blue-50);
-}
-
-html[data-theme='light'] :not(pre) > code {
-  background-color: var(--chakra-colors-gray-100);
-  color: var(--chakra-colors-gray-800);
-}
-
-kbd {
-  border-radius: 4px;
-  display: inline-block;
-  font-family: var(--font-ia-writer) !important;
-  font-size: 16px !important;
-  line-height: 16px;
-  min-width: 24px;
-  padding: 3px;
-  text-align: center;
-  text-transform: capitalize;
-  vertical-align: baseline;
-}
-
-html[data-theme='dark'] kbd {
-  background-color: var(--chakra-colors-gray-700);
-  color: var(--chakra-colors-blue-50);
-}
-
-html[data-theme='light'] kbd {
-  background-color: var(--chakra-colors-gray-100);
-  color: var(--chakra-colors-gray-800);
-}
-
-code[data-language='terminal'] .line ::before {
-  content: '$ ';
+    & code:not(pre code) {
+      @apply bg-gray-100 rounded-md px-1 py-0.5 text-gray-950;
+    }
+  }
 }
