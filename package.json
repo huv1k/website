@@ -39,7 +39,7 @@
     "contentlayer": "0.3.4",
     "date-fns": "3.6.0",
     "framer-motion": "11.18.2",
-    "graphql": "16.10.0",
+    "graphql": "16.12.0",
     "graphql-yoga": "5.12.0",
     "gray-matter": "4.0.3",
     "next": "14.2.33",
