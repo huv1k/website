@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/layout.astro';
+import Speaking from '../components/speaking.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class="mb-12">
+    <p class="text-stone-400">Lukáš Huvar</p>
+    <h1 class="text-2xl font-bold uppercase">Huvik</h1>
+    <p>
+      Software developer passionate about <b>React</b>, <b>GraphQL</b>, <b
+        >TypeScript</b
+      >
+    </p>
+  </section>
+  <Speaking />
+</Layout>

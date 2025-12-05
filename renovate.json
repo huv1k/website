@@ -6,11 +6,5 @@
   },
   "patch": {
     "automerge": true
-  },
-  "packageRules": [
-    {
-      "matchPackageNames": ["@types/node"],
-      "allowedVersions": "/^20\\..*$/"
-    }
-  ]
+  }
 }
