@@ -11,7 +11,7 @@ const posts = (await getCollection('blog')).sort(
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <h1 class="text-2xl font-bold uppercase mb-4">Blog</h1>
-  <p class="mb-8">My two cents about different topics going trought my mind</p>
+  <p class="mb-8">My two cents about different topics going through my mind</p>
   {
     posts.map((post) => (
       <article class="w-full">

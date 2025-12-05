@@ -42,7 +42,9 @@
     "deploy": "wrangler deploy",
     "dev": "astro dev",
     "preview": "astro build && wrangler dev",
-    "check": "prettier -w . && oxlint -c .oxlintrc.json --fix ."
+    "format": "prettier -w .",
+    "lint:fix": "oxlint -c .oxlintrc.json --fix .",
+    "check": "prettier -c . && oxlint -c .oxlintrc.json ."
   },
   "type": "module"
 }

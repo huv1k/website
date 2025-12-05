@@ -10,9 +10,9 @@ export async function getStaticPaths() {
     props: til,
   }));
 }
-type Props = CollectionEntry<'til'>;
+export type Props = CollectionEntry<'til'>;
 
-const til = Astro.props;
+const til = Astro.props as Props;
 const { Content } = await render(til);
 ---
 
