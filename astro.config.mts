@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
@@ -16,6 +16,17 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  experimental: {
+    fonts: [
+      {
+        name: 'Space Mono',
+        provider: fontProviders.fontsource(),
+        cssVariable: '--font-space-mono',
+        weights: [400, 700],
+        styles: ['normal', 'italic'],
+      },
+    ],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

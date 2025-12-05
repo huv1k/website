@@ -1,22 +1,8 @@
-@import '@fontsource/space-mono/400.css';
-@import '@fontsource/space-mono/400-italic.css';
-@import '@fontsource/space-mono/700.css';
-@import '@fontsource/space-mono/700-italic.css';
 @import 'tailwindcss';
 
-/* Fallback font with size-adjust to match Space Mono metrics */
-@font-face {
-  font-family: 'Space Mono Fallback';
-  src: local('Courier New');
-  size-adjust: 90%;
-  ascent-override: 95%;
-  descent-override: 25%;
-  line-gap-override: 0%;
-}
-
-@theme {
-  --font-sans: 'Space Mono', 'Space Mono Fallback', 'Courier New', monospace;
-  --font-mono: 'Space Mono', 'Space Mono Fallback', 'Courier New', monospace;
+@theme inline {
+  --font-sans: var(--font-space-mono), 'Courier New', monospace;
+  --font-mono: var(--font-space-mono), 'Courier New', monospace;
 }
 
 @layer base {
