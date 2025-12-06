@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: '*.{js,ts,astro,md,mdx,json,yml,yaml}'
+      run: bunx prettier --check {staged_files}
+    lint:
+      glob: '*.{js,ts,astro}'
+      run: bunx oxlint -c .oxlintrc.json {staged_files}

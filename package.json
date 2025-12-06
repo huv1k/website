@@ -28,6 +28,7 @@
     "@tailwindcss/vite": "4.1.17",
     "@types/node": "24.10.1",
     "hastscript": "9.0.1",
+    "lefthook": "2.0.8",
     "oxfmt": "0.16.0",
     "oxlint": "1.31.0",
     "prettier": "3.7.4",
