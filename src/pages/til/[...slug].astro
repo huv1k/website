@@ -17,8 +17,33 @@ const { Content } = await render(til);
 ---
 
 <Layout title={`Huvik - ${til.data.title}`} description={til.data.description}>
-  <h1 class="text-2xl font-bold uppercase mb-4">{til.data.title}</h1>
-  <div class="markdown">
-    <Content />
-  </div>
+  <article>
+    <h1 class="text-2xl font-bold uppercase mb-4">{til.data.title}</h1>
+    <div class="flex items-center justify-between mb-8 text-sm text-gray-600">
+      <div class="flex items-center gap-3">
+        {
+          til.data.authorImage && (
+            <img
+              src={til.data.authorImage}
+              alt={til.data.author}
+              class="w-8 h-8 rounded-full"
+            />
+          )
+        }
+        <span class="font-bold text-gray-900">{til.data.author}</span>
+      </div>
+      <time datetime={til.data.date.toISOString()}>
+        {
+          til.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }
+      </time>
+    </div>
+    <div class="markdown">
+      <Content />
+    </div>
+  </article>
 </Layout>

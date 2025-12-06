@@ -24,6 +24,7 @@ export default defineConfig({
         cssVariable: '--font-space-mono',
         weights: [400, 700],
         styles: ['normal', 'italic'],
+        subsets: ['latin', 'latin-ext'],
       },
     ],
   },

@@ -20,8 +20,33 @@ const { Content } = await render(post);
   title={`Huvik - ${post.data.title}`}
   description={post.data.description}
 >
-  <h1 class="text-2xl font-bold uppercase mb-4">{post.data.title}</h1>
-  <div class="markdown">
-    <Content />
-  </div>
+  <article>
+    <h1 class="text-2xl font-bold uppercase mb-4">{post.data.title}</h1>
+    <div class="flex items-center justify-between mb-8 text-sm text-gray-600">
+      <div class="flex items-center gap-3">
+        {
+          post.data.authorImage && (
+            <img
+              src={post.data.authorImage}
+              alt={post.data.author}
+              class="w-8 h-8 rounded-full"
+            />
+          )
+        }
+        <span class="font-bold text-gray-900">{post.data.author}</span>
+      </div>
+      <time datetime={post.data.date.toISOString()}>
+        {
+          post.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }
+      </time>
+    </div>
+    <div class="markdown">
+      <Content />
+    </div>
+  </article>
 </Layout>
