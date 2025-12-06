@@ -16,7 +16,7 @@ const til = Astro.props as Props;
 const { Content } = await render(til);
 ---
 
-<Layout {...til.data}>
+<Layout title={`Huvik - ${til.data.title}`} description={til.data.description}>
   <h1 class="text-2xl font-bold uppercase mb-4">{til.data.title}</h1>
   <div class="markdown">
     <Content />

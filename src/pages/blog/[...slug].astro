@@ -16,7 +16,10 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout {...post.data}>
+<Layout
+  title={`Huvik - ${post.data.title}`}
+  description={post.data.description}
+>
   <h1 class="text-2xl font-bold uppercase mb-4">{post.data.title}</h1>
   <div class="markdown">
     <Content />
