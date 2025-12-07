@@ -1,0 +1,71 @@
+---
+title: 'Working with remote Docker hosts'
+description: 'Deploy and control Docker on remote machines using SSH'
+date: '2025-12-07T00:00:00Z'
+---
+
+Docker offers a convenient method for managing containers on remote hosts without exposing the Docker daemon over TCP. Using SSH as the transport protocol is secure and straightforward. This approach is excellent for deploying applications to your VPS or cloud instances.
+
+## Basic Usage
+
+You can access a remote Docker host by setting the `DOCKER_HOST` environment variable with an SSH URI:
+
+```bash
+export DOCKER_HOST=ssh://user@remote-host
+docker ps
+```
+
+This will execute `docker ps` on the remote machine using SSH as the transport layer.
+
+## One-liner Commands
+
+For quick operations, you can set the environment variable inline:
+
+```bash
+DOCKER_HOST=ssh://user@remote-host docker ps
+DOCKER_HOST=ssh://user@remote-host docker images
+DOCKER_HOST=ssh://user@remote-host docker compose up -d
+```
+
+## Using SSH Config
+
+For better convenience, configure your SSH settings in `~/.ssh/config`:
+
+```text title=~/.ssh/config
+Host docker-server
+  HostName 192.168.1.100
+  User deploy
+  Port 22
+  IdentityFile ~/.ssh/docker_key
+```
+
+Then simply reference the host alias:
+
+```bash
+export DOCKER_HOST=ssh://docker-server
+docker ps
+```
+
+## Docker Compose with Remote Hosts
+
+Docker Compose also respects the `DOCKER_HOST` variable:
+
+```bash
+DOCKER_HOST=ssh://user@remote-host docker compose up -d
+```
+
+This is particularly useful for deploying applications to staging or production environments without complex CI/CD pipelines. You can simply deploy to the remote host using Docker Compose.
+
+## Requirements
+
+- Docker must be installed on both local and remote machines
+- SSH access to the remote host
+- The remote user must have permission to run Docker commands (typically in the `docker` group)
+
+## Security Benefits
+
+Using SSH for Docker access provides several advantages:
+
+- No need to expose Docker daemon on TCP ports (2375/2376)
+- Leverages existing SSH authentication (keys, certificates)
+- All communication is encrypted
