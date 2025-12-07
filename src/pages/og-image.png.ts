@@ -4,6 +4,9 @@ import { html } from 'satori-html';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 
+// Disable prerendering to ensure query parameters work
+export const prerender = false;
+
 // Cache font data to avoid repeated file reads
 let fontCache: { latin: ArrayBuffer; latinExt: ArrayBuffer } | null = null;
 

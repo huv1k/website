@@ -23,7 +23,14 @@
     h2,
     h3,
     h4 {
-      @apply uppercase font-bold;
+      @apply uppercase font-bold mt-6 mb-3;
+    }
+
+    & h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child {
+      @apply mt-0;
     }
     & p {
       @apply my-2;

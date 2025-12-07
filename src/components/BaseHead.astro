@@ -17,7 +17,6 @@ const { title, description } = Astro.props as Props;
 const ogImageUrl = new URL('/og-image.png', Astro.site);
 ogImageUrl.searchParams.set('title', title);
 ogImageUrl.searchParams.set('description', description);
-const image = ogImageUrl.toString();
 ---
 
 <!-- Global Metadata -->
@@ -40,14 +39,14 @@ const image = ogImageUrl.toString();
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={ogImageUrl} />
 
 <!-- Analytics -->
 <script
