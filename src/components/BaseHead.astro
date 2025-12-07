@@ -7,16 +7,17 @@ import { Font } from 'astro:assets';
 export interface Props {
   title: string;
   description: string;
-  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const {
-  title,
-  description,
-  image = '/blog-placeholder-1.jpg',
-} = Astro.props as Props;
+const { title, description } = Astro.props as Props;
+
+// Generate OG image URL with title and description
+const ogImageUrl = new URL('/og-image.png', Astro.site);
+ogImageUrl.searchParams.set('title', title);
+ogImageUrl.searchParams.set('description', description);
+const image = ogImageUrl.toString();
 ---
 
 <!-- Global Metadata -->
