@@ -18,7 +18,7 @@
     "@astrojs/rss": "4.0.14",
     "@astrojs/sitemap": "3.6.0",
     "@fontsource/space-mono": "5.2.9",
-    "@lucide/astro": "0.559.0",
+    "@lucide/astro": "0.560.0",
     "astro": "5.16.5",
     "satori": "0.18.3",
     "satori-astro": "0.3.1",
