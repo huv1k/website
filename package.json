@@ -21,7 +21,7 @@
     "@lucide/astro": "0.562.0",
     "astro": "5.16.7",
     "satori": "0.18.3",
-    "satori-astro": "0.3.2",
+    "satori-astro": "0.3.3",
     "satori-html": "0.3.2",
     "sharp": "0.34.5",
     "tailwindcss": "4.1.18",
