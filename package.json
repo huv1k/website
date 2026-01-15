@@ -37,7 +37,7 @@
     "oxlint": "1.39.0",
     "prettier": "3.8.0",
     "prettier-plugin-astro": "0.14.1",
-    "wrangler": "4.59.1"
+    "wrangler": "4.59.2"
   },
   "scripts": {
     "astro": "astro",
