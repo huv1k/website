@@ -30,7 +30,7 @@
   "devDependencies": {
     "@prettier/plugin-oxc": "0.1.3",
     "@tailwindcss/vite": "4.1.18",
-    "@types/node": "24.10.8",
+    "@types/node": "24.10.9",
     "hastscript": "9.0.1",
     "lefthook": "2.0.15",
     "oxfmt": "0.24.0",
