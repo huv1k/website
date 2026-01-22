@@ -35,7 +35,7 @@
     "lefthook": "2.0.15",
     "oxfmt": "0.26.0",
     "oxlint": "1.41.0",
-    "prettier": "3.8.0",
+    "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "wrangler": "4.59.3"
   },
