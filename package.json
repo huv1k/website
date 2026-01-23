@@ -19,7 +19,7 @@
     "@astrojs/sitemap": "3.7.0",
     "@fontsource/space-mono": "5.2.9",
     "@lucide/astro": "0.562.0",
-    "astro": "5.16.14",
+    "astro": "5.16.15",
     "satori": "0.19.1",
     "satori-astro": "0.3.3",
     "satori-html": "0.3.2",
