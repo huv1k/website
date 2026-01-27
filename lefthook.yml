@@ -3,7 +3,7 @@ pre-commit:
   commands:
     format:
       glob: "*.{js,ts,astro,md,mdx,json,yml,yaml}"
-      run: bunx oxfmt -c .oxlintrc.json --check {staged_files}
+      run: bunx oxfmt -c .oxlintrc.json {staged_files}
     lint:
       glob: "*.{js,ts,astro}"
       run: bunx oxlint -c .oxlintrc.json {staged_files}

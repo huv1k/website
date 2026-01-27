@@ -2,16 +2,46 @@
 import Layout from '../layouts/layout.astro';
 import Speaking from '../components/speaking.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section class="mb-12">
-    <p class="text-stone-400">Lukáš Huvar</p>
-    <h1 class="text-2xl font-bold uppercase">Huvik</h1>
-    <p>
+    <div class="flex items-center gap-4 mb-4">
+      <Image
+        src="/lukas-huvar.jpg"
+        alt="Lukáš Huvar"
+        class="w-16 h-16 rounded-full grayscale"
+        width={64}
+        height={64}
+        inferSize
+        loading="eager"
+      />
+      <div>
+        <p class="text-stone-400">Lukáš Huvar</p>
+        <h1 class="text-2xl font-bold uppercase">Huvik</h1>
+      </div>
+    </div>
+    <p class="mb-4">
       Software developer passionate about <b>React</b>, <b>GraphQL</b>, <b
         >TypeScript</b
       >
+    </p>
+    <p class="mb-4">
+      I specialize in building high-performance web applications with modern
+      JavaScript technologies. My expertise includes creating scalable frontend
+      architectures, optimizing application performance, and developing
+      type-safe GraphQL APIs.
+    </p>
+    <p class="mb-4">
+      Based in the Czech Republic, I focus on delivering exceptional user
+      experiences through clean code and thoughtful engineering. I'm
+      particularly interested in performance optimization, developer experience,
+      and building tools that make developers' lives easier.
+    </p>
+    <p class="mb-4">
+      When I'm not coding, I am spending time with my family, exploring new
+      technologies, playing board games, and enjoying the outdoors.
     </p>
   </section>
   <Speaking />

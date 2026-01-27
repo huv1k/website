@@ -23,6 +23,7 @@ ogImageUrl.searchParams.set('description', description);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
 <meta name="generator" content={Astro.generator} />
 <Font cssVariable="--font-space-mono" preload />
 
@@ -47,6 +48,47 @@ ogImageUrl.searchParams.set('description', description);
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImageUrl} />
+
+<!-- Schema.org structured data -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Lukáš Huvar',
+    alternateName: 'Huvik',
+    url: 'https://huvik.dev',
+    jobTitle: 'Software Developer',
+    description:
+      'Software developer passionate about React, GraphQL, TypeScript',
+    knowsAbout: [
+      'React',
+      'GraphQL',
+      'TypeScript',
+      'Web Performance',
+      'Frontend Development',
+    ],
+    sameAs: ['https://github.com/huv1k', 'https://twitter.com/huv1k'],
+  })}
+>
+</script>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Huvik',
+    url: 'https://huvik.dev',
+    description:
+      'Personal site by Lukáš Huvar. A software developer from the Czech Republic. Passionated about React, GraphQL, Typescript.',
+    author: {
+      '@type': 'Person',
+      name: 'Lukáš Huvar',
+    },
+  })}
+>
+</script>
 
 <!-- Analytics -->
 <script
