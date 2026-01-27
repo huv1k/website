@@ -12,14 +12,14 @@ This is a personal website built with Astro, TypeScript, and Tailwind CSS, deplo
 - **Package Manager**: Bun (with bun.lock)
 - **Language**: TypeScript with strict configuration
 - **Linting**: Oxlint with comprehensive rules
-- **Formatting**: Prettier with Astro support
+- **Formatting**: Oxfmt (Oxc's formatter)
 - **Content**: MDX support for rich content
 
 ## Code Style & Formatting
 
 - Use **2 spaces** for indentation (never tabs)
 - Use **single quotes** for strings
-- Follow Prettier configuration in `.prettierrc`
+- Follow Oxfmt formatting conventions
 - Respect Oxlint rules defined in `.oxlintrc.json`
 - Use TypeScript strict mode with null checks enabled
 

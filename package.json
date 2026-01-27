@@ -1,16 +1,19 @@
 {
   "name": "website",
-  "description": "Personal website ✨",
   "private": true,
-  "cloudflare": {
-    "label": "Astro Framework Starter",
-    "products": [
-      "Workers"
-    ],
-    "categories": [],
-    "preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/394ca3c9-d351-4036-035a-9f6dfa26dd00/public",
-    "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/f40a6577-eed5-4f3e-cef4-b5ef0a1be100/preview",
-    "publish": true
+  "description": "Personal website ✨",
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "cf-typegen": "wrangler types",
+    "check-build": "astro build && tsc && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "dev": "astro dev",
+    "preview": "astro build && wrangler dev",
+    "format": "oxfmt -c .oxlintrc.json .",
+    "lint:fix": "oxlint -c .oxlintrc.json --fix .",
+    "check": "oxfmt -c .oxlintrc.json --check . && oxlint -c .oxlintrc.json ."
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.12",
@@ -28,28 +31,22 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@prettier/plugin-oxc": "0.1.3",
     "@tailwindcss/vite": "4.1.18",
     "@types/node": "24.10.9",
     "hastscript": "9.0.1",
     "lefthook": "2.0.15",
     "oxfmt": "0.27.0",
     "oxlint": "1.42.0",
-    "prettier": "3.8.1",
-    "prettier-plugin-astro": "0.14.1",
     "wrangler": "4.60.0"
   },
-  "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "cf-typegen": "wrangler types",
-    "check-build": "astro build && tsc && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy",
-    "dev": "astro dev",
-    "preview": "astro build && wrangler dev",
-    "format": "prettier -w .",
-    "lint:fix": "oxlint -c .oxlintrc.json --fix .",
-    "check": "prettier -c . && oxlint -c .oxlintrc.json ."
-  },
-  "type": "module"
+  "cloudflare": {
+    "label": "Astro Framework Starter",
+    "products": [
+      "Workers"
+    ],
+    "categories": [],
+    "preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/394ca3c9-d351-4036-035a-9f6dfa26dd00/public",
+    "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/f40a6577-eed5-4f3e-cef4-b5ef0a1be100/preview",
+    "publish": true
+  }
 }

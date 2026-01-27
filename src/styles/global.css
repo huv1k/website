@@ -1,8 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-space-mono), 'Courier New', monospace;
-  --font-mono: var(--font-space-mono), 'Courier New', monospace;
+  --font-sans: var(--font-space-mono), "Courier New", monospace;
+  --font-mono: var(--font-space-mono), "Courier New", monospace;
 }
 
 @layer base {

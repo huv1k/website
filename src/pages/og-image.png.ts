@@ -1,8 +1,8 @@
-import type { APIRoute } from 'astro';
-import { satoriAstroOG } from 'satori-astro';
-import { html } from 'satori-html';
-import { readFile } from 'fs/promises';
-import { join } from 'path';
+import type { APIRoute } from "astro";
+import { satoriAstroOG } from "satori-astro";
+import { html } from "satori-html";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 // Disable prerendering to ensure query parameters work
 export const prerender = false;
@@ -18,11 +18,11 @@ async function getFonts() {
 
   const fontPathLatin = join(
     process.cwd(),
-    'node_modules/@fontsource/space-mono/files/space-mono-latin-400-normal.woff',
+    "node_modules/@fontsource/space-mono/files/space-mono-latin-400-normal.woff",
   );
   const fontPathLatinExt = join(
     process.cwd(),
-    'node_modules/@fontsource/space-mono/files/space-mono-latin-ext-400-normal.woff',
+    "node_modules/@fontsource/space-mono/files/space-mono-latin-ext-400-normal.woff",
   );
 
   const latinBuffer = await readFile(fontPathLatin);
@@ -44,35 +44,30 @@ async function getFonts() {
 export const GET: APIRoute = async ({ url }) => {
   try {
     // Get query parameters (only title and description)
-    const title = url.searchParams.get('title') || 'Huvik - software developer';
+    const title = url.searchParams.get("title") || "Huvik - software developer";
     const description =
-      url.searchParams.get('description') ||
-      'A software developer from the Czech Republic.';
+      url.searchParams.get("description") || "A software developer from the Czech Republic.";
 
     // Author information is fixed
-    const author = 'Lukáš Huvar';
-    const authorImage = '/lukas-huvar.jpg';
+    const author = "Lukáš Huvar";
+    const authorImage = "/lukas-huvar.jpg";
 
     // Load both fonts for full character support
     const fonts = await getFonts();
 
     // Load and process the author image
-    let avatarBase64 = '';
+    let avatarBase64 = "";
     try {
-      const imagePath = join(
-        process.cwd(),
-        'public',
-        authorImage.replace(/^\//, ''),
-      );
+      const imagePath = join(process.cwd(), "public", authorImage.replace(/^\//, ""));
       const imageBuffer = await readFile(imagePath);
-      const sharp = (await import('sharp')).default;
+      const sharp = (await import("sharp")).default;
       const optimizedImage = await sharp(imageBuffer)
-        .resize(80, 80, { fit: 'cover' })
+        .resize(80, 80, { fit: "cover" })
         .png()
         .toBuffer();
-      avatarBase64 = `data:image/png;base64,${optimizedImage.toString('base64')}`;
+      avatarBase64 = `data:image/png;base64,${optimizedImage.toString("base64")}`;
     } catch (e) {
-      console.error('Failed to load author image:', e);
+      console.error("Failed to load author image:", e);
     }
 
     // Build HTML template as string with image embedded
@@ -85,7 +80,7 @@ export const GET: APIRoute = async ({ url }) => {
           ${description}
         </div>
         <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 40px;">
-          ${avatarBase64 ? `<img src="${avatarBase64}" style="width: 80px; height: 80px; border-radius: 50%; margin-right: 16px;" />` : ''}
+          ${avatarBase64 ? `<img src="${avatarBase64}" style="width: 80px; height: 80px; border-radius: 50%; margin-right: 16px;" />` : ""}
           <div style="font-size: 20px; font-weight: bold; color: #0a0a0a;">
             ${author}
           </div>
@@ -102,27 +97,27 @@ export const GET: APIRoute = async ({ url }) => {
       satori: {
         fonts: [
           {
-            name: 'Space Mono Latin',
+            name: "Space Mono Latin",
             data: fonts.latin,
             weight: 400,
-            style: 'normal',
+            style: "normal",
           },
           {
-            name: 'Space Mono Extended',
+            name: "Space Mono Extended",
             data: fonts.latinExt,
             weight: 400,
-            style: 'normal',
+            style: "normal",
           },
         ],
       },
       response: {
         headers: {
-          'Cache-Control': 'public, max-age=31536000, immutable',
+          "Cache-Control": "public, max-age=31536000, immutable",
         },
       },
     });
   } catch (error) {
-    console.error('Error generating OG image:', error);
-    return new Response('Error generating image', { status: 500 });
+    console.error("Error generating OG image:", error);
+    return new Response("Error generating image", { status: 500 });
   }
 };
