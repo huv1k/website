@@ -43,11 +43,11 @@
     }
 
     & pre {
-      @apply border-gray-200 border rounded-md overflow-x-auto;
+      @apply border-gray-200 border rounded-md overflow-x-auto relative;
     }
 
     & pre code {
-      @apply block p-2 relative;
+      @apply block p-2;
     }
 
     & code:not(pre code) {

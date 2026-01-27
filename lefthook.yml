@@ -2,8 +2,8 @@ pre-commit:
   parallel: true
   commands:
     format:
-      glob: "*.{js,ts,astro,md,mdx,json,yml,yaml}"
+      glob: "*.{js,ts,mts,astro,md,mdx,json,yml,yaml,css}"
       run: bunx oxfmt -c .oxlintrc.json {staged_files}
     lint:
-      glob: "*.{js,ts,astro}"
+      glob: "*.{js,ts,mts,astro}"
       run: bunx oxlint -c .oxlintrc.json {staged_files}

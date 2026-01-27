@@ -74,7 +74,7 @@ export default defineConfig({
         },
         {
           name: "copy-button",
-          code(node) {
+          pre(node) {
             // Create copy button placeholder
             const copyButton = h(
               "button",
