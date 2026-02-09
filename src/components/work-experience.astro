@@ -1,0 +1,43 @@
+---
+interface Props {
+  company: string;
+  logo: string;
+  from: string;
+  to?: string;
+  role: string;
+}
+
+const { company, logo, from, to, role } = Astro.props;
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+  }).format(date);
+};
+
+const formattedFrom = formatDate(from);
+const formattedTo = to ? formatDate(to) : "Present";
+const duration = `${formattedFrom} - ${formattedTo}`;
+---
+
+<div class="flex gap-4">
+  <img
+    src={logo}
+    alt={`${company} logo`}
+    width="16"
+    height="16"
+    class="w-6 h-6 mt-1 shrink-0"
+  />
+  <div class="flex-1">
+    <div class="flex justify-between items-baseline flex-wrap gap-2">
+      <h3 class="font-semibold">{company}</h3>
+      <span class="text-stone-400 text-sm">{duration}</span>
+    </div>
+    <p class="text-sm text-stone-500">{role}</p>
+    <div class="text-sm text-stone-600 mt-1">
+      <slot />
+    </div>
+  </div>
+</div>

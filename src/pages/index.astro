@@ -1,8 +1,9 @@
 ---
-import Layout from '../layouts/layout.astro';
-import Speaking from '../components/speaking.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Image } from 'astro:assets';
+import Layout from "../layouts/layout.astro";
+import Speaking from "../components/speaking.astro";
+import Work from "../components/work.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from "astro:assets";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -45,4 +46,5 @@ import { Image } from 'astro:assets';
     </p>
   </section>
   <Speaking />
+  <Work />
 </Layout>
