@@ -34,7 +34,7 @@
     "@tailwindcss/vite": "4.1.18",
     "@types/node": "24.10.13",
     "hastscript": "9.0.1",
-    "lefthook": "2.1.0",
+    "lefthook": "2.1.1",
     "oxfmt": "0.31.0",
     "oxlint": "1.46.0",
     "wrangler": "4.64.0"
