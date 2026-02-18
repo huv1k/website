@@ -27,11 +27,11 @@
     "satori-astro": "0.3.3",
     "satori-html": "0.3.2",
     "sharp": "0.34.5",
-    "tailwindcss": "4.1.18",
+    "tailwindcss": "4.2.0",
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "4.1.18",
+    "@tailwindcss/vite": "4.2.0",
     "@types/node": "24.10.13",
     "hastscript": "9.0.1",
     "lefthook": "2.1.1",
