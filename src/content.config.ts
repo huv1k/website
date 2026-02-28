@@ -1,14 +1,26 @@
+/**
+ * Astro content collection definitions for blog posts and TIL entries.
+ *
+ * Both collections share the same frontmatter schema. Notable behaviour:
+ * - `z.coerce.date()` accepts ISO-8601 strings *and* JS Date objects,
+ *   coercing either into a `Date`. This lets authors write `date: 2024-01-15`
+ *   in YAML frontmatter without quoting.
+ * - `author` defaults to "Lukáš Huvar" when omitted from frontmatter.
+ * - `updatedDate` and `authorImage` are optional; pages that don't need them
+ *   simply leave them out.
+ *
+ * @module content.config
+ */
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
+/** Blog posts loaded from `src/content/blog/`. */
 const blog = defineCollection({
-  // Load Markdown and MDX files in the `src/content/blog/` directory.
   loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
-  // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // Transform string to Date object
+    /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default("Lukáš Huvar"),
@@ -16,14 +28,13 @@ const blog = defineCollection({
   }),
 });
 
+/** "Today I Learned" entries loaded from `src/content/til/`. */
 const til = defineCollection({
-  // Load Markdown and MDX files in the `src/content/til/` directory.
   loader: glob({ base: "./src/content/til", pattern: "**/*.{md,mdx}" }),
-  // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // Transform string to Date object
+    /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default("Lukáš Huvar"),
