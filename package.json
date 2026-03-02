@@ -35,8 +35,8 @@
     "@types/node": "24.11.0",
     "hastscript": "9.0.1",
     "lefthook": "2.1.2",
-    "oxfmt": "0.35.0",
-    "oxlint": "1.50.0",
+    "oxfmt": "0.36.0",
+    "oxlint": "1.51.0",
     "wrangler": "4.69.0"
   },
   "cloudflare": {
