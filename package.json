@@ -23,7 +23,7 @@
     "@fontsource/space-mono": "5.2.9",
     "@lucide/astro": "0.577.0",
     "astro": "5.18.0",
-    "satori": "0.24.1",
+    "satori": "0.25.0",
     "satori-astro": "0.3.3",
     "satori-html": "0.3.2",
     "sharp": "0.34.5",
