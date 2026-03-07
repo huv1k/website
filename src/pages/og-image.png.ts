@@ -1,16 +1,37 @@
+/**
+ * Dynamic OG image generation endpoint.
+ *
+ * Renders a 1200x630 PNG via satori using Space Mono fonts and the author's
+ * avatar. Accepts `title` and `description` query parameters to customise
+ * the card; falls back to site-wide defaults when omitted.
+ *
+ * Font files are read from disk and cached in-memory across requests so
+ * subsequent invocations skip filesystem I/O. The author avatar is resized
+ * with sharp and base64-inlined into the satori HTML template.
+ *
+ * @module og-image
+ */
 import type { APIRoute } from "astro";
 import { satoriAstroOG } from "satori-astro";
 import { html } from "satori-html";
 import { readFile } from "fs/promises";
 import { join } from "path";
 
-// Disable prerendering to ensure query parameters work
+/** Disable prerendering so query parameters are available at request time. */
 export const prerender = false;
 
-// Cache font data to avoid repeated file reads
+/** In-memory cache for loaded font ArrayBuffers, populated on first request. */
 let fontCache: { latin: ArrayBuffer; latinExt: ArrayBuffer } | null = null;
 
-// Load both Latin and Latin Extended fonts
+/**
+ * Load Space Mono Latin and Latin Extended font files from `@fontsource`.
+ *
+ * Results are cached in {@link fontCache} so the filesystem is only hit once
+ * per process lifetime. The returned ArrayBuffers are sliced from the
+ * underlying Node Buffer to guarantee correct byte offsets for satori.
+ *
+ * @returns Cached font data for both character sets.
+ */
 async function getFonts() {
   if (fontCache) {
     return fontCache;
@@ -41,6 +62,16 @@ async function getFonts() {
   return fontCache;
 }
 
+/**
+ * GET handler that generates an OG image as a PNG response.
+ *
+ * Query parameters:
+ * - `title`       – headline text (default: "Huvik - software developer")
+ * - `description` – subtitle text (default: "A software developer from the Czech Republic.")
+ *
+ * The response is served with an immutable `Cache-Control` header (1 year)
+ * so CDN edges and browsers can cache the generated image indefinitely.
+ */
 export const GET: APIRoute = async ({ url }) => {
   try {
     // Get query parameters (only title and description)

@@ -1,4 +1,13 @@
 ---
+/**
+ * Navigation link that automatically bolds itself when active.
+ *
+ * Active-state detection works by stripping the base URL prefix from the
+ * current pathname, then checking two conditions:
+ * 1. Exact match — `href` equals the stripped pathname.
+ * 2. Section match — `href` equals `/<first-segment>`, so `/blog/my-post`
+ *    still highlights the `/blog` nav link.
+ */
 import type { HTMLAttributes } from 'astro/types';
 
 export type Props = HTMLAttributes<'a'>;
