@@ -1,14 +1,28 @@
 ---
+/**
+ * Displays a single work-experience entry with company logo, role, and
+ * date range. Accepts a `<slot>` for an optional description body.
+ */
+
 interface Props {
+  /** Company or organisation name. */
   company: string;
+  /** Path to the company logo image. */
   logo: string;
+  /** Start date as an ISO-8601 string (e.g. "2022-01"). */
   from: string;
+  /** End date as an ISO-8601 string. Omit for current positions. */
   to?: string;
+  /** Job title or role held. */
   role: string;
 }
 
 const { company, logo, from, to, role } = Astro.props;
 
+/**
+ * Format an ISO date string into a short human-readable form (e.g. "Jan 2024").
+ * Uses `Intl.DateTimeFormat` for locale-aware month abbreviations.
+ */
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return new Intl.DateTimeFormat("en-US", {
