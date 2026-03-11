@@ -37,7 +37,7 @@
     "lefthook": "2.1.3",
     "oxfmt": "0.37.0",
     "oxlint": "1.52.0",
-    "wrangler": "4.71.0"
+    "wrangler": "4.72.0"
   },
   "cloudflare": {
     "label": "Astro Framework Starter",
