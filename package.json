@@ -48,5 +48,6 @@
     "preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/394ca3c9-d351-4036-035a-9f6dfa26dd00/public",
     "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/f40a6577-eed5-4f3e-cef4-b5ef0a1be100/preview",
     "publish": true
-  }
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
