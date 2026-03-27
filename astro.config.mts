@@ -11,23 +11,17 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://huvik.dev",
   integrations: [mdx(), sitemap()],
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
+  adapter: cloudflare(),
+  fonts: [
+    {
+      name: "Space Mono",
+      provider: fontProviders.fontsource(),
+      cssVariable: "--font-space-mono",
+      weights: [400, 700],
+      styles: ["normal", "italic"],
+      subsets: ["latin", "latin-ext"],
     },
-  }),
-  experimental: {
-    fonts: [
-      {
-        name: "Space Mono",
-        provider: fontProviders.fontsource(),
-        cssVariable: "--font-space-mono",
-        weights: [400, 700],
-        styles: ["normal", "italic"],
-        subsets: ["latin", "latin-ext"],
-      },
-    ],
-  },
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
