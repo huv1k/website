@@ -11,33 +11,33 @@
  *
  * @module content.config
  */
-import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
 
 /** Blog posts loaded from `src/content/blog/`. */
 const blog = defineCollection({
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default("Lukáš Huvar"),
+    author: z.string().default('Lukáš Huvar'),
     authorImage: z.string().optional(),
   }),
 });
 
 /** "Today I Learned" entries loaded from `src/content/til/`. */
 const til = defineCollection({
-  loader: glob({ base: "./src/content/til", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: './src/content/til', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default("Lukáš Huvar"),
+    author: z.string().default('Lukáš Huvar'),
     authorImage: z.string().optional(),
   }),
 });

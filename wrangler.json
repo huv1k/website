@@ -9,5 +9,11 @@
   "observability": {
     "enabled": true
   },
-  "upload_source_maps": true
+  "upload_source_maps": true,
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "4e76c0f2e16b4205ac67292817b1a010"
+    }
+  ]
 }
