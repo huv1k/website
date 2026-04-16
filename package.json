@@ -16,13 +16,13 @@
     "check": "oxfmt -c .oxlintrc.json --check . && oxlint -c .oxlintrc.json ."
   },
   "dependencies": {
-    "@astrojs/cloudflare": "13.1.4",
+    "@astrojs/cloudflare": "13.1.10",
     "@astrojs/mdx": "5.0.3",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@fontsource/space-mono": "5.2.9",
     "@lucide/astro": "1.8.0",
-    "astro": "6.1.1",
+    "astro": "6.1.7",
     "satori": "0.26.0",
     "satori-astro": "0.4.0",
     "satori-html": "0.3.2",
