@@ -1,0 +1,81 @@
+---
+title: "Six Years at Productboard"
+description: "Reflecting on my journey at Productboard — from frontend platform, design systems, and performance to GraphQL, AI, and gradual deployments."
+date: "2025-04-17T00:00:00Z"
+---
+
+import YouTube from "../../components/YouTube.astro";
+
+After six years of working at Productboard, I want to reflect on my journey. It was a long ride, so let me walk you through it.
+
+## Joining Productboard
+
+I joined Productboard because of the people; everyone was very nice, and the culture was fantastic. One reason I joined was [Jukben](https://x.com/jukben), who tried to persuade me for almost a year. When I first entered the office, it felt like home, and it was a great feeling to be there.
+
+## Frontend Platform and Nx Migration
+
+After joining, I worked on the frontend platform team. When I started, our codebase contained around **250,000** lines of TypeScript code. We were transitioning to a new architecture using Nx. I was part of a team with [Hottel](https://x.com/martin_hotell), and migrating the old codebase to the new Nx workspace took some time. It was fully migrated a couple of years later because there was a significant amount of technical debt to address. Additionally, we had to manually adjust nearly every **Nx** migration since our repository was not compatible at all.
+
+## Rebooting the Design System
+
+We encountered a bottleneck due to the absence of a dedicated engineer for the design system. I stepped in to assist [Honza Toman](https://x.com/HonzaTmn) in rebooting the design system. It was a mess, with numerous components and multiple instances of the same component. I can't even count how many variants of buttons we had — there were just too many.
+
+This was the golden age of design systems; everything was thriving, and those without a design system were falling behind. We bootstrapped a new version, prepared the necessary tools, and gradually unified the components. After hiring [Filip](https://x.com/filipdanisko) and Adam, I am confident that the design system is in good hands, and I have moved on.
+
+## Loading Performance
+
+The next chapter focused on improving the loading performance of our main frontend application. I advocated for removing our "server-side rendering," which merely injected global variables into the template. Instead, we moved it closer to our customers to speed up the initial load. This change reduced the **Time to First Byte (TTFB)** by **600ms** for our customers.
+
+<YouTube id="IWR3xxEc3V0" title="Every millisecond matters" />
+
+We migrated to **Cloudflare Workers**, which disrupted the data flow in our clusters. Changing the frontend application that relied on these globals for years was not an easy task. I implemented some "hacky" solutions to make it work.
+
+Another performance improvement involved reducing the amount of data customers needed to load initially. Our sync engine handled most of the data during the initial load, ensuring a highly reactive experience. This approach worked well for quick iterations and small customers. However, as data volume increased, we implemented several enhancements to speed up loading.
+
+<YouTube id="43OCcnLYYn8" title="Loading 40 MB of JSON on initial load" />
+
+Unfortunately, you cannot resolve the initial load of sync engines without any data saved on your computers. While sync engines are effective, they are not suitable for all use cases.
+
+## GraphQL and Relay
+
+We were preparing for large-scale operations, so we aimed to unify the data loading layer so everyone could use the same patterns and technologies. We explored various options and ultimately chose **GraphQL**. We established a federated GraphQL setup, where each team built their service as part of one super graph.
+
+For the frontend, we selected **Relay** with [Balvajs](https://x.com/Balvajs), which proved to be a good choice and served us well. However, those familiar with Relay know there are a couple of challenges: a steep learning curve and the potential for query sizes to grow significantly, which can take up a large portion of your JavaScript bundles.
+
+## Build Times and Removing Babel
+
+Our build times were slowing down, so I migrated to **Webpack 5** and **SWC**, completely removing Babel from our setup. This change was fantastic; build times dropped from 12 minutes to just 5 minutes, and we celebrated the improvement. Does anyone remember the struggle of resolving Babel versions and how configurations piled up? Those were truly painful times, and everything felt fragile with each update.
+
+## Product Teams and Performance
+
+I was part of several smaller teams working on various product-related and performance topics. It was enjoyable to collaborate with different people on these subjects. We created a new navigation system and addressed performance issues for large customers, some of whom had very slow and outdated computers.
+
+## Circular Dependencies
+
+The next big topic was removing circular dependencies from the codebase. Having a large monorepo with circular dependencies is challenging. When one file changes, it can affect many projects and invalidate a lot of JavaScript. This ultimately leads to slower delivery and strange bugs that can occur, even if you didn't modify that part of the codebase.
+
+[Pavel Kepka](https://x.com/kepkap) created an excellent tool, and we are gradually eliminating more than **250+** of circular dependencies. This would be much easier nowadays with AI. 😅
+
+## Migrations, Migrations, Migrations
+
+Then Ondrej joined, and we completed many different migrations. To name a few: Yarn to Pnpm, Webpack to Vite, multiple Nx versions, new Storybook versions, a new documentation platform, a GraphQL gateway, and more. I can't even recall everything; there were just too many tasks. I also traveled to San Francisco with Ondrej, and our families had a great time together.
+
+## CI/CD and Modern Tooling
+
+Our CI/CD was getting slower with increase of size of our monorepo. [Jirka](https://x.com/synaptiko_o) joined team and helped us to create a lot of improvements and making Nx faster. We tried Nx Cloud and task distribution. It was working, but never achieved the end goal, because of various issues.
+
+Then age of "new" modern tools began. We tried to enable TypeScript project references, it was slow. We decided to try out **tsgo** and everything was faster and better and simpler.
+
+## AI
+
+Then AI made a significant impact, changing everything. Code is now inexpensive, enabling the production of anything, but maintaining quality and stability is crucial. We adjusted our monorepo to work more effectively with AI agents and migrated away from slow tools like ESLint to provide our agents and team with faster feedback loops. We had full setup with **oxlint**, **oxfmt** and **tsgo**.
+
+We drastically transformed our CI/CD process. Jirka created a simplified version of task distribution to better suit our needs. We iterated on multiple tools and models and ultimately decided it is best to focus on one, as things are changing rapidly and models are improving every day. If you want to **ship value, you should focus on shipping** and not trying models all the time.
+
+## Gradual Deployments
+
+One of the last projects I worked on involved gradual deployments of frontend applications. When code is inexpensive and can be produced quickly, it's essential to ensure that what you ship does not break anything. Quality remains important; just look at the status pages of various companies to see what is happening in the industry. Change is inevitable, but **maintaining stability is key**. Having a system that automatically detects faulty deployments and rolls back changes is crucial in today's environment. Everything was built around Cloudflare Workers and our monitoring tools.
+
+## Thank You
+
+This summarizes my journey at Productboard. It was a wild ride, and I made many friends while shipping numerous improvements and features. When I left the frontend codebase had more then **1.6 milion lines of codes** and more then **750+** libraries. I significantly enhanced our developers' day-to-day experience. We If something sounds interesting or you want to discuss it, let me know. I am eager to talk about these topics. Thank you for your attention, and yes, I am open to new opportunities.
