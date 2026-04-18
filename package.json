@@ -22,7 +22,7 @@
     "@astrojs/sitemap": "3.7.2",
     "@fontsource/space-mono": "5.2.9",
     "@lucide/astro": "1.8.0",
-    "astro": "6.1.7",
+    "astro": "6.1.8",
     "satori": "0.26.0",
     "satori-astro": "0.4.0",
     "satori-html": "0.3.2",
