@@ -13,6 +13,23 @@ import WorkExperience from "./work-experience.astro";
             role="Frontend Platform Engineer"
         >
             <p class="pb-4">
+                Built gradual deployments for frontend applications on top of
+                Cloudflare Workers and our monitoring tools. The system
+                automatically detects faulty deployments and rolls back
+                changes, keeping production stable as shipping velocity
+                increased.
+            </p>
+            <p class="pb-4">
+                Led the migration away from slow tooling like <b>ESLint</b> to
+                a modern stack built on <b>oxlint</b>, <b>oxfmt</b>, and <b
+                    >tsgo</b
+                >. This provided faster feedback loops for both engineers and
+                AI agents working in the monorepo. Adjusted the monorepo
+                structure and conventions to work well with agents, and
+                authored a set of <b>skills</b> that codified our workflows so
+                agents could ship reliably across the codebase.
+            </p>
+            <p class="pb-4">
                 Worked on multiple legacy code cleanups, removing more than <b
                     >250+</b
                 >
@@ -38,14 +55,14 @@ import WorkExperience from "./work-experience.astro";
             </p>
             <p class="pb-4">
                 Maintained frontend monorepo with more than <b>750</b> packages and
-                <b>1.4 million</b>
+                <b>1.6 million</b>
                 lines of TypeScript code. I worked on several improvements to enhance
                 CI/CD and overall developer experience in this large codebase.
             </p>
             <p class="pb-4">
                 Introduced Cloudflare Workers into the stack and changed how
                 frontend applications are served. This reduced initial load time
-                and decreased <b>P90</b> by <b>800ms</b>.
+                and decreased <b>TTFB</b> by <b>600ms</b>.
             </p>
             <p>
                 Resurrected the design system and created the initial version of
@@ -80,7 +97,7 @@ import WorkExperience from "./work-experience.astro";
             logo="https://www.prisma.io/favicon.ico"
             from="2017-09"
             to="2018-03"
-            role="Frontend Engineer"
+            role="Product Engineer"
         >
             Built an Electron application <a
                 href="https://v1.prisma.io/docs/1.34/prisma-admin/overview-el3e/"
