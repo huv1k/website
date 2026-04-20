@@ -47,10 +47,10 @@ const duration = `${formattedFrom} - ${formattedTo}`;
   <div class="flex-1">
     <div class="flex justify-between items-baseline flex-wrap gap-2">
       <h3 class="font-semibold">{company}</h3>
-      <span class="text-stone-400 text-sm">{duration}</span>
+      <span class="text-stone-400 dark:text-stone-500 text-sm">{duration}</span>
     </div>
-    <p class="text-sm text-stone-500">{role}</p>
-    <div class="text-sm text-stone-600 mt-1">
+    <p class="text-sm text-stone-500 dark:text-stone-400">{role}</p>
+    <div class="text-sm text-stone-600 dark:text-stone-300 mt-1">
       <slot />
     </div>
   </div>

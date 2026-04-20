@@ -1,11 +1,13 @@
 ---
 import HeaderLink from './header-link.astro';
+import ThemeToggle from './theme-toggle.astro';
 ---
 
-<header class="max-w-2xl w-full mx-auto my-4 flex justify-end">
+<header class="max-w-2xl w-full mx-auto my-4 flex items-center justify-end gap-4">
   <nav class="flex gap-4">
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/til">Today I Learned</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
   </nav>
+  <ThemeToggle />
 </header>
