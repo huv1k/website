@@ -10,6 +10,10 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://huvik.dev",
+  trailingSlash: "never",
+  build: {
+    format: "file",
+  },
   integrations: [mdx(), sitemap()],
   adapter: cloudflare(),
   fonts: [
