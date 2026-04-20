@@ -15,12 +15,20 @@
  *
  * @module og-image
  */
+import { Buffer } from "node:buffer";
 import type { APIRoute } from "astro";
+import { env } from "cloudflare:workers";
 import { ImageResponse, GoogleFont, cache } from "cf-workers-og";
 import { OGTemplate } from "../lib/og-template";
 
 /** Disable prerendering so query params and the Workers runtime are available. */
 export const prerender = false;
+
+async function loadAvatarDataUrl(origin: string): Promise<string> {
+  const response = await env.ASSETS.fetch(new URL("/lukas-huvar.jpg", origin));
+  const buffer = await response.arrayBuffer();
+  return `data:image/jpeg;base64,${Buffer.from(buffer).toString("base64")}`;
+}
 
 export const GET: APIRoute = async ({ url, locals }) => {
   cache.setExecutionContext(locals.cfContext);
@@ -29,7 +37,7 @@ export const GET: APIRoute = async ({ url, locals }) => {
   const description =
     url.searchParams.get("description") || "A software developer from the Czech Republic.";
 
-  const avatarUrl = new URL("/lukas-huvar.jpg", url.origin).toString();
+  const avatarUrl = await loadAvatarDataUrl(url.origin);
 
   return ImageResponse.create(OGTemplate({ title, description, avatarUrl }), {
     width: 1200,
