@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/header.astro";
+import OpenToWork from "../components/open-to-work.astro";
 import Footer from "../components/footer.astro";
 import { SITE_TITLE } from "../consts";
 
@@ -24,6 +25,7 @@ const {
     class="min-h-screen bg-white text-gray-900 font-mono antialiased font-size-15 flex flex-col"
   >
     <Header />
+    <OpenToWork />
     <main class="max-w-2xl w-full mx-auto flex flex-col grow">
       <slot />
     </main>
