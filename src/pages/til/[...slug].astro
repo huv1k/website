@@ -20,7 +20,7 @@ const { Content } = await render(til);
 <Layout title={`Huvik - ${til.data.title}`} description={til.data.description}>
   <article class="mb-16">
     <h1 class="text-2xl font-bold uppercase mb-4">{til.data.title}</h1>
-    <div class="flex items-center justify-between mb-8 text-sm text-gray-600">
+    <div class="flex items-center justify-between mb-8 text-sm text-gray-600 dark:text-gray-400">
       <div class="flex items-center gap-3">
         <Image
           src="/lukas-huvar.jpg"
@@ -31,7 +31,7 @@ const { Content } = await render(til);
           inferSize
           loading="eager"
         />
-        <span class="font-bold text-gray-900">Lukáš Huvar</span>
+        <span class="font-bold text-gray-900 dark:text-gray-100">Lukáš Huvar</span>
       </div>
       <time datetime={til.data.date.toISOString()}>
         {

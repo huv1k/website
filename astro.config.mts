@@ -58,7 +58,8 @@ export default defineConfig({
               const titleDiv = h(
                 'div',
                 {
-                  class: 'bg-gray-200 p-1 rounded-t-md',
+                  class:
+                    'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-b border-gray-300 dark:border-gray-700 px-3 py-2 text-sm font-bold rounded-t-md',
                 },
                 meta.title,
               );
@@ -74,7 +75,7 @@ export default defineConfig({
               'button',
               {
                 class:
-                  'copy-code-button absolute top-2 right-2 rounded p-1 hover:bg-gray-200 transition-colors w-6 h-6 flex items-center justify-center',
+                  'copy-code-button absolute top-2 right-2 rounded p-1 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors w-6 h-6 flex items-center justify-center',
                 'aria-label': 'Copy code to clipboard',
                 'data-copied': 'false',
               },
@@ -82,7 +83,7 @@ export default defineConfig({
                 h(
                   'svg',
                   {
-                    class: 'copy-icon w-3.5 h-3.5 text-gray-500',
+                    class: 'copy-icon w-3.5 h-3.5 text-gray-500 dark:text-gray-400',
                     xmlns: 'http://www.w3.org/2000/svg',
                     width: '24',
                     height: '24',
