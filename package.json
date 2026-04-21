@@ -25,11 +25,11 @@
     "astro": "6.1.8",
     "cf-workers-og": "3.0.1",
     "react": "19.2.5",
-    "tailwindcss": "4.2.2",
+    "tailwindcss": "4.2.3",
     "typescript": "6.0.3"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "4.2.2",
+    "@tailwindcss/vite": "4.2.3",
     "@types/node": "25.6.0",
     "hastscript": "9.0.1",
     "lefthook": "2.1.6",
