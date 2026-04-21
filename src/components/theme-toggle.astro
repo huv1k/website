@@ -20,9 +20,11 @@ import { Sun, Moon } from '@lucide/astro';
 
     button.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
+      const theme = isDark ? 'dark' : 'light';
       try {
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('theme', theme);
       } catch (_) {}
+      window.seline?.track('theme_toggle', { theme });
     });
   }
 

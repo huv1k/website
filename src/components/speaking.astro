@@ -23,7 +23,13 @@ const talks = [
   {
     talks.map((talk) => (
       <div class="flex justify-between">
-        <a href={talk.href} target="_blank" rel="noopener noreferrer">
+        <a
+          href={talk.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-seline-event="speaking_click"
+          data-seline-talk={talk.name}
+        >
           {talk.name}
         </a>
         <p class="text-stone-400 dark:text-stone-500">{talk.location}</p>
