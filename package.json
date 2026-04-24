@@ -21,7 +21,7 @@
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@fontsource/space-mono": "5.2.9",
-    "@lucide/astro": "1.9.0",
+    "@lucide/astro": "1.11.0",
     "astro": "6.1.9",
     "cf-workers-og": "3.0.1",
     "react": "19.2.5",
