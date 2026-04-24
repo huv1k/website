@@ -1,0 +1,127 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { Content } from '../../cv.md';
+---
+
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <BaseHead
+      title="Lukáš Huvar — CV"
+      description="CV of Lukáš Huvar, software developer (React, GraphQL, TypeScript)."
+    />
+  </head>
+  <body class="bg-white text-gray-900 font-mono antialiased">
+    <aside
+      class="max-w-2xl mx-auto px-4 pt-6 text-sm text-stone-500 print:hidden"
+    >
+      Tip: ⌘P → Save as PDF · A4 · uncheck "Headers and footers" and
+      "Background graphics".
+    </aside>
+    <article class="cv markdown max-w-2xl mx-auto px-4 py-8">
+      <Content />
+    </article>
+
+    <style is:global>
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      .cv-photo {
+        float: left;
+        width: 80px;
+        height: 80px;
+        border-radius: 9999px;
+        margin: 0.25rem 1rem 0.25rem 0;
+        filter: grayscale(100%);
+        object-fit: cover;
+      }
+      .cv h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .cv h1 + p + p {
+        margin-bottom: 1.5rem;
+      }
+      .cv h2 {
+        clear: left;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid #d6d3d1;
+        break-after: avoid;
+      }
+      .cv h3 {
+        font-size: 0.875rem;
+        margin-top: 1rem;
+        margin-bottom: 0.25rem;
+        text-transform: none;
+      }
+      .cv h3 + p em {
+        color: #78716c;
+        font-style: normal;
+        font-size: 0.75rem;
+      }
+      .cv ul {
+        list-style: disc;
+        padding-left: 1.25rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .cv li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        break-inside: avoid;
+      }
+      .cv p,
+      .cv li {
+        font-size: 0.875rem;
+        line-height: 1.625;
+      }
+
+      @media print {
+        html,
+        body {
+          background: white !important;
+          color: black !important;
+        }
+        .print\:hidden {
+          display: none !important;
+        }
+        .cv {
+          max-width: none;
+          padding: 0;
+          font-size: 10.5pt;
+          line-height: 1.45;
+        }
+        .cv h1 {
+          font-size: 20pt;
+        }
+        .cv h2 {
+          font-size: 11pt;
+          margin-top: 14pt;
+          border-bottom-color: #999;
+        }
+        .cv h3 {
+          font-size: 10.5pt;
+          margin-top: 9pt;
+        }
+        .cv p,
+        .cv li {
+          font-size: 10pt;
+        }
+        .cv a {
+          color: black;
+          text-decoration: none;
+          font-weight: normal;
+        }
+        .cv h3,
+        .cv section {
+          break-after: avoid;
+        }
+      }
+    </style>
+  </body>
+</html>
