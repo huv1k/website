@@ -5,7 +5,7 @@
 **Software Developer — AI, React, GraphQL & TypeScript**
 Czech Republic
 
-[huvar.cz](https://huvik.dev/) · [github.com/huv1k](https://github.com/huv1k) · [x.com/huv1k](https://x.com/huv1k)
+[huvik.dev](https://huvik.dev/) · [github.com/huv1k](https://github.com/huv1k) · [x.com/huv1k](https://x.com/huv1k)
 
 ## Summary
 
