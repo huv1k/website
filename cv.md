@@ -5,7 +5,7 @@
 **Software Developer — AI, React, GraphQL & TypeScript**
 Czech Republic
 
-[huvik.dev](https://huvik.dev/) · [github.com/huv1k](https://github.com/huv1k) · [x.com/huv1k](https://x.com/huv1k)
+[huvik.dev](https://huvik.dev/) · [lukas@huvar.cz](mailto:lukas@huvar.cz) · [github.com/huv1k](https://github.com/huv1k) · [x.com/huv1k](https://x.com/huv1k)
 
 ## Summary
 
@@ -46,6 +46,10 @@ _Feb 2020 – Apr 2026_
 - Resurrected the design system and built the initial version of
   **Nucleus**, unifying components and keeping React and Figma in
   parity.
+- Leading member of the **frontend guild**, setting technical direction
+  and aligning standards across teams.
+- Established the **frontend oncall** rotation from scratch, putting
+  triage, alerting, and runbooks in place to shorten time-to-recovery.
 
 ### Vercel — Software Engineer
 
