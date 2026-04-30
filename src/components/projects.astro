@@ -1,0 +1,51 @@
+---
+const projects = [
+  {
+    name: "Untanglecode",
+    tagline: "Refactoring tangled codebases into digital gardens",
+    description:
+      "Side project. An AI agent that manages technical debt and ongoing maintenance, keeping codebases healthy so engineers and AI agents can keep shipping.",
+    href: "https://untanglecode.com/",
+    logo: "https://untanglecode.com/favicon.svg",
+  },
+] as const;
+---
+
+<section class="mb-12">
+  <h2 class="text-lg font-bold uppercase mb-4">Projects</h2>
+  <div class="space-y-4">
+    {
+      projects.map((project) => (
+        <div class="flex gap-4">
+          <img
+            src={project.logo}
+            alt={`${project.name} logo`}
+            width="16"
+            height="16"
+            class="w-6 h-6 mt-1 shrink-0"
+          />
+          <div class="flex-1">
+            <h3 class="font-semibold">
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-seline-event="project_click"
+                data-seline-project={project.name}
+                class="underline hover:text-stone-800 dark:hover:text-stone-300"
+              >
+                {project.name}
+              </a>
+            </h3>
+            <p class="text-sm text-stone-500 dark:text-stone-400">
+              {project.tagline}
+            </p>
+            <p class="text-sm text-stone-600 dark:text-stone-300 mt-1">
+              {project.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
