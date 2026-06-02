@@ -24,7 +24,7 @@
     "@lucide/astro": "1.17.0",
     "astro": "6.4.2",
     "cf-workers-og": "3.0.1",
-    "react": "19.2.6",
+    "react": "19.2.7",
     "tailwindcss": "4.3.0",
     "typescript": "6.0.3"
   },
