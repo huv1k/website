@@ -33,7 +33,7 @@
     "@types/node": "25.9.3",
     "hastscript": "9.0.1",
     "lefthook": "2.1.9",
-    "oxfmt": "0.54.0",
+    "oxfmt": "0.55.0",
     "oxlint": "1.69.0",
     "wrangler": "4.100.0"
   },
