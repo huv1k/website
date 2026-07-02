@@ -10,8 +10,8 @@
  * - `title`       – headline text (default: site title)
  * - `description` – subtitle text (default: site description)
  *
- * The JSX template lives in `src/lib/og-template.tsx` — Astro rejects `.tsx`
- * inside `src/pages/`, so the element is built there and imported here.
+ * The React element template lives in `src/lib/og-template.ts` — built with
+ * `React.createElement` to avoid JSX parsing requirements in the bundler.
  *
  * @module og-image
  */
