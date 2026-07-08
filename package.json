@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.2",
-    "@types/node": "26.1.0",
+    "@types/node": "26.1.1",
     "hastscript": "9.0.1",
     "lefthook": "2.1.9",
     "oxfmt": "0.58.0",
