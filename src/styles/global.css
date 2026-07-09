@@ -43,6 +43,19 @@
     & p {
       @apply my-2;
     }
+
+    & ul {
+      @apply list-disc pl-6 my-2;
+    }
+
+    & ol {
+      @apply list-decimal pl-6 my-2;
+    }
+
+    & li {
+      @apply my-1;
+    }
+
     & a {
       @apply font-bold underline;
     }
