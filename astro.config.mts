@@ -15,7 +15,7 @@ export default defineConfig({
     format: "file",
   },
   integrations: [mdx(), sitemap()],
-  adapter: cloudflare(),
+  adapter: cloudflare({ prerenderEnvironment: "node" }),
   fonts: [
     {
       name: "Space Mono",
