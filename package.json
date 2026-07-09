@@ -11,9 +11,9 @@
     "deploy": "wrangler deploy",
     "dev": "astro dev",
     "preview": "astro build && wrangler dev",
-    "format": "oxfmt -c .oxlintrc.json .",
-    "lint:fix": "oxlint -c .oxlintrc.json --fix .",
-    "check": "oxfmt -c .oxlintrc.json --check . && oxlint -c .oxlintrc.json ."
+    "format": "oxfmt .",
+    "lint": "oxlint --fix .",
+    "check": "oxfmt --check . && oxlint ."
   },
   "dependencies": {
     "@astrojs/cloudflare": "14.1.0",
