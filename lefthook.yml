@@ -1,9 +1,13 @@
+# The actual tools/flags live in package.json scripts (single source of truth).
+# This hook just runs those same scripts so the two never drift apart.
 pre-commit:
-  parallel: true
+  # Run sequentially, not in parallel: both scripts auto-fix and re-stage the same
+  # files, so concurrent writes would race and clobber each other's edits.
+  piped: true
   commands:
     format:
-      glob: "*.{js,ts,mts,astro,md,mdx,json,yml,yaml,css}"
-      run: bunx oxfmt -c .oxlintrc.json --no-error-on-unmatched-pattern {staged_files}
+      run: bun run format
+      stage_fixed: true
     lint:
-      glob: "*.{js,ts,mts,astro}"
-      run: bunx oxlint -c .oxlintrc.json {staged_files}
+      run: bun run lint
+      stage_fixed: true
