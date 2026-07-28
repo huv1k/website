@@ -9,9 +9,9 @@ interface Props {
   company: string;
   /** Path to the company logo image. */
   logo: string;
-  /** Start date as an ISO-8601 string (e.g. "2022-01"). */
+  /** Start date as a year or ISO-8601 year-month string (e.g. "2022-01"). */
   from: string;
-  /** End date as an ISO-8601 string. Omit for current positions. */
+  /** End date as a year or ISO-8601 year-month string. Omit for current positions. */
   to?: string;
   /** Job title or role held. */
   role: string;
@@ -20,10 +20,14 @@ interface Props {
 const { company, logo, from, to, role } = Astro.props;
 
 /**
- * Format an ISO date string into a short human-readable form (e.g. "Jan 2024").
+ * Format a date string into a short human-readable form (e.g. "Jan 2024").
  * Uses `Intl.DateTimeFormat` for locale-aware month abbreviations.
  */
 const formatDate = (dateString: string) => {
+  if (/^\d{4}$/.test(dateString)) {
+    return dateString;
+  }
+
   const date = new Date(dateString);
   return new Intl.DateTimeFormat("en-US", {
     year: "numeric",

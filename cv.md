@@ -20,6 +20,14 @@ reliably.
 
 ## Experience
 
+### Self-employed — Software Consultant
+
+_2015 – Present_
+
+- Run an independent consultancy creating custom applications, content
+  management systems (**CMS**), and customer relationship management
+  (**CRM**) solutions tailored to clients' needs.
+
 ### Productboard — Frontend Platform Engineer
 
 _Feb 2020 – Apr 2026_
