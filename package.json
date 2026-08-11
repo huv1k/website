@@ -16,13 +16,13 @@
     "check": "oxfmt --check . && oxlint ."
   },
   "dependencies": {
-    "@astrojs/cloudflare": "14.2.0",
+    "@astrojs/cloudflare": "14.2.1",
     "@astrojs/mdx": "7.0.5",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.3",
     "@fontsource/space-mono": "5.3.0",
     "@lucide/astro": "1.31.0",
-    "astro": "7.2.0",
+    "astro": "7.2.1",
     "cf-workers-og": "3.0.1",
     "react": "19.2.8",
     "tailwindcss": "4.3.3",
