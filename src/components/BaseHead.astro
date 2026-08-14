@@ -20,7 +20,15 @@ export interface Props {
   description: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Astro uses `.html` paths while prerendering with `build.format: 'file'`.
+// Strip that build-only suffix (and trailing slashes) so metadata matches the
+// public URLs emitted by the sitemap and used throughout the site.
+const publicPath =
+  Astro.url.pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/+$/, '') || '/';
+const canonicalURL = new URL(publicPath, Astro.site);
 
 const { title, description } = Astro.props as Props;
 
@@ -64,14 +72,14 @@ ogImageUrl.searchParams.set('description', description);
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImageUrl} />
