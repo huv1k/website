@@ -24,7 +24,7 @@ const tils = (await getCollection('til')).sort(
   {
     tils.map((til) => (
       <article class="w-full">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-col gap-1 sm:flex-row sm:justify-between sm:items-center sm:gap-0">
           <h2 class="text-xl font-bold mb-2">
             <a href={`/til/${til.id}`}>{til.data.title}</a>
           </h2>
