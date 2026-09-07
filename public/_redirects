@@ -1,0 +1,5 @@
+# Preserve the clean, extensionless URL convention for Astro's file-format
+# output. Static redirects run before Cloudflare's automatic HTML handling.
+/index.html / 301
+/*/index.html /:splat 301
+/*.html /:splat 301
