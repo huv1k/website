@@ -36,7 +36,7 @@
     "lefthook": "2.1.14",
     "oxfmt": "0.68.0",
     "oxlint": "1.83.0",
-    "wrangler": "4.134.0"
+    "wrangler": "4.135.0"
   },
   "packageManager": "bun@1.4.2",
   "cloudflare": {
