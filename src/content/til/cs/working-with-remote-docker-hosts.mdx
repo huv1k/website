@@ -1,0 +1,72 @@
+---
+title: 'Práce se vzdálenými Docker hosty'
+description: 'Nasazujte a ovládejte Docker na vzdálených strojích pomocí SSH'
+date: '2025-12-07T00:00:00Z'
+locale: 'cs'
+---
+
+Docker nabízí pohodlný způsob správy kontejnerů na vzdálených hostech bez zpřístupnění Docker daemonu přes TCP. Použití SSH jako transportního protokolu je bezpečné a jednoduché. Tento přístup se skvěle hodí pro nasazování aplikací na VPS nebo cloudové instance.
+
+## Základní použití
+
+Ke vzdálenému Docker hostu se můžete připojit nastavením proměnné prostředí `DOCKER_HOST` na SSH URI:
+
+```bash
+export DOCKER_HOST=ssh://user@remote-host
+docker ps
+```
+
+Příkaz `docker ps` se tím spustí na vzdáleném stroji a jako transportní vrstvu použije SSH.
+
+## Jednořádkové příkazy
+
+Pro rychlé operace můžete proměnnou prostředí nastavit přímo před příkazem:
+
+```bash
+DOCKER_HOST=ssh://user@remote-host docker ps
+DOCKER_HOST=ssh://user@remote-host docker images
+DOCKER_HOST=ssh://user@remote-host docker compose up -d
+```
+
+## Použití konfigurace SSH
+
+Pro pohodlnější práci si upravte nastavení SSH v souboru `~/.ssh/config`:
+
+```text title=~/.ssh/config
+Host docker-server
+  HostName 192.168.1.100
+  User deploy
+  Port 22
+  IdentityFile ~/.ssh/docker_key
+```
+
+Potom stačí použít alias hostu:
+
+```bash
+export DOCKER_HOST=ssh://docker-server
+docker ps
+```
+
+## Docker Compose se vzdálenými hosty
+
+Docker Compose také respektuje proměnnou `DOCKER_HOST`:
+
+```bash
+DOCKER_HOST=ssh://user@remote-host docker compose up -d
+```
+
+To je užitečné zejména při nasazování aplikací do stagingového nebo produkčního prostředí bez složitých CI/CD pipelines. Na vzdálený host můžete jednoduše nasadit aplikaci pomocí Docker Compose.
+
+## Požadavky
+
+- Docker musí být nainstalovaný na lokálním i vzdáleném stroji
+- Přístup ke vzdálenému hostu přes SSH
+- Vzdálený uživatel musí mít oprávnění spouštět příkazy Dockeru (obvykle je členem skupiny `docker`)
+
+## Bezpečnostní výhody
+
+Použití SSH pro přístup k Dockeru přináší několik výhod:
+
+- Není nutné zpřístupňovat Docker daemon na TCP portech 2375/2376
+- Využívá existující SSH autentizaci (klíče a certifikáty)
+- Veškerá komunikace je šifrovaná

@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/layout.astro';
+import Speaking from '../speaking.astro';
+import Projects from '../projects.astro';
+import Work from '../work.astro';
+import { siteCopy, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = siteCopy[locale];
+---
+
+<Layout
+  title={copy.metadata.siteTitle}
+  description={copy.metadata.siteDescription}
+  locale={locale}
+>
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-4">
+      <Image
+        src="/lukas-huvar.jpg"
+        alt="Lukáš Huvar"
+        class="w-16 h-16 rounded-full grayscale"
+        width={64}
+        height={64}
+        inferSize
+        loading="eager"
+      />
+      <div>
+        <p class="text-stone-400 dark:text-stone-500">Lukáš Huvar</p>
+        <h1 class="text-2xl font-bold uppercase">Huvik</h1>
+      </div>
+    </div>
+    {
+      copy.home.paragraphs.map((paragraph) => (
+        <p class="mb-4" set:html={paragraph} />
+      ))
+    }
+  </section>
+  <Speaking locale={locale} />
+  <Projects locale={locale} />
+  <Work locale={locale} />
+</Layout>

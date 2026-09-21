@@ -1,13 +1,71 @@
 ---
 import HeaderLink from './header-link.astro';
 import ThemeToggle from './theme-toggle.astro';
+import {
+  getAlternateLocale,
+  getLocalePath,
+  siteCopy,
+  type Locale,
+} from '../i18n';
+
+interface Props {
+  locale: Locale;
+  hasAlternate?: boolean;
+}
+
+const { locale, hasAlternate = true } = Astro.props;
+const copy = siteCopy[locale];
+const alternateLocale = getAlternateLocale(locale);
+const alternatePath = getLocalePath(alternateLocale, Astro.url.pathname);
+const homePath = getLocalePath(locale, '/');
+const tilPath = getLocalePath(locale, '/til');
+const blogPath = getLocalePath(locale, '/blog');
 ---
 
 <header class="max-w-2xl w-full mx-auto my-4 px-4 flex flex-wrap items-center justify-end gap-3 sm:gap-4">
-  <nav class="flex flex-wrap justify-end gap-3 sm:gap-4">
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/til">Today I Learned</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
+  <nav class="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
+    <HeaderLink href={homePath}>{copy.nav.home}</HeaderLink>
+    <HeaderLink href={tilPath}>{copy.nav.til}</HeaderLink>
+    <HeaderLink href={blogPath}>{copy.nav.blog}</HeaderLink>
+    <div class="flex items-center gap-2 uppercase text-stone-500 dark:text-stone-400">
+      {
+        hasAlternate ? (
+          <>
+            {locale === 'en' ? (
+              <span class="font-bold text-gray-900 dark:text-gray-100" aria-current="page">EN</span>
+            ) : (
+              <a
+                href={alternatePath}
+                hreflang="en"
+                data-seline-event="language_switch"
+                data-seline-from="cs"
+                data-seline-to="en"
+              >
+                EN
+              </a>
+            )}
+            <span aria-hidden="true">/</span>
+            {locale === 'cs' ? (
+              <span class="font-bold text-gray-900 dark:text-gray-100" aria-current="page">CS</span>
+            ) : (
+              <a
+                href={alternatePath}
+                hreflang="cs"
+                data-seline-event="language_switch"
+                data-seline-from="en"
+                data-seline-to="cs"
+              >
+                CS
+              </a>
+            )}
+          </>
+        ) : (
+          <span class="font-bold text-gray-900 dark:text-gray-100" aria-current="page">
+            {locale.toUpperCase()}
+          </span>
+        )
+      }
+    </div>
   </nav>
-  <ThemeToggle />
+  <ThemeToggle locale={locale} />
 </header>

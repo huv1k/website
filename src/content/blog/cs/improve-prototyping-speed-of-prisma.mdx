@@ -1,0 +1,54 @@
+---
+title: 'Jak zrychlit prototypování s Prismou'
+description: 'Automatizujte aktualizace databáze jediným příkazem.'
+date: '2020-11-22T18:00:00Z'
+locale: 'cs'
+image: 'improve-prototyping-speed-of-prisma/og-image.png'
+---
+
+[Prisma](https://www.prisma.io/) je skvělé ORM „nové generace“. Vývojářům umožňuje pracovat s databázemi bez zbytečné námahy. Měla ale jednu nevýhodu: nepříjemný proces při prototypování.
+
+## Jediný příkaz pro změny schématu
+
+Vydání [2.10.0](https://github.com/prisma/prisma/releases/tag/2.10.0) všechno zlepšilo díky možnosti spustit jediný příkaz. Prisma představila nový namespace `prisma db` pro příkazy, které pracují přímo s databází.
+
+```bash
+prisma db push --preview-feature
+```
+
+Výrazně to zrychluje prototypování, protože vývojář už nemusí psát migrace. Příkaz je určen především pro prototypy a lokální prostředí. V produkčním prostředí byste měli databázové migrace provádět pomocí příkazů `prisma migrate`.
+
+## Uložit a spustit
+
+Pokud používáte [VSCode](https://code.visualstudio.com/), můžeme prototypování ještě zrychlit. Rozšíření [Save and Run](https://marketplace.visualstudio.com/items?itemName=wk-j.save-and-run) umožňuje spustit příkaz při uložení souboru. Nainstalovat ho můžete přes nabídku `Extensions` ve VSCode nebo tímto příkazem:
+
+```bash
+code --install-extension wk-j.save-and-run
+```
+
+Potom musíte do projektu s `Prisma` přidat soubor s nastavením, aby `Save and Run` fungovalo pro soubor `schema.prisma`.
+
+```json showLineNumbers title=.vscode/settings.json
+{
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": "schema.prisma",
+        "cmd": "yarn prisma db push --preview-feature",
+        "silent": false
+      }
+    ]
+  }
+}
+```
+
+Tady můžete vidět celý postup v praxi. Nasadí nové databázové schéma a vygeneruje typy pro `PrismaClient`.
+
+![Spuštění příkazu Prisma db push při uložení](/improve-prototyping-speed-of-prisma/run-on-save-prisma.gif)
+
+`Save and Run` můžete použít také s dalšími nástroji, například:
+
+- [GraphQL code generator](https://graphql-code-generator.com/) – generování kódu z vašeho `GraphQL` schématu
+- [Nexus.js](https://nexusjs.org/) – generování code-first `GraphQL` schématu
+
+Pokud nepoužíváte `VSCode`, můžete ke sledování změn souborů využít [Watchman](https://facebook.github.io/watchman/), [entr](https://github.com/eradman/entr) nebo jiný podobný nástroj.

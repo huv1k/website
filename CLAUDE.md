@@ -126,9 +126,9 @@ src/
 
 - Seline is loaded globally in `BaseHead.astro` for analytics
 - **Always** add Seline tracking to user-initiated clicks on meaningful links/buttons (external links, social profiles, contact, CTAs, speaking/project links, etc.)
-- Prefer Seline's declarative data attributes — no custom JS needed:
-  - `data-seline-event="event_name"` — required, snake_case event name
-  - `data-seline-<property>="value"` — optional properties on the event
+- Prefer Seline's declarative data attributes; no custom JS needed:
+  - `data-seline-event="event_name"`: required, snake_case event name
+  - `data-seline-<property>="value"`: optional properties on the event
 - For dynamic values that only exist at click time (e.g. a toggled state), use the programmatic API: `window.seline?.track('event_name', { prop: value })`
 - Event naming: snake_case, describing the action (e.g. `social_click`, `contact_click`, `speaking_click`, `project_click`, `theme_toggle`)
 - Include a discriminator property so events can be segmented (e.g. `data-seline-network="github"`, `data-seline-talk="…"`, `data-seline-source="open_to_work"`, `{ theme: 'dark' }`)

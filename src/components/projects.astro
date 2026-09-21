@@ -1,21 +1,19 @@
 ---
-const projects = [
-  {
-    name: "Untanglecode",
-    tagline: "Refactoring tangled codebases into digital gardens",
-    description:
-      "Side project. An AI agent that manages technical debt and ongoing maintenance, keeping codebases healthy so engineers and AI agents can keep shipping.",
-    href: "https://untanglecode.com/",
-    logo: "https://untanglecode.com/favicon.svg",
-  },
-] as const;
+import { siteCopy, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = siteCopy[locale].projects;
 ---
 
 <section class="mb-12">
-  <h2 class="text-lg font-bold uppercase mb-4">Projects</h2>
+  <h2 class="text-lg font-bold uppercase mb-4">{copy.title}</h2>
   <div class="space-y-4">
     {
-      projects.map((project) => (
+      copy.items.map((project) => (
         <div class="flex gap-4">
           <img
             src={project.logo}

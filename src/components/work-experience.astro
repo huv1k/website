@@ -15,9 +15,13 @@ interface Props {
   to?: string;
   /** Job title or role held. */
   role: string;
+  /** Locale used to format month names. */
+  locale: 'en' | 'cs';
+  /** Localized label used for current positions. */
+  presentLabel: string;
 }
 
-const { company, logo, from, to, role } = Astro.props;
+const { company, logo, from, to, role, locale, presentLabel } = Astro.props;
 
 /**
  * Format a date string into a short human-readable form (e.g. "Jan 2024").
@@ -29,14 +33,14 @@ const formatDate = (dateString: string) => {
   }
 
   const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "short",
+  return new Intl.DateTimeFormat(locale === 'cs' ? 'cs-CZ' : 'en-US', {
+    year: 'numeric',
+    month: 'short',
   }).format(date);
 };
 
 const formattedFrom = formatDate(from);
-const formattedTo = to ? formatDate(to) : "Present";
+const formattedTo = to ? formatDate(to) : presentLabel;
 const duration = `${formattedFrom} - ${formattedTo}`;
 ---
 

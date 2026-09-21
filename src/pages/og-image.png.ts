@@ -2,7 +2,7 @@
  * Runtime OG image generation on Cloudflare Workers.
  *
  * Uses `cf-workers-og` (satori + resvg-wasm) so the endpoint works on the
- * Workers runtime — no `fs`, `sharp`, or `process.cwd()` required. Fonts
+ * Workers runtime; no `fs`, `sharp`, or `process.cwd()` required. Fonts
  * are fetched from Google Fonts on first request and cached via the
  * library's `cache` helper (pass the Workers `ctx` so refetches are rare).
  *
@@ -10,7 +10,7 @@
  * - `title`       – headline text (default: site title)
  * - `description` – subtitle text (default: site description)
  *
- * The React element template lives in `src/lib/og-template.ts` — built with
+ * The React element template lives in `src/lib/og-template.ts` and is built with
  * `React.createElement` to avoid JSX parsing requirements in the bundler.
  *
  * @module og-image

@@ -11,10 +11,28 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://huvik.dev',
   trailingSlash: 'never',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'cs'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   build: {
     format: 'file',
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          cs: 'cs-CZ',
+        },
+      },
+    }),
+  ],
   adapter: cloudflare({ prerenderEnvironment: 'node' }),
   fonts: [
     {
