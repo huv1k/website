@@ -1,0 +1,10 @@
+---
+import ContentIndexPage from '../../../components/pages/content-index-page.astro';
+import { getLocalizedEntries } from '../../../lib/content';
+
+const posts = (await getLocalizedEntries('blog', 'cs')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<ContentIndexPage locale="cs" section="blog" entries={posts} />

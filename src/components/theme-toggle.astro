@@ -1,11 +1,18 @@
 ---
 import { Sun, Moon } from '@lucide/astro';
+import { siteCopy, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
 ---
 
 <button
   type="button"
   id="theme-toggle"
-  aria-label="Toggle dark mode"
+  aria-label={siteCopy[locale].accessibility.themeToggle}
   class="inline-flex items-center justify-center rounded p-1 text-stone-500 hover:text-gray-900 dark:text-stone-400 dark:hover:text-gray-100 transition-colors"
 >
   <Sun size={16} class="block dark:hidden" aria-hidden="true" />

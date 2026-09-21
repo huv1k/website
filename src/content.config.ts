@@ -20,6 +20,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    locale: z.enum(['en', 'cs']),
     /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
@@ -34,6 +35,7 @@ const til = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    locale: z.enum(['en', 'cs']),
     /** Coerced from YAML date or ISO string to a JS Date object. */
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

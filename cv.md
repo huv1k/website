@@ -2,7 +2,7 @@
 
 # Lukáš Huvar
 
-**Software Developer — AI, React, GraphQL & TypeScript**
+**Software Developer - AI, React, GraphQL & TypeScript**
 Czech Republic
 
 [huvik.dev](https://huvik.dev/) · [lukas@huvar.cz](mailto:lukas@huvar.cz) · [github.com/huv1k](https://github.com/huv1k) · [x.com/huv1k](https://x.com/huv1k)
@@ -11,7 +11,7 @@ Czech Republic
 
 Full-stack JavaScript engineer specialising in high-performance web
 applications, scalable frontend architectures, and type-safe GraphQL
-APIs. Comfortable shipping end-to-end — UI, backend services, databases,
+APIs. Comfortable shipping end-to-end across UI, backend services, databases,
 and deployment. Particularly interested in performance, developer
 experience, and shaping codebases so AI agents can ship in them
 reliably.
@@ -20,7 +20,7 @@ reliably.
 
 ## Experience
 
-### Self-employed — Software Consultant
+### Self-employed - Software Consultant
 
 _2015 – Present_
 
@@ -28,7 +28,7 @@ _2015 – Present_
   management systems (**CMS**), and customer relationship management
   (**CRM**) solutions tailored to clients' needs.
 
-### Productboard — Frontend Platform Engineer
+### Productboard - Frontend Platform Engineer
 
 _Feb 2020 – Apr 2026_
 
@@ -59,7 +59,7 @@ _Feb 2020 – Apr 2026_
 - Established the **frontend oncall** rotation from scratch, putting
   triage, alerting, and runbooks in place to shorten time-to-recovery.
 
-### Vercel — Software Engineer
+### Vercel - Software Engineer
 
 _Apr 2019 – Nov 2019_
 
@@ -70,7 +70,7 @@ _Apr 2019 – Nov 2019_
 - Contributed to the internal dashboard (DNS records, preview
   deployments).
 
-### Prisma — Product Engineer
+### Prisma - Product Engineer
 
 _Sep 2017 – Mar 2018_
 
@@ -82,11 +82,11 @@ _Sep 2017 – Mar 2018_
 
 ## Speaking
 
-- **Loading 40 MB of JSON on initial load** — Productboard frontend
+- **Loading 40 MB of JSON on initial load** - Productboard frontend
   meetup #4, 2022 · [video](https://www.youtube.com/watch?v=43OCcnLYYn8)
-- **Every millisecond matters** — Productboard frontend meetup #3, 2021
+- **Every millisecond matters** - Productboard frontend meetup #3, 2021
   · [video](https://www.youtube.com/watch?v=IWR3xxEc3V0)
-- **Code-first GraphQL Server Development with Nexus & Prisma** —
+- **Code-first GraphQL Server Development with Nexus & Prisma** -
   PragueJS 2019 #4 ·
   [video](https://www.youtube.com/watch?v=rTJYIfae7Rk)
 
@@ -108,6 +108,6 @@ _2012 – 2017_
 
 ## Writing
 
-Long-form notes at [huvar.cz/blog](https://huvar.cz/blog) — most
+Long-form notes at [huvar.cz/blog](https://huvar.cz/blog), most
 recently [Six Years at Productboard](https://huvar.cz/blog/six-years-at-productboard),
 a reflection on the work above.

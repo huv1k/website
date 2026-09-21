@@ -3,29 +3,40 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/header.astro";
 import OpenToWork from "../components/open-to-work.astro";
 import Footer from "../components/footer.astro";
-import { SITE_TITLE } from "../consts";
+import { siteCopy, type Locale } from '../i18n';
 
 export interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
+  hasAlternate?: boolean;
 }
 
 const {
-  title = SITE_TITLE,
-  description = "A personal website built with Astro and Space Mono font",
+  locale = 'en',
+  title = siteCopy[locale].metadata.siteTitle,
+  description = siteCopy[locale].metadata.defaultDescription,
+  hasAlternate = true,
 } = Astro.props as Props;
+const copyCodeLabel = siteCopy[locale].accessibility.copyCode;
 ---
 
 <!doctype html>
-<html lang="en" class="font-sans">
+<html lang={locale} class="font-sans">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      locale={locale}
+      hasAlternate={hasAlternate}
+    />
   </head>
   <body
+    data-copy-label={copyCodeLabel}
     class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-mono antialiased font-size-15 flex flex-col"
   >
-    <Header />
-    <OpenToWork />
+    <Header locale={locale} hasAlternate={hasAlternate} />
+    <OpenToWork locale={locale} />
     <main class="max-w-2xl w-full mx-auto px-4 flex flex-col grow">
       <slot />
     </main>
@@ -35,6 +46,11 @@ const {
         const buttons = document.querySelectorAll(".copy-code-button");
 
         buttons.forEach((button) => {
+          button.setAttribute(
+            "aria-label",
+            document.body.dataset.copyLabel || "Copy code to clipboard",
+          );
+
           if (button.hasAttribute("data-listener-attached")) {
             return;
           }

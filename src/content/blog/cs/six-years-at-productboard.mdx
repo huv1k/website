@@ -1,0 +1,82 @@
+---
+title: 'Šest let v Productboardu'
+description: 'Ohlédnutí za mou cestou v Productboardu: od frontendové platformy, design systémů a výkonu přes GraphQL a AI až po postupné nasazování.'
+date: '2026-04-17T00:00:00Z'
+locale: 'cs'
+---
+
+import YouTube from '../../../components/YouTube.astro';
+
+Po šesti letech práce v Productboardu se chci ohlédnout za svou cestou. Byla to dlouhá jízda, tak vás jí postupně provedu.
+
+## Nástup do Productboardu
+
+Do Productboardu jsem nastoupil kvůli lidem. Všichni byli velmi milí a firemní kultura byla skvělá. Jedním z důvodů mého nástupu byl [Jukben](https://x.com/jukben), který se mě snažil přesvědčit téměř rok. Když jsem poprvé vstoupil do kanceláře, cítil jsem se jako doma a bylo mi tam opravdu dobře.
+
+## Frontendová platforma a migrace na Nx
+
+Po nástupu jsem pracoval v týmu frontendové platformy. Když jsem začínal, naše codebase obsahovala přibližně **250 000** řádků TypeScriptu. Přecházeli jsme na novou architekturu využívající Nx. Byl jsem v týmu s [Hottelem](https://x.com/martin_hotell) a migrace staré codebase do nového Nx workspace nějakou dobu trvala. Kvůli velkému množství technického dluhu byla dokončena až o několik let později. Navíc jsme museli ručně upravit téměř každou migraci **Nx**, protože náš repozitář s nimi nebyl vůbec kompatibilní.
+
+## Restart design systému
+
+Narazili jsme na úzké místo, protože jsme neměli vývojáře, který by se design systému věnoval naplno. Zapojil jsem se a pomohl [Honzovi Tomanovi](https://x.com/HonzaTmn) design systém restartovat. Byl v něm nepořádek, spousta komponent a několik verzí téže komponenty. Ani nedokážu spočítat, kolik variant tlačítek jsme měli; bylo jich zkrátka příliš mnoho.
+
+Byla to zlatá éra design systémů. Všechno kolem nich vzkvétalo a firmy bez design systému začínaly zaostávat. Připravili jsme novou verzi, vytvořili potřebné nástroje a postupně komponenty sjednotili. Po příchodu [Filipa](https://x.com/filipdanisko) a Adama jsem věděl, že je design systém v dobrých rukou, a mohl jsem se posunout dál.
+
+## Výkon načítání
+
+Další kapitola se zaměřila na zlepšení rychlosti načítání naší hlavní frontendové aplikace. Prosazoval jsem odstranění našeho „server-side renderingu“, který do šablony pouze vkládal globální proměnné. Místo toho jsme aplikaci přesunuli blíž k zákazníkům a zrychlili její první načtení. Zákazníkům jsme tím zkrátili **Time to First Byte (TTFB)** o **600 ms**.
+
+<YouTube id="IWR3xxEc3V0" title="Every millisecond matters" />
+
+Přešli jsme na **Cloudflare Workers**, což narušilo tok dat v našich clusterech. Změnit frontendovou aplikaci, která na globálních proměnných roky závisela, nebylo jednoduché. Aby vše fungovalo, musel jsem vytvořit několik „hacky“ řešení.
+
+Dalším vylepšením výkonu bylo snížení množství dat, která zákazníci museli při prvním načtení stáhnout. Náš synchronizační engine načítal většinu dat hned na začátku a zajišťoval velmi reaktivní prostředí. Pro rychlé iterace a malé zákazníky to fungovalo dobře. S rostoucím objemem dat jsme ale museli zavést několik vylepšení, která načítání zrychlila.
+
+<YouTube id="43OCcnLYYn8" title="Loading 40 MB of JSON on initial load" />
+
+Bohužel nelze vyřešit první načtení synchronizačních enginů bez toho, aby byla část dat uložená přímo v počítači. Synchronizační enginy jsou účinné, ale nehodí se pro všechny případy použití.
+
+## GraphQL a Relay
+
+Připravovali jsme se na provoz ve velkém měřítku, a proto jsme chtěli sjednotit vrstvu pro načítání dat, aby všichni používali stejné postupy a technologie. Prozkoumali jsme několik možností a nakonec zvolili **GraphQL**. Vytvořili jsme federované GraphQL, kde každý tým budoval svou službu jako součást jednoho supergraphu.
+
+Pro frontend jsme společně s [Balvajsem](https://x.com/Balvajs) vybrali **Relay**. Byla to dobrá volba, která nám dlouho dobře sloužila. Kdo Relay zná, ví ale o několika problémech: strmé křivce učení a možnosti, že dotazy výrazně narostou a zaberou velkou část JavaScriptových bundlů.
+
+## Doba sestavení a odstranění Babelu
+
+Buildy se nám zpomalovaly, proto jsem přešel na **Webpack 5** a **SWC** a Babel z našeho stacku úplně odstranil. Výsledek byl skvělý: doba sestavení klesla z 12 minut na pouhých 5 a zlepšení jsme náležitě oslavili. Pamatuje si ještě někdo boj s verzemi Babelu a neustále narůstající konfigurací? Byly to opravdu bolestivé časy a každá aktualizace působila křehce.
+
+## Produktové týmy a výkon
+
+Byl jsem součástí několika menších týmů, které řešily různá produktová a výkonnostní témata. Spolupráce s různými lidmi mě bavila. Vytvořili jsme nový navigační systém a řešili problémy s výkonem u velkých zákazníků, z nichž někteří používali velmi pomalé a zastaralé počítače.
+
+## Cyklické závislosti
+
+Dalším velkým tématem bylo odstraňování cyklických závislostí z codebase. Velké monorepo s cyklickými závislostmi se spravuje obtížně. Změna jediného souboru může ovlivnit mnoho projektů a zneplatnit velké množství JavaScriptu. To vede k pomalejšímu dodávání změn a podivným chybám, které se mohou objevit i v částech codebase, jichž jste se nedotkli.
+
+[Pavel Kepka](https://x.com/kepkap) vytvořil skvělý nástroj a my postupně odstranili více než **250** cyklických závislostí. S dnešní AI by to bylo mnohem jednodušší. 😅
+
+## Migrace, migrace, migrace
+
+Potom přišel Ondřej a společně jsme dokončili mnoho různých migrací. Namátkou: Yarn na Pnpm, Webpack na Vite, několik verzí Nx, nové verze Storybooku, nová dokumentační platforma, GraphQL gateway a další. Už si ani nedokážu vybavit všechno; úkolů bylo příliš mnoho. S Ondřejem jsem také vyrazil do San Francisca a naše rodiny si společný čas skvěle užily.
+
+## CI/CD a moderní nástroje
+
+S rostoucí velikostí monorepa se zpomalovalo i naše CI/CD. Do týmu přišel [Jirka](https://x.com/synaptiko_o), pomohl nám zavést řadu vylepšení a zrychlit Nx. Vyzkoušeli jsme Nx Cloud a distribuci úloh. Řešení fungovalo, ale kvůli různým problémům nikdy nedosáhlo původního cíle.
+
+Pak začala éra „nových“ moderních nástrojů. Pokusili jsme se zapnout TypeScript project references, ale byly pomalé. Rozhodli jsme se vyzkoušet **tsgo** a všechno bylo rychlejší, lepší a jednodušší.
+
+## AI
+
+Potom přišla AI a všechno výrazně změnila. Kód je dnes levný a lze vytvořit téměř cokoli, zásadní je ale udržet kvalitu a stabilitu. Upravili jsme monorepo tak, aby v něm AI agenti pracovali efektivněji, a opustili pomalé nástroje, jako je ESLint. Agentům i týmu jsme tím zajistili rychlejší zpětnou vazbu. Měli jsme kompletní sestavu s nástroji **oxlint**, **oxfmt** a **tsgo**.
+
+Zásadně jsme proměnili také CI/CD. Jirka vytvořil zjednodušenou distribuci úloh, která lépe odpovídala našim potřebám. Vyzkoušeli jsme mnoho nástrojů a modelů a nakonec došli k tomu, že je nejlepší soustředit se na jeden. Všechno se totiž rychle mění a modely se zlepšují každý den. Pokud chcete **dodávat hodnotu, musíte se soustředit na dodávání**, ne neustále zkoušet další modely.
+
+## Postupné nasazování
+
+Jedním z posledních projektů, na kterých jsem pracoval, bylo postupné nasazování frontendových aplikací. Když je kód levný a vzniká rychle, musíte zajistit, aby nasazené změny nic nerozbily. Na kvalitě stále záleží. Stačí se podívat na status pages různých firem a uvidíte, co se v oboru děje. Změnám se nevyhneme, ale **klíčové je udržet stabilitu**. Systém, který automaticky odhalí vadné nasazení a vrátí změny zpět, je v dnešním prostředí zásadní. Všechno jsme postavili kolem Cloudflare Workers a našich monitorovacích nástrojů.
+
+## Poděkování
+
+Tím končí shrnutí mé cesty v Productboardu. Byla to divoká jízda, během které jsem si našel mnoho přátel a dodal spoustu vylepšení a funkcí. Když jsem odcházel, frontendová codebase obsahovala více než **1,6 milionu řádků kódu** a přes **750 knihoven**. Výrazně jsem zlepšil každodenní práci našich vývojářů. Pokud vás něco z toho zaujalo nebo si o tom chcete popovídat, ozvěte se. O těchto tématech budu mluvit rád. Děkuji za pozornost. A ano, jsem otevřený novým příležitostem.

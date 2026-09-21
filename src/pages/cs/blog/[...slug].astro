@@ -1,21 +1,21 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import ArticlePage from '../../components/pages/article-page.astro';
+import ArticlePage from '../../../components/pages/article-page.astro';
 import {
   getEntrySlug,
   getLocalizedEntries,
   hasTranslation,
-} from '../../lib/content';
+} from '../../../lib/content';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
-  const posts = await getLocalizedEntries('blog', 'en');
+  const posts = await getLocalizedEntries('blog', 'cs');
 
   return posts.map((post) => ({
     params: { slug: getEntrySlug(post) },
     props: {
       post,
-      hasAlternate: hasTranslation(allPosts, getEntrySlug(post), 'cs'),
+      hasAlternate: hasTranslation(allPosts, getEntrySlug(post), 'en'),
     },
   }));
 }
@@ -33,7 +33,7 @@ const { Content } = await render(post);
   title={post.data.title}
   description={post.data.description}
   date={post.data.date}
-  locale="en"
+  locale="cs"
   hasAlternate={hasAlternate}
 >
   <Content />
