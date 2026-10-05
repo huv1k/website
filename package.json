@@ -33,7 +33,7 @@
     "@types/node": "26.6.4",
     "@types/react": "19.3.0",
     "hastscript": "9.0.1",
-    "lefthook": "2.1.16",
+    "lefthook": "2.1.17",
     "oxfmt": "0.71.0",
     "oxlint": "1.86.0",
     "wrangler": "4.147.0"
