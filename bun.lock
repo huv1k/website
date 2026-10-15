@@ -10,7 +10,7 @@
         "@astrojs/rss": "4.0.19",
         "@astrojs/sitemap": "3.7.4",
         "@fontsource/space-mono": "5.3.0",
-        "@lucide/astro": "1.56.0",
+        "@lucide/astro": "1.57.0",
         "astro": "7.3.8",
         "cf-workers-og": "3.0.1",
         "react": "19.3.1",
@@ -242,7 +242,7 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@lucide/astro": ["@lucide/astro@1.56.0", "", { "peerDependencies": { "astro": "^4 || ^5 || ^6 || ^7" } }, "sha512-BLLnB+qj1SG60WyvkcGxSfBo0Nq2ZMjJI+39KVhgZJlQKQ4+1XOArJonl4Ktx/D2N6OcbJXNnFLsCbunf1AtXQ=="],
+    "@lucide/astro": ["@lucide/astro@1.57.0", "", { "peerDependencies": { "astro": "^4 || ^5 || ^6 || ^7" } }, "sha512-c7PitaHb87ZTtttqi2j+3dJ72pqx5dSnuh59Cudr4OS+POofYvWVyBXFS/sdVjuWn6sQUl/o3qGK8w9rtI7GTA=="],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.2.4", "", { "dependencies": { "@tybys/wasm-util": "^0.10.3" }, "peerDependencies": { "@emnapi/core": "^1.7.1 || ^2.0.0-alpha.4", "@emnapi/runtime": "^1.7.1 || ^2.0.0-alpha.4" } }, "sha512-AJxoUD2/15ESHbvpcyjU274nsAPLuOtPHCk0vKJM5pj//Fg/B1FXNWjPnXTT9PymCYYiHo4zPj0ZomXBKhoy7g=="],
 
