@@ -35,7 +35,7 @@
     "hastscript": "9.0.3",
     "lefthook": "2.2.2",
     "oxfmt": "0.78.0",
-    "oxlint": "1.90.0",
+    "oxlint": "1.93.0",
     "wrangler": "4.156.0"
   },
   "packageManager": "bun@1.4.4",
